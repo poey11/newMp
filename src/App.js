@@ -1,5 +1,6 @@
 import './App.css';
 import Home from './Pages/Homepage';
+import Review from './Pages/Reviewpage';
 
 import { 
   BrowserRouter as Router, 
@@ -17,7 +18,7 @@ function App() {
             <Route exact path ="/" Component={Home}/>
           }
           {
-            <Route exact path ="/Review" Component={Home}/>
+            <Route exact path ="/Review" Component={Review}/>
           }
           {
             <Route exact path="/Login" Component={Home}/>

@@ -1,21 +1,20 @@
 .body{
-    background-color: yellow;
     max-width: 100%;
     width: 100vw;
     overflow: hidden;
     display: flex;
+    
 }
 
 .title{
     position: absolute;
     width: calc(100% - 800px);
-    top: 150px ;
+    top: 140px ;
     left: 433px;
-    letter-spacing: -0.02em;
-    line-height: 120%;
+    letter-spacing: -0.05em;
+    line-height: 150%;
     text-align: center;
     display: inline-block;
-    background-color: gainsboro;
 
 }
 .header-1{
@@ -26,11 +25,10 @@
 .bodyLogo{
 
     position: relative;
-    left: 50%;
+    left: 49%;
     height: 80px;
     object-fit: cover;
     padding: 90px 0px 0px 0px;
-    background-color: green;
 }
 .forward {
     color: #2d5987;
@@ -46,7 +44,6 @@
     text-align: center;
     display: inline-block;
     font-size: 36px;
-    background-color: greenyellow;
 
 }
 .dividerHP{/*divider Class is in LoginCSS*/
@@ -65,7 +62,6 @@
     justify-content: center;
     align-items: center;
     position: absolute;
-    background-color: bisque;
     top: 85%;
     right: 47%;
 }
@@ -78,6 +74,7 @@
     background-color: #2D5987;
     cursor: pointer;
     border: 1px solid white;  
+    
 }  
 
 .review-button:active{
@@ -86,4 +83,64 @@
        -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
             box-shadow: inset 0px 0px 5px #c1c1c1;
      outline: none;
+}
+
+
+.VisMis{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 1560px;
+   justify-items: center;
+    width: 100%;
+}   
+.VisCont,.introCont,.MisCont,.believe{
+    position: relative;
+    width: 630px;
+    left: 34.5%;
+}
+
+.believe,.igan{
+    color: #2D5987;
+}
+.introCont,.igan{
+    font-weight: 540;
+}
+
+.hp-pics{
+    position: absolute;
+    height: 708px;
+    overflow: hidden;
+    font-size: 16px;
+    width: 1381px;
+    max-width: 100%;
+    top: 755px;
+    left: calc(10% - 3px);
+}
+.pic1{
+    position: relative;
+    width: calc(100% - 803px);
+    top: 5px;
+    max-width: 100%;
+    overflow: hidden;
+    height: 700px;
+}
+.pic2{
+    position: relative;
+    width: calc(100% - 704px);
+    left: 8.8%;
+    bottom: 18%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 432px;
+    padding-left: 10PX;
+}
+.pic-tags{
+    position: absolute;
+    width: calc(100% - 704px);
+    top: 574px;
+    left: 705px;
+    letter-spacing: -0.01em;
+    line-height: 160%;
+    display: inline-block;
 }

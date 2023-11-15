@@ -33,13 +33,60 @@ const Homepage  = () => {
                     <North/>
                 </Link>
                 <div className="review-container">
-                    <Link to ="/" > 
+                    <Link to ="/Review" > 
                         <input type="button" className ="review-button"  value="CHECK REVIEWS"/>
                     </Link>
+                </div>
+                
+                <div className="hp-pics">
+                    <img
+                        className="pic1"
+                        alt=""
+                        src="./jonathankemper1hhrdiolfpuunsplash-1@2x.png"
+                    />
+                
+                    <img
+                        className="pic2"
+                        alt="" src="./stocksy-txp226f62b2ane300-medium-4582193-1@2x.png"
+                    />
+                     <div className="pic-tags">
+                            Tags: #TravelSafeWithIgan, #IganTheFriendlyBus, #MalutoTrans
+                    </div>
+                </div>
+                <div className="VisMis">
+                    <div className="believe">WHAT WE BELIEVE</div>
+                    <div className="introCont">
+                        <p className="describe" >
+                            At <span className="igan">IGAN</span>, we are dedicated to providing exceptional transportation services to our passengers, 
+                            ensuring safety, comfort, and reliability in every journey. We believe in connecting communities,
+                            creating memories, and making travel convenient and enjoyable for all.
+                        </p>
+                    </div>
+                    <div className="MisCont">
+                        <span className="igan">Our Mission</span>
+                        <p className="mission">
+                            Connecting Communities, One Ride at a Time <br/>
+                            Our mission is to serve as a catalyst for community connectivity by offering 
+                            reliable and efficient bus transportation services. We strive to exceed our 
+                            passengers' expectations in terms of safety, comfort, and punctuality while 
+                            minimizing our environmental impact.
+                        </p>
+                    </div>
+                    <div className="VisCont">
+                        <span className="igan">Our Vision</span>
+                        <p className="mission">
+                            Leading the Way in Sustainable Transportation<br/>
+                            We envision being at the forefront of sustainable transportation, setting industry
+                            standards and inspiring positive change in the way people perceive and use bus 
+                            services. We aim to be a beacon of innovation, continually exploring ways to reduce
+                            our carbon footprint and contribute to a greener future.
+                        </p>
+                    </div>
                 </div>
             </div>            
         </div>
     );
 }
 
+/* */
 export default Homepage;
