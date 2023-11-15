@@ -1,0 +1,28 @@
+
+.container{
+    position: absolute;
+    display: flex;
+    height: 230px;
+    width: 560px;
+    border: 1px solid   black;
+    display: flex;
+    font-weight: lighter;
+    font-size: 20px;
+  
+}
+#HPSouth{
+    top: 390px;
+    right:51%;
+}
+#HPNorth{
+    display: flex;
+    top: 390px;
+    right: 13%;
+}
+.contTitle{
+    position: inherit;
+}
+.contDesc{
+    position: absolute;
+    top: 50%;
+}

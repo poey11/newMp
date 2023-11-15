@@ -1,0 +1,89 @@
+.body{
+    background-color: yellow;
+    max-width: 100%;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+}
+
+.title{
+    position: absolute;
+    width: calc(100% - 800px);
+    top: 150px ;
+    left: 433px;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+    text-align: center;
+    display: inline-block;
+    background-color: gainsboro;
+
+}
+.header-1{
+    margin: 0;
+    font-size: 24px;   
+
+}
+.bodyLogo{
+
+    position: relative;
+    left: 50%;
+    height: 80px;
+    object-fit: cover;
+    padding: 90px 0px 0px 0px;
+    background-color: green;
+}
+.forward {
+    color: #2d5987;
+}
+
+.moving-forward-passengers-container{
+    position: absolute;
+    width: calc(100% - 420px);
+    top: 305px;
+    left: 210px;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+    text-align: center;
+    display: inline-block;
+    font-size: 36px;
+    background-color: greenyellow;
+
+}
+.dividerHP{/*divider Class is in LoginCSS*/
+    position: relative;
+    top:250px;
+    border-top: 1px solid black;
+    box-sizing: border-box;
+    width: calc(100% - 320px);
+    height: 2px;
+    left:95px;
+    padding-bottom: 650px;
+}
+.review-container{
+    display: flex;
+    height:50px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: bisque;
+    top: 85%;
+    right: 47%;
+}
+.review-button{
+    position: relative;    
+    width: 160%;
+    color: white;
+    height: 48px;
+    border-radius: 8px;
+    background-color: #2D5987;
+    cursor: pointer;
+    border: 1px solid white;  
+}  
+
+.review-button:active{
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+     outline: none;
+}

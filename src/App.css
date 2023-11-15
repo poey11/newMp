@@ -1,0 +1,15 @@
+.containerClick:hover{
+    text-decoration: none;
+}
+.containerClick:not(:hover),.containerClick:active{
+    text-decoration: none;
+    color: black;
+}
+.ForumBar:not(:active),.ForumBar:active,.ForumBar:hover{
+    color: white;
+    text-decoration: none;
+}
+body{
+    position:relative;
+    display: flex;
+}
