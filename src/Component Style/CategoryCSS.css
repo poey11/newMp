@@ -12,12 +12,18 @@
 }
 #HPSouth{
     top: 390px;
-    right:51%;
+    right:38%;
+    left: 0;  
+    margin-left: auto; 
+    margin-right: auto;
 }
 #HPNorth{
     display: flex;
     top: 390px;
-    right: 13%;
+    right: 0;
+    left: 41%; 
+    margin-left: auto; 
+    margin-right: auto;
 }
 .contTitle{
     position: inherit;

@@ -1,0 +1,96 @@
+.at-igan-we-container {
+    position: absolute;
+    top: 40%;
+    left: 16%;
+    font-size: 14px;
+    line-height: 160%;
+    text-align: center;
+    display: inline-block;
+    width: 410px;
+    height: 69px;
+}
+
+
+
+
+.Page-Header{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    padding: 30px 50px 20px;
+    box-sizing:border-box;
+    font-size: 45px;
+}
+
+.divider {
+    position: absolute;
+    width: calc(100% - 190px);
+    right: 95px;
+    left: 95px;
+    border-top: 2px solid black;
+    box-sizing: border-box;
+  }
+
+  .n-2-icon {
+    display: flex;
+    position: relative;
+    top: 2px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+    width: 930.49px;
+    height: 463px;
+    object-fit: cover;
+  }
+
+  .loginPageChild{
+    flex-direction: column;
+    position: absolute;
+    top: 228.5px;
+    background-color: whitesmoke;
+    width: 608px;
+    height: 364px;
+    align-items: center;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
+  }
+  .maluto-transportation, .travel-corporation{
+    position: relative;
+    letter-spacing: -0.01em;
+    line-height: 100%;
+  }
+  .malutotranslogo-icon1 {
+    position: relative;
+    width: 42px;
+    height: 50px;
+    object-fit: cover;
+    left:45%;
+  }
+  .maluto-transportation{
+    margin-top: 30px;
+    left: 19.5%;
+    font-size:30px;
+    font-weight: bold;
+    color: steelblue;
+   
+  }
+  .travel-corporation {
+    left: 26%;
+    width: 305px;
+    height: 17px;
+  }
+
+.footer{
+    position: relative;
+    width: calc(100% - 420px);
+    top: 10px;
+    left: 200px;
+    font-size: 60px;
+    letter-spacing: -0.02em;
+    line-height: 120%;
+    text-align: center;
+    display: inline-block;
+}

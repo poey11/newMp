@@ -1,7 +1,9 @@
 import './App.css';
 import Home from './Pages/Homepage';
 import Review from './Pages/Reviewpage';
-
+import Gallery from './Pages/Gallerypage';
+import About from './Pages/Aboutpage';
+import Login from './Pages/Loginpage';
 import { 
   BrowserRouter as Router, 
   Route, 
@@ -21,13 +23,13 @@ function App() {
             <Route exact path ="/Review" Component={Review}/>
           }
           {
-            <Route exact path="/Login" Component={Home}/>
+            <Route exact path="/Login" Component={Login}/>
           }
           {
-            <Route exact path="/About" Component={Home}/>
+            <Route exact path="/About" Component={About}/>
           }
           {
-            <Route exact path="/Gallery" Component={Home}/>
+            <Route exact path="/Gallery" Component={Gallery}/>
           }
           {
             <Route exact path ="/Register" Component={Home}/>

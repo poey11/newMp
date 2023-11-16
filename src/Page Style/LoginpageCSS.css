@@ -1,0 +1,72 @@
+.userN, .pass, 
+.passInput, 
+.userInput{
+    position: relative;
+    left: 25%;
+    line-height: 130%;
+    font-weight: 600;
+    border-radius: 3px;
+
+}
+.passInput, 
+.userInput{
+    width: 50%;
+    height: 20px;
+    background-color: gainsboro;
+    border: 0px solid white;
+}
+.passInput, 
+.userInput:focus{
+   
+  outline: none;
+}
+
+.forget{
+    position: relative;
+    left:55%;
+    top: 1px;
+    cursor: pointer;
+}
+
+.loginButt, .RegisterButt{
+    position: relative;
+    width: 126px;
+    height: 48px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 6px;
+    background-color: #2D5987;
+    border:0px solid black;
+    color: white;
+    cursor: pointer;
+}
+.loginButt{
+    margin-left: 160px;
+}
+.RegisterButt{
+    margin-left: 30px;
+}
+
+.loginButt:active, .RegisterButt:active{
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+     outline: none;
+  }
+
+.RememberMeBox, .RememberLabel{
+  position: absolute;
+  cursor: pointer;
+}
+.RememberMeBox{
+  left: 25%;
+  bottom: 28.5%;
+}
+.RememberLabel{
+  left: 29%;
+  bottom: 28.5%;
+}

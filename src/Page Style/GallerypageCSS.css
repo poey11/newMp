@@ -1,0 +1,92 @@
+
+
+.Page-Header{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    padding: 30px 50px 20px;
+    box-sizing:border-box;
+    font-size: 45px;
+}
+
+.n-1-icon1,
+.n-1-icon2 {
+  position: relative;
+  width: 349.25px;
+  height: 463px;
+  object-fit: cover;
+  
+}
+.n-1-icon2 {
+  width: 930.49px;
+}
+
+
+.gallery-container{
+  position: relative;
+  justify-content: center;
+  display: flex;
+  width: 1300px;
+  margin-top: 10px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+.n-2-icon2,
+.n-1-icon3{
+  position: relative;
+  width: 568px;
+  height: 568px;
+  object-fit: cover;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+}
+.n-2-icon2{
+  left: 3%; 
+
+}
+.n-1-icon3{
+  left: -3%; 
+}
+.gallery-container-2{
+  display: flex;
+  position: relative;
+  width: 1300px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+
+}
+
+.n-1-icon4,
+.n-1-icon5{
+  position: relative;
+  width: 568px;
+  height: 568px;
+  object-fit: cover;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+  
+}
+.n-1-icon4{
+  left:  3%;
+}
+.n-1-icon5{
+  left: -3%;
+}
+.gallery-container-3{
+  position: relative;
+  display: flex;
+  width: 1300px;
+  height: 10px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
+}
