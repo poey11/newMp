@@ -1,0 +1,492 @@
+.malutoTransBy {
+    position: absolute;
+    top: 40px;
+    left: 119px;
+    font-size: var(--font-size-13xl);
+    letter-spacing: -0.01em;
+    line-height: 100%;
+    font-family: var(--font-reem-kufi);
+    color: var(--color-steelblue);
+    text-align: left;
+  }
+  .forum,
+  .home {
+    line-height: 130%;
+  }
+  .home {
+    position: absolute;
+    top: 45.5px;
+    right: 738px;
+  }
+  .forum {
+    top: 46px;
+    right: 624px;
+  }
+  .about,
+  .forum,
+  .gallery {
+    position: absolute;
+  }
+  .about {
+    top: 45px;
+    right: 512px;
+    line-height: 130%;
+  }
+  .gallery {
+    top: 46px;
+    right: 393px;
+  }
+  .gallery,
+  .login,
+  .review {
+    line-height: 130%;
+  }
+  .review {
+    position: absolute;
+    top: 45px;
+    right: 280px;
+  }
+  .login {
+    position: relative;
+    font-weight: 600;
+  }
+  .loginButton {
+    position: absolute;
+    top: 32px;
+    right: 96px;
+    border-radius: var(--br-5xs);
+    background-color: var(--color-steelblue);
+    width: 126px;
+    height: 48px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: var(--padding-smi) var(--padding-0);
+    box-sizing: border-box;
+    color: var(--color-white);
+  }
+  .malutotranslogoIcon {
+    position: absolute;
+    top: 16px;
+    left: 33px;
+    width: 63px;
+    height: 80px;
+    object-fit: cover;
+  }
+  .header {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 112px;
+    overflow: hidden;
+    text-align: center;
+    font-size: var(--font-size-base);
+  }
+  .divider,
+  .northBoundRoute {
+    align-self: stretch;
+    position: relative;
+  }
+  .northBoundRoute {
+    letter-spacing: -0.02em;
+    line-height: 120%;
+  }
+  .divider {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-top: 2px solid var(--color-gainsboro);
+    box-sizing: border-box;
+    height: 2px;
+  }
+  .pageHeading {
+    position: absolute;
+    width: 100%;
+    top: 112px;
+    right: 0;
+    left: 0;
+    background-color: var(--color-white);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: 55.9998893737793px var(--padding-77xl) 0.0001068115234375px;
+    box-sizing: border-box;
+    gap: var(--gap-base);
+    font-size: var(--font-size-45xl);
+    color: var(--color-steelblue);
+    font-family: var(--font-newsreader);
+  }
+  .home1 {
+    position: absolute;
+    top: 45.5px;
+    right: 738px;
+    font-size: var(--font-size-base);
+    line-height: 130%;
+    text-align: center;
+  }
+  .button,
+  .searchBar {
+    background-color: var(--color-steelblue);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+  .searchBar {
+    border: 1px solid var(--color-white);
+    width: 209px;
+    height: 39px;
+    flex-shrink: 0;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: var(--padding-7xs) var(--padding-26xl);
+  }
+  .button {
+    position: absolute;
+    top: 261px;
+    left: calc(50% - 771px);
+    border-radius: var(--br-5xs);
+    width: 1506px;
+    height: 64px;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: var(--padding-xs) var(--padding-20xl);
+    color: var(--color-gray-200);
+  }
+  .allPosts,
+  .myPosts {
+    position: absolute;
+    top: calc(50% - 232px);
+    left: calc(50% - 380px);
+    line-height: 130%;
+    font-weight: 600;
+    color: var(--color-white);
+  }
+  .allPosts {
+    left: calc(50% - 549px);
+  }
+  .magnifyGlassIcon {
+    position: absolute;
+    top: 277px;
+    left: 1207px;
+    width: 45px;
+    height: 32px;
+    object-fit: cover;
+  }
+  .button1,
+  .frame {
+    position: absolute;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .button1 {
+    top: 373px;
+    left: calc(50% + 487px);
+    border-radius: var(--br-5xs);
+    background-color: var(--color-steelblue);
+    width: 209px;
+    height: 60px;
+    align-items: flex-end;
+    justify-content: center;
+    padding: var(--padding-0) var(--padding-4xl);
+    box-sizing: border-box;
+    color: var(--color-white);
+  }
+  .frame {
+    top: 375px;
+    left: 63px;
+    width: 188px;
+    height: 40px;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-newsreader);
+  }
+  .sortByRecent {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 200;
+    font-family: inherit;
+  }
+  .frame1 {
+    position: absolute;
+    top: 375px;
+    left: 267px;
+    width: 215px;
+    height: 40px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-newsreader);
+  }
+  .northBoundPageChild {
+    position: absolute;
+    top: 398px;
+    left: 499px;
+    width: 22.1px;
+    height: 12.5px;
+  }
+  .moreActions {
+    margin: 0;
+    position: absolute;
+    top: 17px;
+    left: 19px;
+    font-size: inherit;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 200;
+    font-family: inherit;
+    display: flex;
+    align-items: flex-end;
+    width: 140px;
+  }
+  .frameChild {
+    position: absolute;
+    top: 24px;
+    left: 162px;
+    width: 22.1px;
+    height: 12.5px;
+  }
+  .moreActionsParent {
+    position: absolute;
+    top: 376px;
+    left: 980px;
+    border: 1px solid var(--color-gray-100);
+    box-sizing: border-box;
+    width: 201px;
+    height: 54px;
+    overflow: hidden;
+    font-size: var(--font-size-6xl);
+    font-family: var(--font-newsreader);
+  }
+  .northBoundRoutes {
+    margin: 0;
+    position: absolute;
+    top: 81px;
+    left: 21px;
+    font-size: inherit;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 200;
+    font-family: inherit;
+  }
+  .thisIsYour {
+    margin: 0;
+  }
+  .thisIsYourContainer {
+    margin: 0;
+    position: absolute;
+    top: 138px;
+    left: 46px;
+    font-size: inherit;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 200;
+    font-family: inherit;
+  }
+  .user21 {
+    position: relative;
+    width: 50px;
+    height: 49px;
+    object-fit: cover;
+  }
+  .firstNameLast {
+    margin: 0;
+    position: relative;
+    font-size: inherit;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 200;
+    font-family: inherit;
+    display: flex;
+    align-items: flex-end;
+    width: 379px;
+    flex-shrink: 0;
+  }
+  .frame3 {
+    position: absolute;
+    top: 11px;
+    left: 21px;
+    width: 445px;
+    height: 49px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: var(--gap-base);
+    font-size: var(--font-size-20xl);
+  }
+  .comment22,
+  .like11 {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+  }
+  .comment22 {
+    width: 33px;
+    height: 31px;
+  }
+  .frame6 {
+    width: 133px;
+    height: 31px;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--gap-6xs);
+  }
+  .frame4,
+  .frame5,
+  .frame6 {
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .frame5 {
+    width: 232px;
+    height: 31px;
+    flex-shrink: 0;
+    align-items: center;
+    gap: var(--gap-40xl);
+  }
+  .frame4 {
+    position: absolute;
+    top: 295px;
+    left: 6px;
+    width: 271px;
+    height: 36px;
+    align-items: flex-start;
+    gap: var(--gap-6xs);
+  }
+  .div,
+  .frame8 {
+    width: 13px;
+    display: flex;
+  }
+  .div {
+    position: relative;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 200;
+    align-items: flex-end;
+  }
+  .frame8 {
+    position: absolute;
+    top: 0;
+    left: 160px;
+    height: 35px;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .div1,
+  .frame9 {
+    width: 12px;
+    display: flex;
+  }
+  .div1 {
+    position: relative;
+    letter-spacing: -0.02em;
+    line-height: 100%;
+    font-weight: 200;
+    align-items: flex-end;
+  }
+  .frame9 {
+    position: absolute;
+    top: 0;
+    left: 65px;
+    height: 34px;
+    overflow: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .nounEye15457301Icon {
+    position: absolute;
+    top: 0;
+    left: 89px;
+    border-radius: var(--br-120xl-5);
+    width: 72px;
+    height: 48px;
+    object-fit: cover;
+  }
+  .frame10 {
+    position: absolute;
+    top: 0;
+    left: 21px;
+    width: 33px;
+    height: 34px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .divider1 {
+    position: absolute;
+    width: calc(100% + 2px);
+    right: -1px;
+    bottom: 3.7px;
+    left: -1px;
+    border-top: 2px solid var(--color-black);
+    box-sizing: border-box;
+    height: 2px;
+  }
+  .frame7 {
+    position: absolute;
+    top: 246px;
+    left: 0;
+    width: 637px;
+    height: 48px;
+    overflow: hidden;
+    font-size: var(--font-size-6xl);
+  }
+  .northBoundRoutesParent {
+    position: relative;
+    border: 1px solid var(--color-black);
+    box-sizing: border-box;
+    width: 637px;
+    height: 341px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .frame2,
+  .northBoundPage {
+    overflow: hidden;
+    text-align: left;
+    color: var(--color-black);
+  }
+  .frame2 {
+    position: absolute;
+    top: 512px;
+    left: 401px;
+    width: 637px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: var(--font-size-5xl);
+    font-family: var(--font-newsreader);
+  }
+  .northBoundPage {
+    position: relative;
+    background-color: var(--color-white);
+    width: 100%;
+    height: 1024px;
+    font-size: var(--font-size-xl);
+    font-family: var(--font-inter);
+  }
+  
