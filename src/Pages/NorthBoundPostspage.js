@@ -1,5 +1,5 @@
 import Nav from '../Components/NavBar';
-import '../Page Style/NorthBoundPostspageCSS.css';
+import '../Page Style/NorthBoundPostsCSS.css';
 
 const NorthBoundPosts = () => {
   const onDots1IconClick = useCallback(() => {
