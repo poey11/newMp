@@ -33,7 +33,7 @@ const Loginpage = () => {
             <p className='forget'>Forgot Password?</p>
             <label className = "RememberLabel" htmlFor="RememberMeBox">Keep me signed in</label>
             <Link to = "/">
-            <input type="button" className="loginButt" value={"Login"}/>
+            <input type="button" className="loginButt" value={'Login'}/>
             </Link>
             <Link to = "/Register">
                 <input type="button" className="RegisterButt" value={'Sign Up'}/>

@@ -64,6 +64,7 @@
     margin-left: auto; 
     margin-right: auto;
     padding-bottom: 650px;
+    
 }
 .review-container{
     display: flex;
@@ -72,7 +73,7 @@
     position: absolute;
     top: 85%;
     left: 0; 
-    right: 4.5%; 
+    right: 0; 
     margin-left: auto; 
     margin-right: auto;
 }
@@ -102,13 +103,15 @@
     position: absolute;
     flex-direction: column;
     top: 1560px;
-    justify-items: center;
-    width: 100%;
+    width: 630px;
+    left: 85px; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
 }   
 .VisCont,.introCont,.MisCont,.believe{
     position: relative;
     width: 630px;
-    left: 34.5%;
 }
 
 .believe,.igan{
