@@ -228,13 +228,13 @@
   .andTravelCorporation,
   .malutoTransportation {
     position: absolute;
-    letter-spacing: -0.01em;
+    letter-spacing: 0.01em;
     line-height: 100%;
     mix-blend-mode: normal;
   }
   .malutoTransportation {
     top: 438px;
-    left: 171px;
+    left: 270px;
     font-size: var(--font-size-13xl);
     font-family: var(--font-reem-kufi);
     color: var(--color-steelblue);
@@ -262,14 +262,14 @@
     height: 91px;
     mix-blend-mode: normal;
   }
+
   .user21 {
-    position: absolute;
-    top: 531px;
-    left: 153px;
+    top: 100x;
+    left: 140px;
     width: 50px;
     height: 49px;
-    object-fit: cover;
   }
+
   .forward {
     color: var(--color-steelblue);
   }
@@ -306,7 +306,8 @@
     left: 46px;
   }
   .user211 {
-    position: relative;
+    top: 40px;
+    left: 120;
     width: 50px;
     height: 49px;
     object-fit: cover;
@@ -511,5 +512,11 @@
     height: 1024px;
     font-size: var(--font-size-base);
     font-family: var(--font-inter);
+  }
+
+  .forumpost {
+    position: absolute;
+    top: 594px;
+    left: 256px;
   }
   
