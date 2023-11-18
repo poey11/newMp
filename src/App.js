@@ -39,7 +39,7 @@ function App() {
             <Route exact path="/Gallery" Component={Gallery}/>
           }
           {
-            <Route exact path ="/Register" Component={SouthBoundPosts}/>
+            <Route exact path ="/Register" Component={Register}/>
           }
           {
             <Route exact path ="/South" Component={Home}/>

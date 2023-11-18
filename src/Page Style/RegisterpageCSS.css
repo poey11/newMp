@@ -1,0 +1,101 @@
+#registerChild{
+    height: 490px;
+
+}
+.Register-Corporation, .Register-Transport{
+    position: relative;
+    letter-spacing: -0.01em;
+    line-height: 100%;
+}
+
+.Register-Transport{
+    margin-top: 5px;
+    left: 19.5%;
+    font-size:30px;
+    font-weight: bold;
+    color: steelblue;
+   
+  }
+.Register-Corporation {
+    left: 26%;
+    width: 305px;
+    height: 17px;
+  }
+
+
+
+.userNameInput, .newPasswordInput,
+.newPasswordInput,.conPasswordInput{
+    position: relative; 
+    line-height: 130%;
+    font-weight: 600;
+    background-color: gainsboro;
+    border: 0px solid black;
+    border-radius: 3px;
+
+  }
+
+.userNameInput, .newPasswordInput,
+.newPasswordInput,.conPasswordInput,
+.ShortDescInput:focus {
+    outline: none;
+}
+
+.ShortDescInput{
+    position: absolute;
+    height: 150px;
+    width: 250px;
+    background-color: gainsboro;
+    border: 0px solid black;
+    border-radius: 3px;
+    resize: none;
+}
+.userNameLabel,.ProfilePicLabel,
+.newPasswordLabel,.conPasswordLabel,
+.shortDesc{
+    font-weight: 600;
+}
+
+.userNameLabel,
+.userNameInput{ 
+    position: relative;
+
+    left: 20%;
+}
+
+.ProfilePicInput,.ProfilePicLabel{
+    position: relative;
+    left: 55%;
+    top: -45px;
+}
+.newPasswordLabel,.newPasswordInput{
+    position: relative;
+    left:37%;
+    top: -39px;
+}
+.conPasswordLabel,.conPasswordInput{
+    position: relative;
+    left:55%;
+    top: -83px;
+}
+.ShortDescInput{
+    position: absolute;
+    left: 30%;
+    top: 47%;
+    border-radius: 4px;
+}
+.shortDesc{
+    position: absolute;
+    left: 30%;
+    top: 42%;
+}
+#RegPbutton{
+    position: absolute;
+    top:83%;
+    left:36.5%;
+}
+
+#RegisterIcon{
+    height: 550px;
+
+}

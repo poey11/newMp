@@ -86,7 +86,7 @@
     text-align: center;
     font-size: var(--font-size-base);
   }
-  .divider,
+  
   .northBoundRoute {
     align-self: stretch;
     position: relative;
@@ -95,12 +95,7 @@
     letter-spacing: -0.02em;
     line-height: 120%;
   }
-  .divider {
-    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-top: 2px solid var(--color-gainsboro);
-    box-sizing: border-box;
-    height: 2px;
-  }
+  
   .pageHeading {
     position: absolute;
     width: 100%;
