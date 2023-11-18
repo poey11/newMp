@@ -5,6 +5,7 @@ import Gallery from './Pages/Gallerypage';
 import About from './Pages/Aboutpage';
 import Login from './Pages/Loginpage';
 import Register from './Pages/Registerpage';
+import Profile from './Pages/Profilepage';
 import { 
   BrowserRouter as Router, 
   Route, 
@@ -33,7 +34,7 @@ function App() {
             <Route exact path="/Gallery" Component={Gallery}/>
           }
           {
-            <Route exact path ="/Register" Component={Register}/>
+            <Route exact path ="/Register" Component={Profile}/>
           }
           {
             <Route exact path ="/South" Component={Home}/>
