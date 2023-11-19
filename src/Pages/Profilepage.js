@@ -25,6 +25,7 @@ const ProfilePage = () => {
       <div className="loginButton1">
         <div className="login">FIRST NAME, LAST NAME</div>
       </div>
+      
       <div className="login2">LATEST</div>
       <div className="malutoTransportation">MALUTO TRANSPORTATION</div>
       <div className="andTravelCorporation"> AND TRAVEL CORPORATION BY MEHRY</div>
@@ -38,6 +39,7 @@ const ProfilePage = () => {
       </div>
 
       <img className="user21" alt="" src="/user-2-1@2x.png" />
+
       <div className="movingForwardPassengersContainer">
         <span>{`Moving `}</span>
         <i className="forward">forward</i>

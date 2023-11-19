@@ -1,61 +1,15 @@
-.malutoTransBy {
-    position: absolute;
-    top: 40px;
-    left: 119px;
-    font-size: var(--font-size-13xl);
-    letter-spacing: -0.01em;
-    line-height: 100%;
-    font-family: var(--font-reem-kufi);
-    color: var(--color-steelblue);
-    text-align: left;
-  }
-  .forum,
-  .home {
-    line-height: 130%;
-  }
-  .home {
-    position: absolute;
-    top: 45.5px;
-    right: 738px;
-  }
-  .forum {
-    top: 46px;
-    right: 624px;
-  }
-  .about,
-  .forum,
-  .gallery {
-    position: absolute;
-  }
-  .about {
-    top: 45px;
-    right: 512px;
-    line-height: 130%;
-  }
-  .gallery {
-    top: 46px;
-    right: 393px;
-  }
-  .gallery,
-  .login,
-  .review {
-    line-height: 130%;
-  }
-  .review {
-    position: absolute;
-    top: 45px;
-    right: 280px;
-  }
+
   .login {
     position: relative;
     font-weight: 600;
   }
+
   .loginButton {
     position: absolute;
     top: 32px;
     right: 96px;
-    border-radius: var(--br-5xs);
-    background-color: var(--color-steelblue);
+    border-radius: 5px;
+    background-color: #2D5987;
     width: 126px;
     height: 48px;
     overflow: hidden;
@@ -63,10 +17,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: var(--padding-smi) var(--padding-0);
+    --padding-smi: 10px;
+    --padding-0: 0;
     box-sizing: border-box;
-    color: var(--color-white);
+    color: white;
   }
+
   .malutotranslogoIcon {
     position: absolute;
     top: 16px;
@@ -75,6 +31,7 @@
     height: 80px;
     object-fit: cover;
   }
+
   .header {
     position: absolute;
     width: 100%;
@@ -85,6 +42,7 @@
     overflow: hidden;
     text-align: center;
   }
+
   .divider,
   .profile {
     align-self: stretch;
@@ -96,7 +54,8 @@
   }
   .divider {
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-top: 2px solid var(--color-gainsboro);
+    border-top: 2px;
+    --color-gainsboro: #dcdcdc;
     box-sizing: border-box;
     height: 2px;
   }
@@ -106,50 +65,31 @@
     top: 112px;
     right: 0;
     left: 0;
-    background-color: var(--color-white);
+    background-color: white;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-end;
-    padding: 55.9998893737793px var(--padding-77xl) 0.0001068115234375px;
-    box-sizing: border-box;
-    gap: var(--gap-base);
-    font-size: var(--font-size-45xl);
-    font-family: var(--font-newsreader);
+    --padding-77xl: 20px;
+    --gap-base: 10px;
+    --font-size-45xl: 24px;
+    --font-newsreader: 'Newsreader', sans-serif;
   }
-  .home1 {
-    position: absolute;
-    top: 45.5px;
-    right: 738px;
-    line-height: 130%;
-    text-align: center;
-  }
-  .searchBar {
-    background-color: var(--color-steelblue);
-    border: 1px solid var(--color-white);
-    box-sizing: border-box;
-    width: 209px;
-    height: 39px;
-    overflow: hidden;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
-    padding: var(--padding-7xs) var(--padding-26xl);
-  }
+
+
   .allPosts,
   .button,
   .myPosts {
     position: absolute;
-    font-size: var(--font-size-xl);
+    --font-size-xl: 18px;
   }
+
   .button {
     top: 261px;
     left: calc(50% - 771px);
-    border-radius: var(--br-5xs);
-    background-color: var(--color-steelblue);
+    border-radius: 5px;
+    background-color:  #2D5987;
     width: 1506px;
     height: 64px;
     overflow: hidden;
@@ -157,29 +97,25 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
-    padding: var(--padding-xs) var(--padding-20xl);
+    padding: 5px 200px;
     box-sizing: border-box;
-    color: var(--color-gray-200);
+    color: #cccccc; 
   }
   .allPosts,
   .myPosts {
-    top: calc(50% - 232px);
-    left: calc(50% - 380px);
+    top: 50%;
+    left: 50%;
+    margin-top: -232px;
+    margin-left: -380px;
     line-height: 130%;
     font-weight: 600;
-    color: var(--color-white);
+    color: white;
   }
   .allPosts {
-    left: calc(50% - 549px);
+    left: 50%;
+    margin-left: -549px;
   }
-  .magnifyGlassIcon {
-    position: absolute;
-    top: 277px;
-    left: 1207px;
-    width: 45px;
-    height: 32px;
-    object-fit: cover;
-  }
+
   .profilePageChild {
     position: absolute;
     top: 411px;
@@ -188,25 +124,27 @@
     width: 608px;
     height: 436px;
   }
+
   .profilePageItem {
     position: absolute;
     top: 411px;
     left: 720px;
-    background-color: var(--color-steelblue);
+    background-color: #2D5987;
     width: 624px;
     height: 54px;
   }
+
   .login2,
   .loginButton1 {
     position: absolute;
-    color: var(--color-white);
+    color: white;
     text-align: center;
   }
   .loginButton1 {
     top: 537px;
     right: 843px;
-    border-radius: var(--br-5xs);
-    background-color: var(--color-steelblue);
+    border-radius: 5px;
+    background-color: #2D5987;
     width: 361px;
     height: 37px;
     overflow: hidden;
@@ -214,14 +152,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: var(--padding-smi) var(--padding-0);
+    padding: 10px 0;
     box-sizing: border-box;
     font-size: 10px;
   }
   .login2 {
     top: 422px;
     left: 991px;
-    font-size: var(--font-size-6xl);
+    font-size: 24px;
     line-height: 130%;
     font-weight: 600;
   }
@@ -231,32 +169,37 @@
     letter-spacing: 0.01em;
     line-height: 100%;
     mix-blend-mode: normal;
+    font-weight: bold;
   }
+
   .malutoTransportation {
     top: 438px;
-    left: 270px;
-    font-size: var(--font-size-13xl);
-    font-family: var(--font-reem-kufi);
-    color: var(--color-steelblue);
+    left: 250px;
+    font-size: 20px;
+    font-family: 'Reem Kufi', sans-serif;
+    color: #2D5987;
   }
   .andTravelCorporation {
     top: 470px;
     left: 236px;
-    font-family: var(--font-reem-kufi-ink);
-    display: inline-block;
+    font-size: 16px;
+    font-family: 'Reem Kufi', sans-serif;
     width: 305px;
     height: 17px;
+    text-align: center;
   }
+
   .usernameBirthday {
     margin: 0;
   }
+
   .usernameBirthdayDescription {
     position: absolute;
     top: 594px;
     left: 256px;
     letter-spacing: -0.01em;
     line-height: 100%;
-    font-family: var(--font-reem-kufi-ink);
+    font-family: 'Reem Kufi', sans-serif;
     display: inline-block;
     width: 309px;
     height: 91px;
@@ -264,36 +207,39 @@
   }
 
   .user21 {
-    top: 100x;
-    left: 140px;
+    top: 200px;
+    left: 240px;
     width: 50px;
     height: 49px;
   }
 
   .forward {
-    color: var(--color-steelblue);
+    color: #2D5987;
   }
   .span {
-    color: var(--color-black);
+    color: black;
   }
   .movingForwardPassengersContainer {
+    display: flex;
     position: absolute;
-    width: calc(100% - 835px);
+    flex: 1;
+    max-width: 100%;
+    margin-right: -835px;
     top: 748px;
-    left: 93px;
+    left: 116px;
     font-size: 40px;
     letter-spacing: -0.02em;
     line-height: 120%;
     text-align: center;
     display: inline-block;
     height: 39px;
-    font-family: var(--font-newsreader);
+    font-family: 'Newsreader', sans-serif;
   }
   .southBoundRoutes,
   .thisIsYourContainer {
     margin: 0;
     position: absolute;
-    top: 81px;
+    top: 140px;
     left: 21px;
     font-size: inherit;
     letter-spacing: -0.02em;
@@ -305,9 +251,11 @@
     top: 138px;
     left: 46px;
   }
+  
   .user211 {
-    top: 40px;
-    left: 120;
+    position: absolute;
+    top: 300px;
+    left: 200px;
     width: 50px;
     height: 49px;
     object-fit: cover;
@@ -317,7 +265,7 @@
     position: relative;
     font-size: inherit;
     letter-spacing: -0.02em;
-    line-height: 100%;
+    top: 140px;
     font-weight: 200;
     font-family: inherit;
     display: flex;
@@ -336,8 +284,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    gap: var(--gap-base);
-    font-size: var(--font-size-20xl);
+    gap: 16px; 
+    font-size: 32px; 
   }
   .like,
   .like11 {
@@ -360,6 +308,8 @@
     position: relative;
     width: 33px;
     height: 31px;
+    top: 10px;
+    left: 140px;
     object-fit: cover;
   }
   .frame4 {
@@ -367,7 +317,7 @@
     height: 31px;
     flex-shrink: 0;
     align-items: center;
-    gap: var(--gap-6xs);
+    gap: 4px;
   }
   .frame2,
   .frame3,
@@ -382,7 +332,7 @@
     height: 31px;
     flex-shrink: 0;
     align-items: center;
-    gap: var(--gap-40xl);
+    gap: 160px;
   }
   .frame2 {
     position: absolute;
@@ -391,7 +341,7 @@
     width: 271px;
     height: 36px;
     align-items: flex-start;
-    gap: var(--gap-6xs);
+    gap: 8px; 
   }
   .div,
   .frame6 {
@@ -441,7 +391,7 @@
     position: absolute;
     top: 0;
     left: 89px;
-    border-radius: var(--br-120xl-5);
+    border-radius: 60px; 
     width: 72px;
     height: 48px;
     object-fit: cover;
@@ -460,11 +410,12 @@
   }
   .divider1 {
     position: absolute;
-    width: calc(100% + 2px);
+    width: 100%;
+    margin-right: 2px;
     right: -1px;
     bottom: 3.7px;
     left: -1px;
-    border-top: 2px solid var(--color-black);
+    border-top: 2px solid #000000;
     box-sizing: border-box;
     height: 2px;
   }
@@ -475,11 +426,11 @@
     width: 637px;
     height: 48px;
     overflow: hidden;
-    font-size: var(--font-size-6xl);
+    font-size: 3rem;
   }
   .southBoundRoutesParent {
     position: relative;
-    border: 1px solid var(--color-black);
+    border: 1px solid #000000;
     box-sizing: border-box;
     width: 616px;
     height: 327px;
@@ -490,7 +441,7 @@
   .profilePage {
     overflow: hidden;
     text-align: left;
-    color: var(--color-black);
+    color: black;
   }
   .frame {
     position: absolute;
@@ -502,18 +453,18 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: center;
-    font-size: var(--font-size-5xl);
-    font-family: var(--font-newsreader);
-  }
-  .profilePage {
-    position: relative;
-    background-color: var(--color-white);
-    width: 100%;
-    height: 1024px;
-    font-size: var(--font-size-base);
-    font-family: var(--font-inter);
+    font-size: 2.5rem;
+    font-family: 'Newsreader', sans-serif; 
   }
 
+  .profilePage {
+    position: relative;
+    background-color: white;
+    width: 100%;
+    height: 1024px;
+    font-size: 16px; 
+    font-family: 'Inter', sans-serif; 
+  }
   .forumpost {
     position: absolute;
     top: 594px;
