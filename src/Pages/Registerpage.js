@@ -30,12 +30,15 @@ const Registerpage = () => {
             setError(json.error)
         }
         if(response.ok){
+            alert("User Registered Successfully")
             setError(null)
             setUsername('')
             setPassword('')
             setBio('')
             setAvatar('')
             console.log('new user registered',json)
+            window.location.assign('/')
+            
         }
     }
     
@@ -67,17 +70,21 @@ const Registerpage = () => {
                             <div className="userNameLabel">Username</div>
                             <input type="text" className="userNameInput" onChange={(e) => setUsername(e.target.value)} value = {Username} required/>
 
-                            <div className="ProfilePicLabel">Profile Avatar URL</div>
-                            <input type="text" id="avatar" className="ProfilePicInput" onChange={(e) => setAvatar(e.target.value)} value = {Avatar} required/>    
-
                             <div className="newPasswordLabel">New Password</div>
                             <input type="password" className="newPasswordInput" onChange={(e) => setPassword(e.target.value)} value = {Password} required/>
                             
+
+                            <div className="ProfilePicLabel">Profile Avatar URL</div>
+                            <textarea type="text" id="avatar" className="ProfilePicInput" onChange={(e) => setAvatar(e.target.value)} value = {Avatar} required/>    
+
+                         
                             
                             <div className="shortDesc">Short Bio</div>
                             <textarea className="ShortDescInput" onChange={(e) => setBio(e.target.value)} value = {Bio} />
                         
-                            <button className="RegisterButt"  id ="RegPbutton" value={'Register'}  >Register</button>
+                            <button className="RegisterButt"  id ="RegPbutton" value={'Register'}> Register</button>
+                        
+                            
                         
                         
                             

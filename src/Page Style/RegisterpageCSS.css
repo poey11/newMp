@@ -32,8 +32,7 @@
     background-color: gainsboro;
     border: 0px solid black;
     border-radius: 3px;
-
-  }
+}
 
 .userNameInput, .newPasswordInput,
 .newPasswordInput,.conPasswordInput,
@@ -50,6 +49,13 @@
     border-radius: 3px;
     resize: none;
 }
+
+.ProfilePicInput{
+    resize: none;
+    width: 275px;
+
+    height: 17px;
+}
 .userNameLabel,.ProfilePicLabel,
 .newPasswordLabel,.conPasswordLabel,
 .shortDesc{
@@ -59,19 +65,19 @@
 .userNameLabel,
 .userNameInput{ 
     position: relative;
-
     left: 20%;
+}
+
+.newPasswordLabel,.newPasswordInput{
+    position: relative;
+    left: 55%;
+    top: -42px;
+    
 }
 
 .ProfilePicInput,.ProfilePicLabel{
     position: relative;
-    left: 55%;
-    top: -45px;
-    
-}
-.newPasswordLabel,.newPasswordInput{
-    position: relative;
-    left:37%;
+    left:29%;
     top: -39px;
 }
 .conPasswordLabel,.conPasswordInput{
