@@ -3,7 +3,8 @@ const router = express.Router()
 const { createUser,
     GetAllUser,
     GetUser,
-    updateUser
+    updateUser,
+    
 } = require('../controller/UserController')
 
 // get ALL user info
@@ -14,6 +15,7 @@ router.get('/:id',GetUser)
 
 //post a user
 router.post('/', createUser)
+
 
 //update/edit user
 router.patch('/:id',updateUser)

@@ -1,25 +1,46 @@
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import Nav from '../Components/NavBar';
 import '../Page Style/RegisterpageCSS.css';
+import { Link } from 'react-router-dom';
 
 
 const Registerpage = () => {
-    const [newUsers, setNewUsers] = useState(null)
+    const [Username, setUsername] = useState('')
+    const [Password, setPassword] = useState('')
+    const [Bio, setBio] = useState('')
+    const [error, setError] = useState(null)
+    const Roles = ""
 
-    useEffect(()=>{
-        const fetchNewUser = async () => {
-            const response = await fetch('/api/register')
-            const json = await response.json()
+    const handleSubmit = async(e)=> {
+        e.preventDefault() // prevent reloading the page after pressing register
 
-            if(response.ok){
-                setNewUsers(json)
+        const user = {Username, Password, Bio, Roles}
+
+        const response = await fetch('/api/register/',{
+            method:'POST',
+            body: JSON.stringify(user),
+            headers:{
+                'Content-Type': 'application/json'
             }
+        })
+
+        const json = await response.json()
+
+        if(!response.ok){
+            setError(json.error)
         }
-        fetchNewUser()
-    },[])
+        if(response.ok){
+            setError(null)
+            setUsername('')
+            setPassword('')
+            setBio('')
+            console.log('new user registered',json)
+        }
+    }
+    
 
     return ( 
-        <div className="Register-page">
+        <form className="Register-page" onSubmit={handleSubmit}>
             <Nav/>
             <div className="Page-Header">
                     <div className="Page-Title">Register</div>
@@ -43,17 +64,20 @@ const Registerpage = () => {
                     <div className="registerInputs">
 
                             <div className="userNameLabel">Username</div>
-                            <input type="text" className="userNameInput" required/>
+                            <input type="text" className="userNameInput" onChange={(e) => setUsername(e.target.value)} value = {Username} required/>
+
                             <div className="ProfilePicLabel">Profile Avatar</div>
-                            <input type="file" id="avatar" className="ProfilePicInput" accept="image/png, image/jpeg" required/>
+                            <input type="file" id="avatar" className="ProfilePicInput"    />
+
                             <div className="newPasswordLabel">New Password</div>
-                            <input type="password" className="newPasswordInput" required/>
+                            <input type="password" className="newPasswordInput" onChange={(e) => setPassword(e.target.value)} value = {Password} required/>
                             
                             
                             <div className="shortDesc">Short Bio</div>
-                            <textarea className="ShortDescInput"/>
-                       
-                        <input type="button" className="RegisterButt"  id ="RegPbutton" value={'Register'} />
+                            <textarea className="ShortDescInput" onChange={(e) => setBio(e.target.value)} value = {Bio} />
+                        
+                            <button className="RegisterButt"  id ="RegPbutton" value={'Register'}  >Register</button>
+                        
                         
                             
                     </div>
@@ -68,7 +92,8 @@ const Registerpage = () => {
                     <span className="span">.</span>
                     </i>
                 </div>
-        </div>
+                {error && <div className='error'>{error}</div>}
+        </form>
      );
 }
  

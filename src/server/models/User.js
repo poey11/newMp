@@ -15,10 +15,13 @@ const UserSchema = new Schema({
     Bio:{
         type: String
     },    
-    Status:{
+    Roles:{
         type: String
+    },
+    Avatar:{
+        data: Buffer,
+        contentType: String,
     }
-
     
 },{timestamps:true})
 const User = mongoose.model('User', UserSchema);

@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 
 //create new user
 const createUser = async (req,res) => {
-    const {Username,Password,Bio,Status} = req.body
+    const {Username,Password,Bio,Roles,Avatar} = req.body
     
     try{
-        const user  = await User.create({Username,Password,Bio,Status})
+        const user  = await User.create({Username,Password,Bio,Roles,Avatar})
         res.status(200).json(user)
     }
     catch(error){
@@ -57,6 +57,11 @@ const updateUser = async (req, res) => {
   
       res.status(200).json(singleUser)
 }
+
+const uploadAvatar = async (req,res)=>{
+
+}
+
 module.exports ={
     createUser,
     GetAllUser,
