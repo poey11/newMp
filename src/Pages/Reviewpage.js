@@ -13,10 +13,10 @@ const Reviewpage = () => {
                 <div className="page-title">Review</div>
             </div>
             <SubNav/>
-            <Link className='containerClick' to='/'>
+            <Link className='containerClick' to='/South'>
                 <South/>
             </Link>
-            <Link className='containerClick' to='/'>
+            <Link className='containerClick' to='/North'>
                 <North/>
             </Link>
         </div>

@@ -6,10 +6,8 @@ import About from './Pages/Aboutpage';
 import Login from './Pages/Loginpage';
 import Register from './Pages/Registerpage';
 import Profile from './Pages/Profilepage';
-import NorthBound from './Pages/NorthBoundPostspage';
-import NorthBoundPosts from './Pages/NorthBoundPostspage';
+import NorthBound from './Pages/NorthBoundpage';
 import SouthBound from './Pages/SouthBoundpage';
-import SouthBoundPosts from './Pages/SouthBoundPostspage';
 
 import { 
   BrowserRouter as Router, 
@@ -44,10 +42,10 @@ function App() {
             <Route exact path ="/Register" Component={Register}/>
           }
           {
-            <Route exact path ="/South" Component={Home}/>
+            <Route exact path ="/South" Component={SouthBound}/>
           }
           {
-            <Route exact path ="/North" Component={Home}/>
+            <Route exact path ="/North" Component={NorthBound}/>
           }
           {
             <Route exact path ="/Post" Component={Home}/>

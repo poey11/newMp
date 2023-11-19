@@ -26,10 +26,10 @@ const Homepage  = () => {
                     </i>
                 </div>
                 <div className='dividerHP' />
-                <Link className='containerClick' to='/'>
+                <Link className='containerClick' to='/South'>
                     <South/>
                 </Link>
-                <Link className='containerClick' to ='/'>
+                <Link className='containerClick' to ='/North'>
                     <North/>
                 </Link>
                 <div className="review-container">
