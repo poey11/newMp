@@ -1,14 +1,21 @@
-.login {
-  position: relative;
-  font-weight: 600;
+.malutoTransBy {
+  position: absolute;
+  top: 40px;
+  left: 119px;
+  font-size: var(--font-size-13xl);
+  letter-spacing: -0.01em;
+  line-height: 100%;
+  font-family: var(--font-reem-kufi);
+  color:  #2d5987;
+  text-align: left;
 }
 
 .loginButton {
   position: absolute;
   top: 32px;
   right: 96px;
-  border-radius: 5px;
-  background-color: #2D5987;
+  border-radius: var(--br-5xs);
+  background-color:  #2d5987;
   width: 126px;
   height: 48px;
   overflow: hidden;
@@ -16,12 +23,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  --padding-smi: 10px;
-  --padding-0: 0;
+  padding: var(--padding-smi) var(--padding-0);
   box-sizing: border-box;
-  color: white;
+  color: var(--color-white);
 }
-
 .malutotranslogoIcon {
   position: absolute;
   top: 16px;
@@ -30,7 +35,6 @@
   height: 80px;
   object-fit: cover;
 }
-
 .header {
   position: absolute;
   width: 100%;
@@ -41,7 +45,6 @@
   overflow: hidden;
   text-align: center;
 }
-
 .divider,
 .profile {
   align-self: stretch;
@@ -54,11 +57,12 @@
 }
 
 .divider {
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-  border-top: 2px;
-  --color-gainsboro: #dcdcdc;
+  position: absolute;
+  width: calc(100% - 190px);
+  right: 95px;
+  left: 95px;
+  border-top: 2px solid black;
   box-sizing: border-box;
-  height: 2px;
 }
 
 .pageHeading {
@@ -67,30 +71,50 @@
   top: 112px;
   right: 0;
   left: 0;
-  background-color: white;
+  background-color: var(--color-white);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  --padding-77xl: 20px;
-  --gap-base: 10px;
-  --font-size-45xl: 24px;
+  padding: 55.9998893737793px var(--padding-77xl) 0.0001068115234375px;
+  box-sizing: border-box;
+  gap: var(--gap-base);
+  --font-size-45xl: 2.8125rem;
   --font-newsreader: 'Newsreader', sans-serif;
 }
-
+.home1 {
+  position: absolute;
+  top: 45.5px;
+  right: 738px;
+  line-height: 130%;
+  text-align: center;
+}
+.searchBar {
+  background-color:  #2d5987;
+  border: 1px solid var(--color-white);
+  box-sizing: border-box;
+  width: 209px;
+  height: 39px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: var(--padding-7xs) var(--padding-26xl);
+}
 .allPosts,
 .button,
 .myPosts {
   position: absolute;
-  --font-size-xl: 18px;
+  font-size: var(--font-size-xl);
 }
-
 .button {
   top: 261px;
   left: calc(50% - 771px);
-  border-radius: 5px;
-  background-color: #2D5987;
+  border-radius: var(--br-5xs);
+  background-color: #2d5987;
   width: 1506px;
   height: 64px;
   overflow: hidden;
@@ -98,27 +122,29 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-  padding: 5px 200px;
+  padding: var(--padding-xs) var(--padding-20xl);
   box-sizing: border-box;
-  color: #cccccc;
+  color: var(--color-gray-200);
 }
-
 .allPosts,
 .myPosts {
-  top: 50%;
-  left: 50%;
-  margin-top: -232px;
-  margin-left: -380px;
+  top: calc(50% - 232px);
+  left: calc(50% - 380px);
   line-height: 130%;
   font-weight: 600;
-  color: white;
+  color: var(--color-white);
 }
-
 .allPosts {
-  left: 50%;
-  margin-left: -549px;
+  left: calc(50% - 549px);
 }
-
+.magnifyGlassIcon {
+  position: absolute;
+  top: 277px;
+  left: 1207px;
+  width: 45px;
+  height: 32px;
+  object-fit: cover;
+}
 .profilePageChild {
   position: absolute;
   top: 411px;
@@ -127,28 +153,25 @@
   width: 608px;
   height: 436px;
 }
-
 .profilePageItem {
   position: absolute;
   top: 411px;
   left: 720px;
-  background-color: #2D5987;
+  background-color:  #2d5987;
   width: 624px;
   height: 54px;
 }
-
-.login2,
-.loginButton1 {
+.latesttext,
+.profilefirstnamelastname {
   position: absolute;
   color: white;
   text-align: center;
 }
-
-.loginButton1 {
+.profilefirstnamelastname {
   top: 537px;
   right: 843px;
-  border-radius: 5px;
-  background-color: #2D5987;
+  border-radius:5px;
+  background-color:  #2d5987;
   width: 361px;
   height: 37px;
   overflow: hidden;
@@ -156,23 +179,21 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 10px 0;
+  padding: var(--padding-smi) var(--padding-0);
   box-sizing: border-box;
-  font-size: 10px;
+  font-size:20px;
 }
-
-.login2 {
+.latesttext {
   top: 422px;
   left: 991px;
-  font-size: 24px;
+  font-size: var(--font-size-6xl);
   line-height: 130%;
   font-weight: 600;
 }
-
 .andTravelCorporation,
 .malutoTransportation {
   position: absolute;
-  letter-spacing: 0.01em;
+  letter-spacing: -0.01em;
   line-height: 100%;
   mix-blend-mode: normal;
   font-weight: bold;
@@ -180,76 +201,66 @@
 
 .malutoTransportation {
   top: 438px;
-  left: 250px;
-  font-size: 20px;
-  font-family: 'Reem Kufi', sans-serif;
-  color: #2D5987;
+  left: 280px;
+  font-size: var(--font-size-13xl);
+  font-family: var(--font-reem-kufi);
+  color:  #2D5987;
 }
-
 .andTravelCorporation {
   top: 470px;
   left: 236px;
-  font-size: 16px;
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: var(--font-reem-kufi-ink);
+  display: inline-block;
   width: 305px;
   height: 17px;
-  text-align: center;
 }
-
 .usernameBirthday {
   margin: 0;
 }
-
 .usernameBirthdayDescription {
   position: absolute;
   top: 594px;
   left: 256px;
   letter-spacing: -0.01em;
   line-height: 100%;
-  font-family: 'Reem Kufi', sans-serif;
+  font-family: var(--font-reem-kufi-ink);
   display: inline-block;
   width: 309px;
   height: 91px;
   mix-blend-mode: normal;
 }
-
-.user21 {
-  top: 200px;
-  left: 240px;
+.profilepic {
+  position: absolute;
+  top: 531px;
+  left: 153px;
   width: 50px;
   height: 49px;
+  object-fit: cover;
 }
-
 .forward {
-  color: #2D5987;
+  color: #2d5987;
 }
-
 .span {
   color: black;
 }
-
 .movingForwardPassengersContainer {
-  display: flex;
   position: absolute;
-  flex: 1;
-  max-width: 100%;
-  margin-right: -835px;
+  width: calc(100% - 835px);
   top: 748px;
-  left: 116px;
+  left: 93px;
   font-size: 40px;
   letter-spacing: -0.02em;
   line-height: 120%;
   text-align: center;
   display: inline-block;
   height: 39px;
-  font-family: 'Newsreader', sans-serif;
+  font-family: var(--font-newsreader);
 }
-
 .southBoundRoutes,
 .thisIsYourContainer {
   margin: 0;
   position: absolute;
-  top: 140px;
+  top: 81px;
   left: 21px;
   font-size: inherit;
   letter-spacing: -0.02em;
@@ -257,27 +268,22 @@
   font-weight: 200;
   font-family: inherit;
 }
-
 .thisIsYourContainer {
   top: 138px;
   left: 46px;
 }
-
-.user211 {
-  position: absolute;
-  top: 300px;
-  left: 200px;
+.latestpic {
+  position: relative;
   width: 50px;
   height: 49px;
   object-fit: cover;
 }
-
 .firstNameLast {
   margin: 0;
   position: relative;
   font-size: inherit;
   letter-spacing: -0.02em;
-  top: 140px;
+  line-height: 100%;
   font-weight: 200;
   font-family: inherit;
   display: flex;
@@ -286,33 +292,16 @@
   flex-shrink: 0;
 }
 
-.frame1 {
-  position: absolute;
-  top: 11px;
-  left: 21px;
-  width: 445px;
-  height: 49px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 16px; 
-  font-size: 32px; 
-}
-
-.like,
-.like11 {
+.likecomment,
+.likepic {
   position: relative;
 }
-
-.like11 {
+.likepic {
   width: 32px;
   height: 32px;
   object-fit: cover;
 }
-
-.like {
+.likecomment{
   margin: 0;
   font-size: inherit;
   letter-spacing: -0.02em;
@@ -320,24 +309,19 @@
   font-weight: 200;
   font-family: inherit;
 }
-
 .comment22 {
   position: relative;
   width: 33px;
   height: 31px;
-  top: 10px;
-  left: 140px;
   object-fit: cover;
 }
-
 .frame4 {
   width: 133px;
   height: 31px;
   flex-shrink: 0;
   align-items: center;
-  gap: 4px;
+  gap: var(--gap-6xs);
 }
-
 .frame2,
 .frame3,
 .frame4 {
@@ -346,15 +330,13 @@
   flex-direction: row;
   justify-content: flex-start;
 }
-
 .frame3 {
   width: 232px;
   height: 31px;
   flex-shrink: 0;
   align-items: center;
-  gap: 160px;
+  gap: var(--gap-40xl);
 }
-
 .frame2 {
   position: absolute;
   top: 295px;
@@ -362,38 +344,19 @@
   width: 271px;
   height: 36px;
   align-items: flex-start;
-  gap: 8px; 
+  gap: var(--gap-6xs);
 }
-
 .div,
 .frame6 {
   width: 13px;
   display: flex;
 }
-
 .div {
   position: relative;
   letter-spacing: -0.02em;
   line-height: 100%;
   font-weight: 200;
   align-items: flex-end;
-}
-
-.frame6 {
-  position: absolute;
-  top: 0;
-  left: 160px;
-  height: 35px;
-  overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.div1,
-.frame7 {
-  width: 12px;
-  display: flex;
 }
 
 .div1 {
@@ -404,79 +367,41 @@
   align-items: flex-end;
 }
 
-.frame7 {
-  position: absolute;
-  top: 0;
-  left: 65px;
-  height: 34px;
-  overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 .nounEye15457301Icon {
   position: absolute;
   top: 0;
   left: 89px;
-  border-radius: 60px; 
+  border-radius: var(--br-120xl-5);
   width: 72px;
   height: 48px;
   object-fit: cover;
 }
 
-.frame8 {
-  position: absolute;
-  top: 0;
-  left: 21px;
-  width: 33px;
-  height: 34px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 .divider1 {
   position: absolute;
-  width: 100%;
-  margin-right: 2px;
+  width: calc(100% + 2px);
   right: -1px;
   bottom: 3.7px;
   left: -1px;
-  border-top: 2px solid #000000;
+  border-top: 2px solid var(--color-black);
   box-sizing: border-box;
   height: 2px;
 }
-
-.frame5 {
-  position: absolute;
-  top: 246px;
-  left: 0;
-  width: 637px;
-  height: 48px;
-  overflow: hidden;
-  font-size: 3rem;
-}
-
 .southBoundRoutesParent {
   position: relative;
-  border: 1px solid #000000;
+  border: 1px solid var(--color-black);
   box-sizing: border-box;
   width: 616px;
   height: 327px;
   overflow: hidden;
   flex-shrink: 0;
 }
-
 .frame,
 .profilePage {
   overflow: hidden;
   text-align: left;
-  color: black;
+  color: var(--color-black);
 }
-
 .frame {
   position: absolute;
   top: 487px;
@@ -487,21 +412,15 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  font-size: 2.5rem;
-  font-family: 'Newsreader', sans-serif; 
+  font-size: var(--font-size-5xl);
+  font-family: var(--font-newsreader);
 }
-
 .profilePage {
   position: relative;
-  background-color: white;
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 100%;
   height: 1024px;
-  font-size: 16px; 
-  font-family: 'Inter', sans-serif; 
-}
-
-.forumpost {
-  position: absolute;
-  top: 594px;
-  left: 256px;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
 }
