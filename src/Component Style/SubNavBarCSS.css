@@ -1,0 +1,53 @@
+
+.page-header{
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    padding: 30px 50px 20px;
+    box-sizing:border-box;
+    font-size: 45px;
+}
+
+.subNavBar{
+    background-color: #2D5987;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-weight: lighter;
+}  
+
+.bar{
+    display: flex;
+    list-style-type: none;
+}
+.bar li{
+    padding-left: 55px;   
+}
+.searchContainer{
+    position: absolute;
+    display: flex;
+    height: 53px;
+    right: 3%;
+    align-items: center;
+    width: 226.5px;
+}
+.searchBox{
+    background-position-y: 2px;
+    padding: 0px 0px 0px 30px;
+    background-image: url('/public/magnify-glass@2x.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    position: relative;
+    font-size:medium;
+    font-weight: 300;
+    background-color: #2D5987;
+    border: 1px solid white;
+    height: 23px;
+    color: white;
+
+}
+
+.searchBox::placeholder {
+    color: white;
+  }
