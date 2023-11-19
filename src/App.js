@@ -22,7 +22,7 @@ function App() {
   
     
   return (
-    <>
+    <div className='App'>
       <Router>
         <Routes>
           {
@@ -63,7 +63,7 @@ function App() {
           }
         </Routes>
       </Router>
-   </>
+   </div>
   );
 };
 

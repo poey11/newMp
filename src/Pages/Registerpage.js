@@ -1,9 +1,22 @@
+import { useEffect, useState } from 'react';
 import Nav from '../Components/NavBar';
 import '../Page Style/RegisterpageCSS.css';
 
-const Registerpage = () => {
 
-    
+const Registerpage = () => {
+    const [newUsers, setNewUsers] = useState(null)
+
+    useEffect(()=>{
+        const fetchNewUser = async () => {
+            const response = await fetch('/api/register')
+            const json = await response.json()
+
+            if(response.ok){
+                setNewUsers(json)
+            }
+        }
+        fetchNewUser()
+    },[])
 
     return ( 
         <div className="Register-page">

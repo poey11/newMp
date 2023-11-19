@@ -4,7 +4,7 @@ require('dotenv').config();
 const express = require('express');
 const connectToDatabase = require('./db.js');
 
-const web_routes = require('./router/Routes.js')
+const register_routes = require('./router/Register_routes.js')
 
 const  app = express();
 
@@ -16,8 +16,8 @@ app.use((req, res, next)=> {
 })
 
 //routes
-app.use('/api/', web_routes)
-
+app.use('/api/register', register_routes)
+//app.use('/api/')
 
 //connect db
 connectToDatabase()

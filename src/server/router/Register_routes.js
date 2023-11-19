@@ -15,7 +15,7 @@ router.get('/:id',GetUser)
 //post a user
 router.post('/', createUser)
 
-//update/edit
+//update/edit user
 router.patch('/:id',updateUser)
 
 // delete review
