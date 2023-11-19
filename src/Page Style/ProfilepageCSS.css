@@ -10,23 +10,6 @@
   text-align: left;
 }
 
-.loginButton {
-  position: absolute;
-  top: 32px;
-  right: 96px;
-  border-radius: var(--br-5xs);
-  background-color:  #2d5987;
-  width: 126px;
-  height: 48px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  padding: var(--padding-smi) var(--padding-0);
-  box-sizing: border-box;
-  color: var(--color-white);
-}
 .malutotranslogoIcon {
   position: absolute;
   top: 16px;
@@ -45,24 +28,10 @@
   overflow: hidden;
   text-align: center;
 }
-.divider,
-.profile {
-  align-self: stretch;
-  position: relative;
-}
 
 .profile {
   letter-spacing: -0.02em;
   line-height: 120%;
-}
-
-.divider {
-  position: absolute;
-  width: calc(100% - 190px);
-  right: 95px;
-  left: 95px;
-  border-top: 2px solid black;
-  box-sizing: border-box;
 }
 
 .pageHeading {
@@ -83,68 +52,7 @@
   --font-size-45xl: 2.8125rem;
   --font-newsreader: 'Newsreader', sans-serif;
 }
-.home1 {
-  position: absolute;
-  top: 45.5px;
-  right: 738px;
-  line-height: 130%;
-  text-align: center;
-}
-.searchBar {
-  background-color:  #2d5987;
-  border: 1px solid var(--color-white);
-  box-sizing: border-box;
-  width: 209px;
-  height: 39px;
-  overflow: hidden;
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: var(--padding-7xs) var(--padding-26xl);
-}
-.allPosts,
-.button,
-.myPosts {
-  position: absolute;
-  font-size: var(--font-size-xl);
-}
-.button {
-  top: 261px;
-  left: calc(50% - 771px);
-  border-radius: var(--br-5xs);
-  background-color: #2d5987;
-  width: 1506px;
-  height: 64px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
-  padding: var(--padding-xs) var(--padding-20xl);
-  box-sizing: border-box;
-  color: var(--color-gray-200);
-}
-.allPosts,
-.myPosts {
-  top: calc(50% - 232px);
-  left: calc(50% - 380px);
-  line-height: 130%;
-  font-weight: 600;
-  color: var(--color-white);
-}
-.allPosts {
-  left: calc(50% - 549px);
-}
-.magnifyGlassIcon {
-  position: absolute;
-  top: 277px;
-  left: 1207px;
-  width: 45px;
-  height: 32px;
-  object-fit: cover;
-}
+
 .profilePageChild {
   position: absolute;
   top: 411px;
@@ -157,11 +65,15 @@
   position: absolute;
   top: 411px;
   left: 720px;
-  background-color:  #2d5987;
+  background-color: #2d5987;
   width: 624px;
   height: 54px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: light;
+  color: #f4f4f4;
 }
-.latesttext,
+
 .profilefirstnamelastname {
   position: absolute;
   color: white;
@@ -183,13 +95,7 @@
   box-sizing: border-box;
   font-size:20px;
 }
-.latesttext {
-  top: 422px;
-  left: 991px;
-  font-size: var(--font-size-6xl);
-  line-height: 130%;
-  font-weight: 600;
-}
+
 .andTravelCorporation,
 .malutoTransportation {
   position: absolute;
@@ -240,9 +146,11 @@
 .forward {
   color: #2d5987;
 }
+
 .span {
   color: black;
 }
+
 .movingForwardPassengersContainer {
   position: absolute;
   width: calc(100% - 835px);
@@ -256,22 +164,8 @@
   height: 39px;
   font-family: var(--font-newsreader);
 }
-.southBoundRoutes,
-.thisIsYourContainer {
-  margin: 0;
-  position: absolute;
-  top: 81px;
-  left: 21px;
-  font-size: inherit;
-  letter-spacing: -0.02em;
-  line-height: 100%;
-  font-weight: 200;
-  font-family: inherit;
-}
-.thisIsYourContainer {
-  top: 138px;
-  left: 46px;
-}
+
+
 .latestpic {
   position: relative;
   width: 50px;
@@ -315,42 +209,7 @@
   height: 31px;
   object-fit: cover;
 }
-.frame4 {
-  width: 133px;
-  height: 31px;
-  flex-shrink: 0;
-  align-items: center;
-  gap: var(--gap-6xs);
-}
-.frame2,
-.frame3,
-.frame4 {
-  overflow: hidden;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-.frame3 {
-  width: 232px;
-  height: 31px;
-  flex-shrink: 0;
-  align-items: center;
-  gap: var(--gap-40xl);
-}
-.frame2 {
-  position: absolute;
-  top: 295px;
-  left: 6px;
-  width: 271px;
-  height: 36px;
-  align-items: flex-start;
-  gap: var(--gap-6xs);
-}
-.div,
-.frame6 {
-  width: 13px;
-  display: flex;
-}
+
 .div {
   position: relative;
   letter-spacing: -0.02em;
@@ -424,3 +283,17 @@
   font-size: var(--font-size-base);
   font-family: var(--font-inter);
 }
+
+.latestcontainer {
+  position: absolute;
+  top: 311px;
+  left: 720px;
+  background-color: #2d5987;
+  width: 624px;
+  height: 174px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: light;
+  color: #f4f4f4;
+}
+
