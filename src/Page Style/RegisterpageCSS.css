@@ -25,7 +25,7 @@
 
 
 .userNameInput, .newPasswordInput,
-.newPasswordInput,.conPasswordInput{
+.newPasswordInput,.conPasswordInput,.ProfilePicInput{
     position: relative; 
     line-height: 130%;
     font-weight: 600;
@@ -67,6 +67,7 @@
     position: relative;
     left: 55%;
     top: -45px;
+    
 }
 .newPasswordLabel,.newPasswordInput{
     position: relative;

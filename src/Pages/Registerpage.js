@@ -1,7 +1,6 @@
 import {useState } from 'react';
 import Nav from '../Components/NavBar';
 import '../Page Style/RegisterpageCSS.css';
-import { Link } from 'react-router-dom';
 
 
 const Registerpage = () => {
@@ -10,11 +9,12 @@ const Registerpage = () => {
     const [Bio, setBio] = useState('')
     const [error, setError] = useState(null)
     const Roles = ""
+    const [Avatar, setAvatar] = useState('');
 
     const handleSubmit = async(e)=> {
         e.preventDefault() // prevent reloading the page after pressing register
 
-        const user = {Username, Password, Bio, Roles}
+        const user = {Username, Password, Bio, Roles, Avatar}
 
         const response = await fetch('/api/register/',{
             method:'POST',
@@ -34,6 +34,7 @@ const Registerpage = () => {
             setUsername('')
             setPassword('')
             setBio('')
+            setAvatar('')
             console.log('new user registered',json)
         }
     }
@@ -66,8 +67,8 @@ const Registerpage = () => {
                             <div className="userNameLabel">Username</div>
                             <input type="text" className="userNameInput" onChange={(e) => setUsername(e.target.value)} value = {Username} required/>
 
-                            <div className="ProfilePicLabel">Profile Avatar</div>
-                            <input type="file" id="avatar" className="ProfilePicInput"    />
+                            <div className="ProfilePicLabel">Profile Avatar URL</div>
+                            <input type="text" id="avatar" className="ProfilePicInput" onChange={(e) => setAvatar(e.target.value)} value = {Avatar} required/>    
 
                             <div className="newPasswordLabel">New Password</div>
                             <input type="password" className="newPasswordInput" onChange={(e) => setPassword(e.target.value)} value = {Password} required/>

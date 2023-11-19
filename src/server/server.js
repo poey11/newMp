@@ -16,7 +16,7 @@ app.use((req, res, next)=> {
 })
 
 //routes
-app.use('/api/register', register_routes)
+app.use('/api/register/', register_routes)
 //app.use('/api/')
 
 //connect db

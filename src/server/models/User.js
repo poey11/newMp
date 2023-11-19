@@ -19,8 +19,8 @@ const UserSchema = new Schema({
         type: String
     },
     Avatar:{
-        data: Buffer,
-        contentType: String,
+        type: String,
+        required: true
     }
     
 },{timestamps:true})
