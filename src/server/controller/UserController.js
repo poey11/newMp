@@ -58,13 +58,8 @@ const updateUser = async (req, res) => {
       res.status(200).json(singleUser)
 }
 
-const uploadAvatar = async (req,res)=>{
-
-}
-
 module.exports ={
     createUser,
     GetAllUser,
     GetUser,
-    updateUser
 }

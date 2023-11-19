@@ -1,10 +1,48 @@
 import NavBar from '../Components/NavBar.js';
 import '../Page Style/LoginpageCSS.css';
 import { Link } from "react-router-dom"; 
+import {useState,useEffect } from 'react';
+
 
 const Loginpage = () => {
+    const [users, setUsers] = useState(null)
+    const [Username, setUsername] = useState('')
+    const [Password, setPassword] = useState('') 
+
+    useEffect(()=>{
+        const fetchUsers= async ()=>{
+            const response = await fetch('/api/register')
+            const json = await response.json()
+
+            if(response.ok){
+                setUsers(json);
+            }
+        }
+
+        fetchUsers()
+    },[])
+    
+    const isLoginSuccessful = async(e) =>{
+        e.preventDefault() 
+        try{
+            for(let i = 0; i < users.length; i++){
+                if(users[i].Username == Username){
+                   if(users[i].Password == Password){
+                       alert("Login Successful")
+                       return window.location.assign('/')
+                   } 
+                }
+            }
+            alert("Login Fail. Wrong Username or Password")
+        }
+        catch(error){
+            alert(error)
+        }
+    }
+    
+    
     return (  
-    <div className="LoginContainer">
+    <form className="LoginContainer" onSubmit={isLoginSuccessful}> 
         <NavBar/>
         <div className="Page-Header">
             <div className="Page-Title">Login</div>
@@ -25,16 +63,16 @@ const Loginpage = () => {
                     src="/malutotranslogo1@2x.png"
                 />
                 <div className="userN">Username</div>
-                <input type="text" placeholder='Username' className='userInput' required/>
+                <input type="text" id="loginUN" placeholder='Username' className='userInput' onChange={(e) => setUsername(e.target.value)} value={Username} required/>
                 <div className="pass">Password</div>
-                <input type="password" placeholder='Password' className='passInput' required/>
+                <input type="password"   id="loginPS" placeholder='Password' className='passInput' onChange={(e) => setPassword(e.target.value)} value={Password} required/>
             </div>
-            <input type='checkbox' className="RememberMeBox"  id="RememberMeBox" required/>
+            <input type='checkbox' className="RememberMeBox"  id="RememberMeBox" />
             <p className='forget'>Forgot Password?</p>
             <label className = "RememberLabel" htmlFor="RememberMeBox">Keep me signed in</label>
-            <Link to = "/">
-            <input type="button" className="loginButt" value={'Login'}/>
-            </Link>
+            
+            <button className="loginButt" >Login</button>
+            
             <Link to = "/Register">
                 <input type="button" className="RegisterButt" value={'Sign Up'}/>
             </Link>
@@ -49,7 +87,7 @@ const Loginpage = () => {
             <span className="span">.</span>
             </i>
         </div>
-    </div> 
+    </form> 
 );
 }
  
