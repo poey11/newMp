@@ -11,7 +11,7 @@ const Loginpage = () => {
 
     useEffect(()=>{
         const fetchUsers= async ()=>{
-            const response = await fetch('/api/register')
+            const response = await fetch('/api/register/')
             const json = await response.json()
 
             if(response.ok){
@@ -26,8 +26,8 @@ const Loginpage = () => {
         e.preventDefault() 
         try{
             for(let i = 0; i < users.length; i++){
-                if(users[i].Username == Username){
-                   if(users[i].Password == Password){
+                if(users[i].Username === Username){
+                   if(users[i].Password === Password){
                        alert("Login Successful")
                        return window.location.assign('/')
                    } 

@@ -23,7 +23,7 @@ app.use('/api/register/', register_routes)
 connectToDatabase()
     .then(()=>{
         //listens to request
-        console.log('Connected To MongoDB ', process.env.PORT);
+        console.log('Connected To MongoDB ', process.env.MONGO_URL);
         app.listen(process.env.PORT, ()=> {
             console.log('listening on port ', process.env.PORT);
         })
