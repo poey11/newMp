@@ -1,5 +1,5 @@
 import Nav from '../Components/NavBar';
-import SubNavBar from '../Components/SubNavBarProfile';
+import SubNavBar from '../Components/SubNavBar';
 import '../Page Style/ProfilepageCSS.css';
 import LatestPost from '../Components/LatestPost.js';
 
@@ -15,6 +15,14 @@ const ProfilePage = () => {
           <div className="page-title">Profile</div>
       </div>
       <SubNavBar/>
+
+      <div class="container" id = "latestpost">
+             <h1 class="contTitle">Latest Post</h1>
+                <p class="contDesc">
+                    Describe your journey to the North or South. Engage your audience 
+                    and entice them to continue reading...
+                </p>
+        </div>
 
       <div className="profilePageChild"/>
       <div className="profilefirstnamelastname">FIRST NAME, LAST NAME</div>
@@ -40,7 +48,6 @@ const ProfilePage = () => {
         </i>
       </div>
 
-      <div classname="latestcontainter"/>
       
       <div className="profilePageItem"> LATEST </div>
 

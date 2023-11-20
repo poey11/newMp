@@ -51,7 +51,7 @@ function App() {
             <Route exact path ="/Post" Component={Home}/>
           }
            {
-            <Route exact path ="/Profile" Component={Home}/>
+            <Route exact path ="/Profile" Component={Profile}/>
           }
            {
             <Route exact path ="/Create" Component={Home}/>
