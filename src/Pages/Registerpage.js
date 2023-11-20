@@ -16,7 +16,7 @@ const Registerpage = () => {
 
         const user = {Username, Password, Bio, Roles, Avatar}
 
-        const response = await fetch('/api/register/',{
+        const response = await fetch('/api/user/',{
             method:'POST',
             body: JSON.stringify(user),
             headers:{

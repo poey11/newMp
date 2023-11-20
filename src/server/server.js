@@ -1,10 +1,10 @@
+
 require('dotenv').config();
-
-
+const mongoose = require('mongoose');
 const express = require('express');
-const connectToDatabase = require('./db.js');
+const connect = require('./db.js');
 
-const register_routes = require('./router/Register_routes.js')
+const userRoutes = require('./router/userRouter.js')
 
 const  app = express();
 
@@ -16,20 +16,22 @@ app.use((req, res, next)=> {
 })
 
 //routes
-app.use('/api/register/', register_routes)
+app.use('/api/user/', userRoutes)
 //app.use('/api/')
 
-//connect db
-connectToDatabase()
+
+
+connect()
     .then(()=>{
         //listens to request
-        console.log('Connected To MongoDB ', process.env.MONGO_URL);
+       
+        console.log('Connected To MongoDB ', process.env.URL);
         app.listen(process.env.PORT, ()=> {
             console.log('listening on port ', process.env.PORT);
         })
     })
     .catch((error)=>{
         console.log(error)
-    })
-
+    }
+)
 
