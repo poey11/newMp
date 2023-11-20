@@ -22,7 +22,9 @@ const NorthBoundpage = () => {
         <button className='loginButt' id = 'CreateReview'>Create New Review</button>
       </div>
       <div className='reviews-container'>
-            
+        <Review/>
+        <Review/>
+        <Review/>
       </div>
     </div>
   );
