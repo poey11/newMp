@@ -10,7 +10,7 @@ const Reviewpage = () => {
         <div className="ReviewBody">
             <NavBar/>
             <div className="page-header">
-                <div className="page-title">Review</div>
+                <div className="page-title">Categories</div>
             </div>
             <SubNav/>
             <Link className='containerClick' to='/South'>

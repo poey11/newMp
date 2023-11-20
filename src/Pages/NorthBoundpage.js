@@ -5,7 +5,12 @@ import SubNav from '../Components/SubNavBar.js';
 import Review from '../Components/ReviewPost.js';
 import { Link } from "react-router-dom"; 
 
+
+
 const NorthBoundpage = () => {
+  const Create=()=>{
+    return window.location.assign('/Create')
+  }
   return (
     <div className="NorthBoundpage">
       <Nav/>
@@ -19,12 +24,14 @@ const NorthBoundpage = () => {
           <option value ="Date"> Date</option>
           <option value ="Rate">Ratings</option>
         </select>
-        <button className='loginButt' id = 'CreateReview'>Create New Review</button>
+        <button className='loginButt' id = 'CreateReview' onClick={Create}>Create New Review</button>
       </div>
       <div className='reviews-container'>
-        <Review/>
-        <Review/>
-        <Review/>
+      <Link className='containerClick' to = '/Post'>
+          <Review/>
+      </Link>
+       
+
       </div>
     </div>
   );

@@ -8,7 +8,8 @@ import Register from './Pages/Registerpage';
 import Profile from './Pages/Profilepage';
 import NorthBound from './Pages/NorthBoundpage';
 import SouthBound from './Pages/SouthBoundpage';
-
+import Create from './Pages/CreateReviewpage.js';
+import Post from './Pages/Postpage.js';
 import { 
   BrowserRouter as Router, 
   Route, 
@@ -48,13 +49,13 @@ function App() {
             <Route exact path ="/North" Component={NorthBound}/>
           }
           {
-            <Route exact path ="/Post" Component={Home}/>
+            <Route exact path ="/Post" Component={Post}/>
           }
            {
             <Route exact path ="/Profile" Component={Home}/>
           }
            {
-            <Route exact path ="/Create" Component={Home}/>
+            <Route exact path ="/Create" Component={Create}/>
           }
           {
             <Route exact path ="/Edit" Component={Home}/>
