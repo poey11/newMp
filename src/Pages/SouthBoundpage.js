@@ -12,18 +12,50 @@ const SouthBoundPage = () => {
           <div className="page-title">South-Bound Route</div>
       </div>
       <SubNav/>
+
+      <div className='title-sort'></div>
+
       <div className='sort-container'>
-        <label htmlFor="SortInput" className="SortLabel">Sort By: </label>
-        <select name="SortInput" id="Sort">
+        <div id='SortTitle'>South Bound Route  | </div>
+
+
+        <label htmlFor="SortInput" className="SortLabel"> Sort By: </label>
+        <select name="SortInput" class="Sort">
           <option value ="Date">Date</option>
           <option value ="Rate">Ratings</option>
-          
+        </select>
+
+        <label htmlFor="MoreActions" className="Actions"></label>
+        <select name="MoreActions" class="MoreActions">
+          <option value ="MoreActions">More Actions</option>
+          <option value ="Text">Text</option>
         </select>
       </div>
-      <div className='reviews-container'>
 
+    
+    <body>
+      <div className='reviews-container'>
+        <div id='south-name-review'>First Name Last Name</div>
+        <div id='south-title-review'>South Bound Routes</div>
+        <div id='south-text-review'>
+          <p>
+          This is your forum post. Use this space to connect with 
+          your audience in a way that’s current and interesting. 
+          Post relevant information that will encourage discussion and 
+          collaboration.....
+          </p>
+        </div>
       </div>
+
+      <div className='icons-container'>
+        
+  
+      </div>
+
+    </body>
     </div>
+
+    
   );
 };
 
