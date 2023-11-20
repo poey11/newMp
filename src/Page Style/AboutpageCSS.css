@@ -10,9 +10,6 @@
     height: 69px;
 }
 
-
-
-
 .Page-Header{
     width: 100%;
     overflow: hidden;
@@ -42,6 +39,7 @@
     width: 930.49px;
     height: 463px;
     object-fit: cover;
+    margin-top: 45px;
   }
 
   .loginPageChild{
@@ -56,6 +54,7 @@
     right: 0; 
     margin-left: auto; 
     margin-right: auto;
+    margin-top: 90px;
   }
   .maluto-transportation, .travel-corporation{
     position: relative;
@@ -94,3 +93,4 @@
     text-align: center;
     display: inline-block;
 }
+
