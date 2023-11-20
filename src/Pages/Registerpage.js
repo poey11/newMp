@@ -16,7 +16,7 @@ const Registerpage = () => {
 
         const user = {Username, Password, Bio, Roles, Avatar}
 
-        const response = await fetch('/api/register/',{
+        const response = await fetch('/api/user/',{
             method:'POST',
             body: JSON.stringify(user),
             headers:{
@@ -68,10 +68,10 @@ const Registerpage = () => {
                     <div className="registerInputs">
 
                             <div className="userNameLabel">Username</div>
-                            <input type="text" className="userNameInput" onChange={(e) => setUsername(e.target.value)} value = {Username} required/>
+                            <input type="text" className="userNameInput" id='userNameInput' onChange={(e) => setUsername(e.target.value)} value = {Username} required/>
 
                             <div className="newPasswordLabel">New Password</div>
-                            <input type="password" className="newPasswordInput" onChange={(e) => setPassword(e.target.value)} value = {Password} required/>
+                            <input type="password" className="newPasswordInput" id='newPasswordInput' onChange={(e) => setPassword(e.target.value)} value = {Password} required/>
                             
 
                             <div className="ProfilePicLabel">Profile Avatar URL</div>
@@ -80,7 +80,7 @@ const Registerpage = () => {
                          
                             
                             <div className="shortDesc">Short Bio</div>
-                            <textarea className="ShortDescInput" onChange={(e) => setBio(e.target.value)} value = {Bio} />
+                            <textarea className="ShortDescInput" id='ShortDescInput' onChange={(e) => setBio(e.target.value)} value = {Bio} />
                         
                             <button className="RegisterButt"  id ="RegPbutton" value={'Register'}> Register</button>
                         

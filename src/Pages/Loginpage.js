@@ -5,29 +5,29 @@ import {useState,useEffect } from 'react';
 
 
 const Loginpage = () => {
-    const [users, setUsers] = useState(null)
+    const [users, setUsers] = useState('')
     const [Username, setUsername] = useState('')
     const [Password, setPassword] = useState('') 
 
     useEffect(()=>{
-        const fetchUsers= async ()=>{
-            const response = await fetch('/api/register')
-            const json = await response.json()
-
-            if(response.ok){
-                setUsers(json);
-            }
-        }
-
         fetchUsers()
-    },[])
+    })
     
+    const fetchUsers= async ()=>{
+        const response = await fetch('/api/user/')
+        const json = await response.json()
+
+        if(response.ok){
+            setUsers(json);
+        }
+    }
     const isLoginSuccessful = async(e) =>{
         e.preventDefault() 
+        
         try{
-            for(let i = 0; i < users.length; i++){
-                if(users[i].Username == Username){
-                   if(users[i].Password == Password){
+            for(let i = 0; i < users.length ; i++){
+                if(users[i].Username === Username){
+                   if(users[i].Password === Password){
                        alert("Login Successful")
                        return window.location.assign('/')
                    } 
