@@ -1,0 +1,117 @@
+.review-name{
+    margin-top: 50px;
+    margin-left: 120px;
+}
+
+.review-name #title{
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.review-name #create{
+    font-size: 20px;
+}
+.review-name #author{
+    font-size: 20px;
+    margin-top: 9px;
+    margin-left: 40px;
+}
+.review-name #reviewDate{
+    font-size: 20px;
+}
+.review-name #profile-pic{
+    position: absolute;
+    object-fit: contain;
+    height: 30px;
+    top:438px;
+}
+.review-paragraph p{
+    margin-top: 30px;
+    margin-left: 120px;
+    margin-right: 500px;
+    font-size: 20px;
+    width: 1450px;
+    
+}
+
+.icons{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 120px;
+    cursor: pointer;
+}
+
+.icons #like, #dislike, #share{
+    margin-right: 50px;
+}
+
+
+.icons a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+.icons #thumbs-up, #thumbs-down, #share-icon{
+    position: relative;
+    margin-right: 10px;
+    object-fit: contain;
+    height: 30px;
+    bottom: 6.6px;
+}
+.icons #thumbs-down{
+    transform: rotate(180deg);
+    bottom: 2px;
+}
+
+#postDivider{
+  margin-top: 20px;
+  border-top: 1px solid black;
+}
+
+
+
+.edit-btn{
+    margin-top: 50px;
+    margin-left: 96px;
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    background-color: #ffffff; /* Set the background color */
+    color: #000; /* Set the text color */
+    border: 1px solid #000; /* Set the border color */
+    border-radius: 5px; /* Add rounded corners */
+    transition: background-color 0.3s ease; /* Add a smooth transition effect on hover */
+    margin-bottom: 50px;
+}
+
+.edit-btn:hover {
+    background-color: #D3D3D3; /* Change the background color on hover */
+  }
+
+
+  .comments-review{
+    margin-top: 45px;
+    margin-left: 120px;
+}
+
+.comments-review #comments{
+    font-size: 20px;
+}
+
+.textbox {
+    margin-top: 20px;
+    margin-left: 120px;
+    width: 1150px; /* Set the width of the textbox */
+    height: 100px;
+    max-width: 100%; /* Set a maximum width if needed */
+    font-size: 16px; /* Set the font size */
+    border: 1px solid #000; 
+    resize: none;
+}
+   
+  
+
+

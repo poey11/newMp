@@ -22,8 +22,10 @@
 .divider {
     position: absolute;
     width: calc(100% - 190px);
-    right: 95px;
-    left: 95px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto;
     border-top: 2px solid black;
     box-sizing: border-box;
   }
@@ -31,7 +33,7 @@
   .n-2-icon {
     display: flex;
     position: relative;
-    top: 2px;
+    top: -15px;
     left: 0; 
     right: 0; 
     margin-left: auto; 

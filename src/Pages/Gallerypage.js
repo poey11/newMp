@@ -8,7 +8,7 @@ const Gallerypage = () => {
         <div className="Page-Header">
                 <div className="Page-Title">Gallery</div>
             </div>
-            <div className="divider"/>
+        <div className="divider"/>
         <div className='gallery-container'>
             <img
                 className="n-1-icon1"

@@ -14,7 +14,7 @@ const Loginpage = () => {
     })
     
     const fetchUsers= async ()=>{
-        const response = await fetch('/api/user/')
+        const response = await fetch("/api/user/");
         const json = await response.json()
 
         if(response.ok){

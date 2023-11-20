@@ -9,7 +9,10 @@
     color: white;
     text-decoration: none;
 }
-body{
-    position:relative;
-    display: flex;
+
+a{
+    text-decoration: none;
+}
+a:not(:active), a:active{
+    color: black;
 }

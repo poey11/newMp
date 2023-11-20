@@ -1,6 +1,7 @@
 #registerChild{
     height: 490px;
-
+    
+   top: 200px;
 }
 .Register-Corporation, .Register-Transport{
     position: relative;
