@@ -11,11 +11,11 @@ const SubNavBar = () => {
                     <li>Categories</li>
                 </Link>
                 <Link to ="/" className="ForumBar">
-                    <li>My Posts</li>
+                    <li>My Reviews</li>
                 </Link>
             </ul>
             <div className="searchContainer">
-                <input type="text" className="searchBox" placeholder="Search..."/>
+                <input type="text" id='search' className="searchBox" placeholder="Search..."/>
             </div>
         </div>
     </div>

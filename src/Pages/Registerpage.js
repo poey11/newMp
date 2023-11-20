@@ -8,7 +8,7 @@ const Registerpage = () => {
     const [Password, setPassword] = useState('')
     const [Bio, setBio] = useState('')
     const [error, setError] = useState(null)
-    const Roles = ""
+    const Roles = "Customer"
     const [Avatar, setAvatar] = useState('');
 
     const handleSubmit = async(e)=> {
