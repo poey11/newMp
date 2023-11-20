@@ -2,9 +2,21 @@ import NavBar from '../Components/NavBar.js';
 import SubNav from '../Components/SubNavBar.js'; 
 import  '../Page Style/Post.css';
 const Postpage = () => {
-    const iconChange = () =>{
+    const iconChange = (thumbId) => {
+        const thumbImage = document.getElementById(thumbId);
+    
+        // Check if the current source is the filled thumbs image
+        if (thumbImage.src.includes('/filled_thumbsup.png')) {
+            // If it is, revert to the default thumbs image
+            thumbImage.src = '/like-1-1@2x.png';
+        } else {
+            // If it's not, set the filled thumbs image
+            thumbImage.src = '/filled_thumbsup.png';
+        }
+    };
+    
 
-    }
+ 
     return ( 
         <div className="PostPageContainer">
         <NavBar/>
@@ -16,7 +28,7 @@ const Postpage = () => {
         <div className='review-name'>
                 <div id='title'>Title</div>
                 <div id='reviewDate'>Date</div>
-                <div id='create'>Trip to Destination</div>
+                <div id='trip-to-dest'>Trip to Destination</div>
                 <a href ='/Profile'>
                     <div id='author'>Author</div>
                     <img id='profile-pic' src='/avatar-icon.png' />
@@ -33,10 +45,10 @@ const Postpage = () => {
             </div>
 
             <div className='icons'>
-                <img id='thumbs-up' src='/like-1-1@2x.png' onClick={iconChange} />
-                <a id='like' onClick={iconChange}>Like</a>
-                <img id='thumbs-down' src='/like-1-1@2x.png' />
-                <a  id='dislike'>Dislike</a>
+                <img id='thumbs-up' src='/like-1-1@2x.png' onClick={() => iconChange("thumbs-up")} />
+                <a id='like'onClick={() => iconChange("thumbs-up")}>Like</a>
+                <img id='thumbs-down' src='/like-1-1@2x.png' onClick={() => iconChange("thumbs-down")} />
+                <a  id='dislike'onClick={() => iconChange("thumbs-down")}>Dislike</a>
                 
             </div>
 
@@ -52,7 +64,12 @@ const Postpage = () => {
 
             <div className='buttons'>
                 <button class="edit-btn">Edit Review</button>
-                <button class="edit-btn">Delete Review</button>
+                <button class="edit-btn" id='delete-btn'>Delete Review</button>
+            </div>
+            <div className="helpfulCont">
+                <p className='helpfulLabel'>Was this review helpful? </p>
+                <button id='yes-btn' class="edit-btn">Yes</button>
+                <button id='no-btn'class="edit-btn">No</button>
             </div>
     </div>
     );

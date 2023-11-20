@@ -9,9 +9,6 @@ const ReviewPost = () => {
                     <h1 className="ReviewTitle">Title</h1>
                     <p className="triptoDest">Trip to -Destination-</p>
                     <p className="triptoDest">Date</p>
-
-                        
-                      
                     
                 </div>
                 <p className='reviewDescription'>
