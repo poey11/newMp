@@ -15,4 +15,4 @@ const LatestPost = () => {
     );
 }
  
-export default HPSouth;
+export default LatestPost;
