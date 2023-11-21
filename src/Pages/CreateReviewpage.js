@@ -1,54 +1,93 @@
+import React, { useState, useEffect } from 'react';
 import NavBar from '../Components/NavBar.js';
-import SubNav from '../Components/SubNavBar.js'; 
+import SubNav from '../Components/SubNavBar.js';
 import '../Page Style/CreateReviewpageCSS.css';
 
 const CreateReviewpage = () => {
-    return (  
-        <div className="CreateReviewCont">
-            <NavBar/>
-            <div className="page-header">
-                <div className="page-title">Create Review</div>
-            </div>            
-            <SubNav/>
+  const [comments, setComments] = useState([]);
+  const [commentText, setCommentText] = useState('');
 
-            <div className='review-name'>
-                <div id='name'>First Name Last Name</div>
-                <div id='create'>Create a Review</div>
-            </div>
+  useEffect(() => {
+  }, []);
 
-            <div className="review-paragraph">
-                <p>This is your review space. Utilize this platform to engage with your audience in a 
-                    manner that's insightful and captivating. Share pertinent details that inspire thoughtful 
-                    reviews and foster a sense of community. With the flexibility to edit and enhance your 
-                    reviews, along with the ability to include compelling media, creating and managing your 
-                    review page has never been more seamless.
-                </p>
-            </div>
+  const handleLike = async () => {
+    console.log('Liked');
+  };
 
-            <div className='icons'>
-                <a href='' id='like'>Like</a>
-                <a href='' id='dislike'>Dislike</a>
-                <a href='' id='share'>Share</a>
-            </div>
+  const handleDislike = async () => {
+    console.log('Disliked');
+  };
 
-            <div className="divider"></div>
+  const handleShare = async () => {
+    console.log('Shared');
+  };
 
-            <div className='comments-review'>
-                <div id='comments'>Comments</div>
-            </div>
+  const handleAddComment = async () => {
+    console.log('Commented:', commentText);
+    setCommentText('');
+  };
 
-            <div className='text-box'>
-                <label for="myTextbox"></label>
-                <input type="text" id="myTextbox" class="textbox" placeholder="Write a comment..."></input>
-            </div>
+  return (
+    <div className="CreateReviewCont">
+      <NavBar />
+      <div className="page-header">
+        <div className="page-title">Create Review</div>
+      </div>
+      <SubNav />
 
-            <div className='buttons'>
-                <button class="comment-btn">Comment</button>
-                <button class="edit-btn">Edit Post</button>
-            </div>
+      <div className="review-name">
+        <div id="name">First Name Last Name</div>
+        <div id="create">Create a Review</div>
+      </div>
 
-        </div>
-    );
-}
- 
+      <div className="review-paragraph">
+        <p>
+          This is your review space. Utilize this platform to engage with your audience in a manner
+          that's insightful and captivating. Share pertinent details that inspire thoughtful
+          reviews and foster a sense of community. With the flexibility to edit and enhance your
+          reviews, along with the ability to include compelling media, creating and managing your
+          review page has never been more seamless.
+        </p>
+      </div>
+
+      <div className="icons">
+        <button onClick={handleLike} id="like">
+          Like
+        </button>
+        <button onClick={handleDislike} id="dislike">
+          Dislike
+        </button>
+        <button onClick={handleShare} id="share">
+          Share
+        </button>
+      </div>
+
+      <div className="divider"></div>
+
+      <div className="comments-review">
+        <div id="comments">Comments</div>
+      </div>
+
+      <div className="text-box">
+        <label htmlFor="myTextbox"></label>
+        <input
+          type="text"
+          id="myTextbox"
+          className="textbox"
+          placeholder="Write a comment..."
+          value={commentText}
+          onChange={(e) => setCommentText(e.target.value)}
+        />
+      </div>
+
+      <div className="buttons">
+        <button className="comment-btn" onClick={handleAddComment}>
+          Comment
+        </button>
+        <button className="edit-btn">Edit Post</button>
+      </div>
+    </div>
+  );
+};
+
 export default CreateReviewpage;
