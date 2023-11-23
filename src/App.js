@@ -52,7 +52,7 @@ function App() {
             <Route exact path ="/Post" Component={Post}/>
           }
            {
-            <Route exact path ="/Profile" Component={Home}/>
+            <Route exact path ="/Profile" Component={Profile}/>
           }
            {
             <Route exact path ="/Create" Component={Create}/>

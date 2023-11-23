@@ -31,7 +31,7 @@ const Postpage = () => {
                 <div id='trip-to-dest'>Trip to Destination</div>
                 <a href ='/Profile'>
                     <div id='author'>Author</div>
-                    <img id='profile-pic' src='/avatar-icon.png' />
+                    <img id='profile-pic' src='/avatar-icon.png' alt=''/>
                 </a>
             </div>
 
@@ -45,10 +45,10 @@ const Postpage = () => {
             </div>
 
             <div className='icons'>
-                <img id='thumbs-up' src='/like-1-1@2x.png' onClick={() => iconChange("thumbs-up")} />
-                <a id='like'onClick={() => iconChange("thumbs-up")}>Like</a>
-                <img id='thumbs-down' src='/like-1-1@2x.png' onClick={() => iconChange("thumbs-down")} />
-                <a  id='dislike'onClick={() => iconChange("thumbs-down")}>Dislike</a>
+                <img id='thumbs-up' src='/like-1-1@2x.png'alt='' onClick={ () => iconChange} />
+                <label htmlFor='thumbs-up' id='like' onClick={ () =>iconChange}>Like</label>
+                <img id='thumbs-down'alt='' src='/like-1-1@2x.png' />
+                <label htmlFor='thumbs-down' id='dislike'>Dislike</label>
                 
             </div>
 

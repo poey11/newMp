@@ -10,7 +10,7 @@ const SubNavBar = () => {
                 <Link to ="/Review" className="ForumBar">
                     <li>Categories</li>
                 </Link>
-                <Link to ="/" className="ForumBar">
+                <Link to ="/Profile" className="ForumBar">
                     <li>My Reviews</li>
                 </Link>
             </ul>

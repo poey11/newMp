@@ -11,8 +11,8 @@ const Loginpage = () => {
 
     useEffect(()=>{
         fetchUsers()
-    })
-    
+    },[])
+
     const fetchUsers= async ()=>{
         const response = await fetch("/api/user/");
         const json = await response.json()
