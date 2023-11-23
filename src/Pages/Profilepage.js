@@ -1,15 +1,11 @@
 import Nav from '../Components/NavBar';
-import SubNavBar from '../Components/SubNavBarProfile';
+import SubNavBar from '../Components/SubNavBar';
 import '../Page Style/ProfilepageCSS.css';
 
 const ProfilePage = () => {
   return (
     <div className="profilePage">
       <Nav/>
-      <div className="header">
-
-      </div>
-
       <div className="page-header">
           <div className="page-title">Profile</div>
       </div>
@@ -23,12 +19,10 @@ const ProfilePage = () => {
       <div className="usernameBirthdayDescription">
         <p className="usernameBirthday">Username</p>
         <p className="usernameBirthday">&nbsp;</p>
-        <p className="usernameBirthday">Birthday</p>
-        <p className="usernameBirthday">&nbsp;</p>
         <p className="usernameBirthday">Description</p>
       </div>
 
-      <img className="profilepic" alt="" src="/user-2-1@2x.png" />
+      <img className="profilepic" alt="" src="/avatar-icon.png" />
       <div className="movingForwardPassengersContainer">
         <span>{`Moving `}</span>
         <i className="forward">forward</i>
