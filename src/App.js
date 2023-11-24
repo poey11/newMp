@@ -31,7 +31,7 @@ function App() {
             <Route exact path ="/Review" Component={Review}/>
           }
           {
-            <Route exact path="/Login" Component={Login}/>
+            <Route exact path="/Login" Component={Create}/>
           }
           {
             <Route exact path="/About" Component={About}/>
