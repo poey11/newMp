@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 const SouthBoundPage = () => {
   const Create=()=>{
-    return window.location.assign('/Create')
+    return window.location.assign('/CreateReview')
   }
   return (
     <div className="southBoundPage">

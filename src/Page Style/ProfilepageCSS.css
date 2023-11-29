@@ -12,211 +12,126 @@
   --color-black: #000000;
 }
 
-.malutoTransBy {
+.profileContainer {
   position: absolute;
-  top: 40px;
-  left: 119px;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: var(--font-size-13xl);
-  letter-spacing: -0.01em;
-  line-height: 100%;
-  font-family: var(--font-reem-kufi);
-  color:  #2d5987;
-  text-align: left;
-}
-
-.header {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  right: 0;
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  height: 112px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.profile {
-  letter-spacing: -0.02em;
-  line-height: 120%;
-}
-
-.pageHeading {
-  position: absolute;
-  width: 100%;
-  top: 112px;
-  right: 0;
-  left: 0;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: var(--color-white);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 55.9998893737793px var(--padding-77xl) 0.0001068115234375px;
-  box-sizing: border-box;
-  gap: var(--gap-base);
-  --font-size-45xl: 2.8125rem;
-  --font-newsreader: 'Newsreader', sans-serif;
-}
-
-.profilePageChild {
-  position: absolute;
-  top: 411px;
-  left: 94px;
-  margin-left: auto;
-  margin-right: auto;
+  top: 311px;
+  left: 10%;
   background-color: #f4f4f4;
   width: 608px;
   height: 436px;
+  margin-bottom: 50px;
 }
 
-.profilePageItem {
+.lastestHeader {
   position: absolute;
-  top: 411px;
-  left: 720px;
-  margin-left: auto;
-  margin-right: auto;
+  top: 311px;
+  left:53%;
   background-color: #2d5987;
   width: 624px;
   height: 54px;
   text-align: center;
   font-size: 40px;
   font-weight: light;
+  border-radius: 3px;
   color: #f4f4f4;
 }
 
-.profilefirstnamelastname {
-  position: absolute;
-  color: white;
-  text-align: center;
+.profilepic {
+  position: relative;
+  top:50px;
+  left: 50px;
+  width: 50px;
+  height: 49px;
+  object-fit: cover;
 }
-.profilefirstnamelastname {
-  top: 537px;
-  right: 600px;
-  left: 0;
-  border-radius:5px;
-  background-color:  #2d5987;
-  width: 361px;
-  height: 40px;
-  margin-left: auto;
-  margin-right: auto;
-  overflow: hidden;
+.latestContainer{
+  position: absolute;
+  top: 360px;
+  left:53%;
+  width: 624px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: var(--padding-smi) var(--padding-0);
-  box-sizing: border-box;
-  font-size:20px;
+  padding-bottom: 30px
+}
+.usernameContainer{
+  position: relative;
+  left: 130px;
+  top: -14px;
+  background-color: #2d5987;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  font-size: 20px;
+  height: 30px;
+  width: 450px;
 }
 
-.andTravelCorporation,
+
+
 .malutoTransportation {
-  position: absolute;
-  letter-spacing: -0.01em;
-  line-height: 100%;
-  mix-blend-mode: normal;
-  font-weight: bold; 
-  margin-left: auto;
-  margin-right: auto;
   
-}
-
-.malutoTransportation {
-  top: 438px;
-  left: 200px;
-  right: 0;
   font-size: var(--font-size-13xl);
   font-family: var(--font-reem-kufi);
   color:  #2D5987;
 }
 
+
 .andTravelCorporation {
-  top: 470px;
-  left: 240px;
-  right: 0;
+ 
   font-family: var(--font-reem-kufi-ink);
+  font-weight: bold; 
 }
-.usernameBirthday {
-  margin: 0;
-}
-.usernameBirthdayDescription {
-  position: absolute;
-  top: 594px;
-  left: 256px;
-  letter-spacing: -0.01em;
-  line-height: 100%;
-  font-family: var(--font-reem-kufi-ink);
-  display: inline-block;
-  width: 309px;
-  height: 91px;
-  mix-blend-mode: normal;
-}
-.profilepic {
-  position: absolute;
-  top: 531px;
-  left: -1100px;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50px;
-  height: 49px;
-  object-fit: cover;
-}
-.forward {
-  color: #2d5987;
-}
-
-.span {
-  color: black;
-}
-
-.movingForwardPassengersContainer {
-  position: absolute;
-  width: calc(100% - 835px);
-  top: 748px;
-  left: -640px;
-  right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 40px;
-  letter-spacing: -0.02em;
-  line-height: 120%;
+.profileHeader{
+  margin-top: 20px;
   text-align: center;
-  display: inline-block;
-  height: 39px;
+}
+.profileFooterContainer{
+  text-align: center;
+  position: absolute;
+  top: 390px;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto;
   font-family: var(--font-newsreader);
+  font-size: 36px;
+}
+.userDescription{
+  resize: none;
+  position: absolute;
+  height: 150px;
+  width: 440px;
+  background-color: gainsboro;
+  border: 0px solid black;
+  border-radius: 3px;
+  left: 22%; 
+  
+  
+}
+.userDescription::placeholder{
+ color: black;
+  
+}
+.editProfileButton{
+    position: absolute;
+    top:310px;
+    right:91.1%;
+    width: 126px;
+    color: white;
+    height: 48px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #2D5987;
+    cursor: pointer;
+    border: 1px solid white;  
+    
 }
 
-/* Media query for smaller screens */
-@media only screen and (max-width: 768px) {
-  .malutoTransBy {
-    top: 5%;
-    left: 5%;
-    font-size: 1.5rem;
-  }
-
-  .malutotranslogoIcon {
-    top: 2%;
-    left: 3%;
-    width: 20%;
-  }
-
-  .header {
-    height: 15%;
-  }
-
-  .profilePageChild {
-    top: 20%;
-    left: 5%;
-    width: 90%;
-  }
-
+.editProfileButton:active{
+  background: #e5e5e5;
+  -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+     -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+          box-shadow: inset 0px 0px 5px #c1c1c1;
+   outline: none;
 }

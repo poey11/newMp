@@ -8,8 +8,11 @@ import Register from './Pages/Registerpage';
 import Profile from './Pages/Profilepage';
 import NorthBound from './Pages/NorthBoundpage';
 import SouthBound from './Pages/SouthBoundpage';
-import Create from './Pages/CreateReviewpage.js';
+import CreateReview from './Pages/CreateReviewpage.js';
 import Post from './Pages/Postpage.js';
+import EditProfile from './Pages/editProfilepage.js';
+import EditReview from './Pages/EditReviewpage.js';
+
 import { 
   BrowserRouter as Router, 
   Route, 
@@ -31,7 +34,7 @@ function App() {
             <Route exact path ="/Review" Component={Review}/>
           }
           {
-            <Route exact path="/Login" Component={Create}/>
+            <Route exact path="/Login" Component={Login}/>
           }
           {
             <Route exact path="/About" Component={About}/>
@@ -55,10 +58,13 @@ function App() {
             <Route exact path ="/Profile" Component={Profile}/>
           }
            {
-            <Route exact path ="/Create" Component={Create}/>
+            <Route exact path ="/CreateReview" Component={CreateReview}/>
           }
           {
-            <Route exact path ="/Edit" Component={Home}/>
+            <Route exact path ="/EditProfile" Component={EditProfile}/>
+          }
+          {
+            <Route exact path ="/EditReview" Component={EditReview}/>
           }
         </Routes>
       </Router>

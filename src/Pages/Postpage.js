@@ -1,6 +1,8 @@
 import NavBar from '../Components/NavBar.js';
 import SubNav from '../Components/SubNavBar.js'; 
 import  '../Page Style/Post.css';
+import { Link } from "react-router-dom"; 
+
 const Postpage = () => {
     const iconChange = (thumbId) => {
         const thumbImage = document.getElementById(thumbId);
@@ -29,10 +31,12 @@ const Postpage = () => {
                 <div id='title'>Title</div>
                 <div id='reviewDate'>Date</div>
                 <div id='trip-to-dest'>Trip to Destination</div>
+                <div id='user-rating'>Recommended</div>
                 <a href ='/Profile'>
                     <div id='author'>Author</div>
                     <img id='profile-pic' src='/avatar-icon.png' alt=''/>
                 </a>
+
             </div>
 
             <div className="review-paragraph">
@@ -46,9 +50,9 @@ const Postpage = () => {
 
             <div className='icons'>
                 <img id='thumbs-up' src='/like-1-1@2x.png'alt='' onClick={ () => iconChange} />
-                <label htmlFor='thumbs-up' id='like' onClick={ () =>iconChange}>Like</label>
+                <label htmlFor='thumbs-up' id='like' onClick={ () =>iconChange}>Helpful</label>
                 <img id='thumbs-down'alt='' src='/like-1-1@2x.png' />
-                <label htmlFor='thumbs-down' id='dislike'>Dislike</label>
+                <label htmlFor='thumbs-down' id='dislike'>Not Helpful</label>
                 
             </div>
 
@@ -63,14 +67,12 @@ const Postpage = () => {
             </div>
 
             <div className='buttons'>
-                <button class="edit-btn">Edit Review</button>
+                <Link to = "/EditReview">
+                    <button class="edit-btn"> <a href='/EditReview'>Edit Review</a></button>
+                </Link>
                 <button class="edit-btn" id='delete-btn'>Delete Review</button>
             </div>
-            <div className="helpfulCont">
-                <p className='helpfulLabel'>Was this review helpful? </p>
-                <button id='yes-btn' class="edit-btn">Yes</button>
-                <button id='no-btn'class="edit-btn">No</button>
-            </div>
+            
     </div>
     );
 }

@@ -79,7 +79,7 @@ const Registerpage = () => {
 
                          
                             
-                            <div className="shortDesc">Short Bio</div>
+                            <div className="shortDesc">User Description</div>
                             <textarea className="ShortDescInput" id='ShortDescInput' onChange={(e) => setBio(e.target.value)} value = {Bio} />
                         
                             <button className="RegisterButt"  id ="RegPbutton" value={'Register'}> Register</button>

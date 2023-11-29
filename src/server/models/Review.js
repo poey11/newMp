@@ -2,20 +2,6 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const CommentSchema = new Schema(
-  {
-    commenterName: {
-      type: String,
-      required: true,
-    },
-    commentText: {
-      type: String,
-      required: true,
-    },
-  },
-  { timestamps: true }
-);
-
 const ReviewSchema = new Schema({
   Title: {
     type: String,
@@ -29,15 +15,20 @@ const ReviewSchema = new Schema({
     type: String,
     required: true,
   },
-  Likes: {
+  Rating: {
+   type:String,
+  },
+  MediaURL:{
+    type:String
+  },
+  Helpful: {
     type: Number,
     default: 0,
   },
-  Shares: {
+  NotHelpful: {
     type: Number,
     default: 0,
   },
-  Comments: [CommentSchema],
 }, { timestamps: true });
 
 const Review = mongoose.model('Review', ReviewSchema, 'REVIEWS');

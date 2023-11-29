@@ -7,7 +7,11 @@
     font-size: 30px;
     margin-bottom: 5px;
 }
-
+.review-name #user-rating{
+    margin-top: 5px;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
 .review-name #trip-to-dest{
     font-size: 20px;
     margin-top: 5px;
@@ -27,7 +31,7 @@
     top:-26px;
 }
 .review-paragraph p{
-    margin-top: 0px;
+    margin-top: -17px;
     margin-left: 120px;
     margin-right: 500px;
     font-size: 20px;
@@ -36,28 +40,26 @@
 }
 
 .icons{
+    position: relative;
     display: flex;
-    margin-top: 30px;
-    margin-left: 120px;
+    padding-left: 120px;
+}
+
+.icons #like, #dislike{
+    margin-right: 50px;
     cursor: pointer;
 }
 
-.icons #like, #dislike, #share{
-    margin-right: 50px;
-}
 
 
-.icons a {
-    color: inherit;
-    text-decoration: none;
-  }
 
-.icons #thumbs-up, #thumbs-down, #share-icon{
+.icons #thumbs-up, #thumbs-down{
     position: relative;
     margin-right: 10px;
     object-fit: contain;
     height: 30px;
     bottom: 6.6px;
+    cursor: pointer;
 }
 .icons #thumbs-down{
     transform: rotate(180deg);
@@ -113,24 +115,8 @@
     resize: none;
 }
    
-  .helpfulCont{
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    width: 450px;
-    height: 60px;
-    left: 450px;
-    top: 845px;
-    
-  }
-.helpfulLabel{
-    margin-top: 24px;
-    font-size: 20px;
-}
-#no-btn,#yes-btn{
-    margin-left: 10px;
-    height: 35px;
-}
+
 #delete-btn{
     margin-left: 10px;
+    
 }

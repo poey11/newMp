@@ -1,0 +1,90 @@
+#editProfileContainer{
+    position: absolute;
+    top: 270px;
+    display:flex;
+}
+
+#editProfileBackground{
+    width:750px;
+}
+
+.userNameEditLabel,.userNameEditInput,
+.userDescEditLabel,.userDescEditInput,
+.userAvatarEditLabel,.userAvatarEditInput
+{
+    font-weight: 500;
+    position: absolute;
+    resize: none;
+}
+
+.userNameEditInput,.userAvatarEditInput
+,.userDescEditInput{
+    line-height: 130%;
+    font-weight: 600;
+    background-color: gainsboro;
+    border: 0px solid black;
+    border-radius: 3px;
+}
+.userNameEditLabel{
+    left: 165px;
+    top:5%;
+}
+.userNameEditInput{
+    top:11%;
+    width: 275px
+}
+
+.userAvatarEditLabel{
+   top:17%;
+   left: 165px;
+}
+.userAvatarEditInput{
+    top:23%;
+    width: 275px;
+}
+
+.userDescEditLabel{
+    top:29%;
+    left: 176px;
+}
+.userDescEditInput{
+    top:36%;
+    width: 250px;
+}
+
+.saveChangesBut{
+    position: absolute;
+    bottom: 15px;
+    right: 170px;
+    
+    text-align: center;
+    border-radius: 3px;
+    background-color: #2D5987;
+    border:0px solid black;
+    color: white;
+    cursor: pointer;
+    width: 123px;
+    height: 25px;
+
+}
+.cancelChangesBut{
+    position: absolute;
+    bottom: 15px;
+    left: 165px;
+
+    text-align: center;
+    border-radius: 3px;
+    background-color: #2D5987;
+    border:0px solid black;
+    color: white;
+    cursor: pointer;
+    width: 135px;
+    height: 25px;
+}
+.saveChangesBut:active, .cancelChangesBut:active{
+    background: #e5e5e5;
+    -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+       -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+            box-shadow: inset 0px 0px 5px #c1c1c1;
+     outline: none;
+  }
