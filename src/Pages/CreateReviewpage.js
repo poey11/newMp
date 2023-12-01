@@ -29,17 +29,20 @@ const CreateReviewpage = () => {
           <option value="Recommended">Recommended</option>
           <option value="Not Recommended">Not Recommended</option>
         </select>
-
-        <label htmlFor='tripInput' className="tripLabel">Trip to the: </label>
-        <select className="tripInput" id="tripInput">
-          <option value="North">North Bound</option>
-          <option value="South">South Bound</option>
-        </select>
-
-        <div className="agencyLabel">Travel Agency Used: </div>
-        <input className="agencyInput" type="text" />
-
       </div>
+
+      <div className="reviewInputCont2">
+          <label htmlFor='tripInput' className="tripLabel">Trip to the: </label>
+          <select className="tripInput" id="tripInput">
+            <option value="North">North Bound</option>
+            <option value="South">South Bound</option>
+          </select>
+
+          <div className="agencyLabel">Travel Agency Used: </div>
+          <input className="agencyInput" type="text" />
+        </div>
+        
+
       <div className='reviewContainer'>
           <textarea className="reviewInput" id="" cols="30" rows="10"placeholder='Write Your Experience...'></textarea>
       </div>

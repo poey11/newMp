@@ -29,6 +29,7 @@ const NorthBoundpage = () => {
       <div className='reviews-container'>
       <Link className='containerClick' to = '/Post'>
           <Review/>
+          <Review/>
       </Link>
        
 

@@ -12,7 +12,7 @@
     font-size: 20px;
     margin-bottom: 5px;
 }
-.review-name #trip-to-dest{
+.review-name #agencyUsed{
     font-size: 20px;
     margin-top: 5px;
 }
@@ -33,9 +33,9 @@
 .review-paragraph p{
     margin-top: -17px;
     margin-left: 120px;
-    margin-right: 500px;
+    margin-right: 10px;
     font-size: 20px;
-    width: 1450px;
+    text-align: left;
     
 }
 
@@ -73,11 +73,10 @@
 
 
 
-.edit-btn{
-    margin-top: 20px;
-    margin-left: 96px;
-    display: inline-block;
-    padding: 10px 30px;
+.btn{
+    position: absolute;
+    height: 40px;
+    width:150px;
     font-size: 16px;
     text-align: center;
     text-decoration: none;
@@ -86,12 +85,15 @@
     color: #000; /* Set the text color */
     border: 1px solid #000; /* Set the border color */
     border-radius: 5px; /* Add rounded corners */
-    transition: background-color 0.3s ease; /* Add a smooth transition effect on hover */
-    margin-bottom: 50px;
+   
 }
 
-.edit-btn:hover {
-    background-color: #D3D3D3; /* Change the background color on hover */
+.btn:active {
+    background: #D3D3D3;
+  -webkit-box-shadow: inset 0px 0px 5px #D3D3D3;
+     -moz-box-shadow: inset 0px 0px 5px #D3D3D3;
+          box-shadow: inset 0px 0px 5px #D3D3D3;
+   outline: none;
   }
 
 
@@ -107,16 +109,26 @@
 .textbox {
     margin-top: 20px;
     margin-left: 120px;
-    width: 1150px; /* Set the width of the textbox */
-    height: 100px;
+    width: calc(100% - 220px);
+    height: 140px;
     max-width: 100%; /* Set a maximum width if needed */
     font-size: 16px; /* Set the font size */
     border: 1px solid #000; 
     resize: none;
+    margin-bottom: 10px;
 }
    
-
+.footer{
+    position: relative;
+    margin-bottom: 100px;
+}
+#edit-btn{
+    left: 120px;
+}
 #delete-btn{
-    margin-left: 10px;
-    
+    left: 290px;
+ 
+}
+#comment-btn{
+    left: calc(100% - 244px);
 }

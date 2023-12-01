@@ -4,6 +4,8 @@ import '../Page Style/ProfilepageCSS.css';
 import Review from '../Components/ReviewPost.js';
 import { Link } from "react-router-dom";
 const ProfilePage = () => {
+  
+  
   return (
     <div className="profilePage">
       <Nav/>

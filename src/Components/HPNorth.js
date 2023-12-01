@@ -5,7 +5,7 @@ const HPNorth = () => {
         <div className="container" id="HPNorth">
              <h1 className="contTitle">North Bound Route</h1>
                 <p className="contDesc">
-                    Describe your journey to the North. Engage your audience 
+                Describe your experience with the travel agency you used to the North. Engage your audience 
                     and entice them to continue reading...
                 </p>
                

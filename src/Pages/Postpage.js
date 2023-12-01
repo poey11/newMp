@@ -30,7 +30,7 @@ const Postpage = () => {
         <div className='review-name'>
                 <div id='title'>Title</div>
                 <div id='reviewDate'>Date</div>
-                <div id='trip-to-dest'>Trip to Destination</div>
+                <div id='agencyUsed'>Agency</div>
                 <div id='user-rating'>Recommended</div>
                 <a href ='/Profile'>
                     <div id='author'>Author</div>
@@ -66,12 +66,14 @@ const Postpage = () => {
                 <textarea  id="myTextbox" class="textbox" placeholder="Owner's response ..." disabled/>
             </div>
 
-            <div className='buttons'>
-                <Link to = "/EditReview">
-                    <button class="edit-btn"> <a href='/EditReview'>Edit Review</a></button>
-                </Link>
-                <button class="edit-btn" id='delete-btn'>Delete Review</button>
-            </div>
+    
+            <Link to = "/EditReview">
+                <button class="btn" id="edit-btn"> <a href='/EditReview'>Edit Review</a></button>
+            </Link>
+            <button class="btn" id='delete-btn'>Delete Review</button>
+            <button class="btn" id='comment-btn'>Post Comment</button>
+
+            <div className='footer'/>
             
     </div>
     );
