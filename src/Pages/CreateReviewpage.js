@@ -44,7 +44,7 @@ const CreateReviewpage = () => {
         
 
       <div className='reviewContainer'>
-          <textarea className="reviewInput" id="" cols="30" rows="10"placeholder='Write Your Experience...'></textarea>
+          <textarea className="reviewInput" id="" cols="30" rows="10"placeholder='Write Your Review...'></textarea>
       </div>
       <div className="mediaCont">
         

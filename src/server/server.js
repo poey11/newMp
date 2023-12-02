@@ -18,7 +18,7 @@ app.use((req, res, next)=> {
 //routes
 app.use('/api/user/', userRoutes)
 app.use('/api/reviews/', userRoutes)
-//app.use('/api/')
+
 
 
 

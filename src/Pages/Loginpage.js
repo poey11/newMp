@@ -11,6 +11,7 @@ const Loginpage = () => {
 
     useEffect(()=>{
         fetchUsers()
+        
     },[])
 
     const fetchUsers= async ()=>{
