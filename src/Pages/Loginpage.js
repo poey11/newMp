@@ -28,17 +28,18 @@ const Loginpage = () => {
             }
           } catch (error) {
             // Handle network errors or errors during JSON parsing
+            console.error('Error fetching user data:', error);
           }
-        };
-      
-        // Call the fetchUsers function when the component mounts
+        };      
         fetchUsers();
+        console.log(users);
+
       }, []); // The empty dependency array ensures this effect runs only once when the component mounts
       
     
     const isLoginSuccessful = async(e) =>{
         e.preventDefault() 
-        
+        console.log(users);
         try{
             for(let i = 0; i < users.length ; i++){
                 if(users[i].Username === Username){
