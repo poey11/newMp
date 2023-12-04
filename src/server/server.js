@@ -5,7 +5,7 @@ const express = require('express');
 const connect = require('./db.js');
 
 const userRoutes = require('./router/userRouter.js')
-
+const reviewRoutes = require('./router/reviewRouter.js');
 const  app = express();
 
 //middleware
@@ -15,9 +15,9 @@ app.use((req, res, next)=> {
     next()
 })
 
-//routes
+//routess
 app.use('/api/user/', userRoutes)
-app.use('/api/reviews/', userRoutes)
+app.use('/api/reviews/', reviewRoutes);
 
 
 

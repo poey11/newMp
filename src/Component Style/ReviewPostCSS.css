@@ -1,14 +1,14 @@
 #reviewPostContainer{
     position: relative;
     margin-top: 16px;
-    display: flex;
     flex-direction: column;
     padding-bottom: 10%;
-    align-items: center;
     margin-bottom: 30px;
     overflow: hidden;
     text-overflow: ellipsis;
-    
+    min-height: 215px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .reviewHeader{

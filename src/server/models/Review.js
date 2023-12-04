@@ -5,20 +5,24 @@ const Schema = mongoose.Schema;
 const ReviewSchema = new Schema({
   Title: {
     type: String,
-    required: true,
   },
-  Dest: {
+  Author: {
     type: String,
-    required: true,
+  },
+  Category: {
+    type: String,
+    default:"North Bound"
   },
   Body: {
     type: String,
-    required: true,
   },
   Rating: {
    type:String,
   },
   MediaURL:{
+    type:String
+  },
+  Agency:{
     type:String
   },
   Helpful: {
@@ -29,6 +33,10 @@ const ReviewSchema = new Schema({
     type: Number,
     default: 0,
   },
+  OwnerReply:{
+    type:String,
+   
+  }
 }, { timestamps: true });
 
 const Review = mongoose.model('Review', ReviewSchema, 'REVIEWS');

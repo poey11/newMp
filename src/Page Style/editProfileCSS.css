@@ -16,6 +16,12 @@
     position: absolute;
     resize: none;
 }
+.userNameEditInput{
+    overflow-y: hidden;
+}
+.userNameEditInput, .userAvatarEditInput{
+    height: 17px;
+}
 
 .userNameEditInput,.userAvatarEditInput
 ,.userDescEditInput{

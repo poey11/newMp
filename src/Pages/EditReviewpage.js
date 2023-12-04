@@ -1,7 +1,23 @@
 import NavBar from '../Components/NavBar.js';
 import SubNav from '../Components/SubNavBar.js';
+import { useLocation,useNavigate } from 'react-router-dom';
+import {useState,useEffect } from 'react';
 
 const EditReviewpage = () => {
+    const location = useLocation();
+    const { state } = location;
+    const { id } = state || {};
+    const navigate = useNavigate();
+    
+    const onEdit= async()=>{
+      
+    }
+
+
+
+
+
+
     return (  
     <div className="EditReviewCont">
       <NavBar />

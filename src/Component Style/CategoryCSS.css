@@ -1,14 +1,11 @@
 
 .container{
     position: absolute;
-    display: flex;
     height: 230px;
     width: 560px;
     border: 1px solid   black;
-    display: flex;
     font-weight: lighter;
     font-size: 20px;
-    word-wrap:break-word;
     padding-left: 30px;
    
 }

@@ -1,34 +1,33 @@
-const express = require('express');
-const router = express.Router();
-const {
-  createReview,
+const express = require('express')
+const router = express.Router()
+const {  createReview,
   getAllReviews,
   getReview,
-  likeReview,
-  dislikeReview,
-  shareReview,
-  addComment,
-} = require('../controller/ReviewController');
+  updateReview,
+  delReview,
+  unTallyHelpful,
+  tallyHelpful
+} = require('../controller/ReviewController')
 
-// Get ALL reviews
-router.get('/', getAllReviews);
+//get all in
+router.get('/',getAllReviews)
 
-// Get single review
-router.get('/:id', getReview);
+//Get single review info 
+router.get('/:id',getReview)
 
-// Post a review
-router.post('/', createReview);
+//create new review
+router.post('/', createReview)
 
-// Like a review
-router.post('/:id/like', likeReview);
+//update/edit review
+router.patch('/:id',updateReview)
 
-// Dislike a review
-router.post('/:id/dislike', dislikeReview);
+//delete review
+router.delete('/:id',delReview)
 
-// Share a review
-router.post('/:id/share', shareReview);
+// to increase helpfull
+router.post('/tally/:id', tallyHelpful)
 
-// Add a comment to a review
-router.post('/:id/comments', addComment);
+// to increate nothelpful
+router.post('/untally/:id',unTallyHelpful)
 
-module.exports = router;
+module.exports = router

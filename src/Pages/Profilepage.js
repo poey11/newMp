@@ -6,21 +6,36 @@ import { Link } from "react-router-dom";
 import {useState,useEffect } from 'react';
 
 const ProfilePage = () => {
-  const [users, setUsers] = useState([]);
- 
-  const fetchUsers= async ()=>{
-    
-    const response = await fetch("/api/user/");
-    const json = await response.json()
-
-    if(response.ok){
-        setUsers(json);
-      }
-      
-  }
+  const [users, setUsers] = useState('');
+  const [Reviews, setReviews] = useState([])
+  
 
   useEffect(()=>{
+    const fetchUsers= async ()=>{
+    
+      const response = await fetch("/api/user/656b3cfd9b4c00b0338a7654");
+      const json = await response.json()
+  
+      if(response.ok){
+          setUsers(json);
+        }
+        
+    }
+
+    const fetchReviews = async () =>{
+      const response2 = await fetch("/api/reviews/");
+      const json2 = await response2.json()
+  
+      if(response2.ok){
+          setReviews(json2);
+      }
+      else{
+        console.log(json2.error)
+      }
+    }
+    fetchReviews();
     fetchUsers()
+    
   },[]);
 
 
@@ -44,40 +59,24 @@ const ProfilePage = () => {
           <div className="andTravelCorporation">AND TRAVEL CORPORATION BY MEHRY</div>
         </div>
         <div className="userInfoContainer">
-        {users.map((data, index) => {
-          if (index === users.length - 1) {
-            const primaryUrl = data.Avatar;
-            return (
-              <img key={data._id} className="profilepic" alt="Url not Valid" src={primaryUrl} onError={(e) => { e.target.src = '/avatar-icon.png'; }}/>
-            );
-          } else {
-            return null;
-          }
-        })}
+       
+          <img  className="profilepic" alt="Url not Valid" src={users.Avatar} onError={(e) => { e.target.src = '/avatar-icon.png'; }}/>
+          
+          
+  
         <div className="usernameContainer">
-          {users.map((data,index)=>{
-            if(index === users.length-1){
-              return(
-                <p key={data._id}>{data.Username}</p>
+          
+             
+            <p>{users.Username}</p>
                 
-              )  
-            }
-            else{
-              return null;
-            }
-          })}
+              
+          
           </div>      
-          {users.map((data,index)=>{
-            if(index === users.length-1){
-              return(
-                <textarea key={data._id} id="userDescription" cols="30" rows="10" className="userDescription" placeholder={data.Bio} disabled/>
+         
+          <textarea id="userDescription" cols="30" rows="10" className="userDescription" placeholder={users.Bio} disabled/>
+            
+          
         
-                
-              )  
-            } else{
-              return null;
-            }
-          })}
           </div>
 
         <div className="profileFooterContainer">
@@ -95,11 +94,12 @@ const ProfilePage = () => {
       
       <div className="lastestHeader"> Lastest Reviews</div>
       <div className="latestContainer">
-        <Link className='containerClick' to = '/Post'>
-            <Review/>
-        </Link>
+        {Reviews
+       .filter((review) => review.Author === users._id)
+       .map((review) => (
+            <Review key = {review._id} Agency = {review.Agency} id = {review._id} Title = {review.Title} AuthorId ={review.Author} Date = { review.createdAt} Body={review.Body}/>       
+        ))}
         
-          
       </div>
     </div>
   );

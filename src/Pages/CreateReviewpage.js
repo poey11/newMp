@@ -1,13 +1,77 @@
 
+import { useState,useEffect  } from 'react';
+import { useNavigate } from 'react-router-dom';
 import NavBar from '../Components/NavBar.js';
 import SubNav from '../Components/SubNavBar.js';
 import '../Page Style/CreateReviewpageCSS.css';
 
 const CreateReviewpage = () => {
+  const [User, setUser] = useState('');
+  const [Title, setTitle] = useState('');
+  const OwnerReply = "";
+  const [Category, setCategory] = useState('');
+  const [Body, setBody] = useState('');
+  const [Rating, setRating] = useState('');
+  const [MediaURL, setMediaURL] = useState('');
+  const [Agency, setAgency] = useState('');
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    const fetchUser= async ()=>{
+
+        const response = await fetch("/api/user/656b3cfd9b4c00b0338a7654");
+        const json = await response.json()
+    
+        if(response.ok){
+            setUser(json);
+        } else {
+            console.log(json.error);
+            }
+          
+    }
+    fetchUser();
+   
+  },[])
+
+  if(Rating === "" && Category === ""){
+    setRating("Recommended");
+    setCategory("North Bound")
+  }
+  
+  const handleSubmit = async (e)=>{
+    e.preventDefault()
+    const Author= User._id
+    const review = {Title,Author,Category,Body,Rating,MediaURL,Agency,OwnerReply}
+    console.log(User)
+
+
+    const response = await fetch('/api/reviews/',{
+      method:'POST',
+      body: JSON.stringify(review),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+
+    const json = await response.json()
+    if(!response.ok){
+        console.log(json.error)
+    }
+    if(response.ok){
+      alert("Review Created")
+      setTitle('')
+      setCategory('')
+      setBody('')
+      setRating('')
+      setMediaURL('')
+      setAgency('')
+      navigate(-1);
+    }
+  }
 
 
   return (
-    <div className="CreateReviewCont">
+    <form className="CreateReviewCont" onSubmit={handleSubmit}>
       <NavBar />
       <div className="page-header">
         <div className="page-title">Create Review</div>
@@ -21,11 +85,11 @@ const CreateReviewpage = () => {
       <div className="divider" id="CreateReviewDivider"/>
       <div className="reviewInputCont">
         <div className="titleLabel">Review Title: </div>
-        <input className="titleInput" type="text" />
+        <input className="titleInput" id="titleInput" type="text" onChange={(e)=> setTitle(e.target.value)} value={Title} required/>
 
        
         <label htmlFor='ratingInput' className="ratingLabel">Rating: </label>
-        <select className="ratingInput" id="ratingInput">
+        <select className="ratingInput" id="ratingInput" onChange={(e)=> setRating(e.target.value)} value={Rating}>
           <option value="Recommended">Recommended</option>
           <option value="Not Recommended">Not Recommended</option>
         </select>
@@ -33,27 +97,27 @@ const CreateReviewpage = () => {
 
       <div className="reviewInputCont2">
           <label htmlFor='tripInput' className="tripLabel">Trip to the: </label>
-          <select className="tripInput" id="tripInput">
-            <option value="North">North Bound</option>
-            <option value="South">South Bound</option>
+          <select className="tripInput" id="tripInput" onChange={(e)=> setCategory(e.target.value)} value={Category}>
+            <option value="North Bound">North Bound</option>
+            <option value="South Bound">South Bound</option>
           </select>
 
           <div className="agencyLabel">Travel Agency Used: </div>
-          <input className="agencyInput" type="text" />
+          <input className="agencyInput" id= "agencyInput"type="text"  onChange={(e)=> setAgency(e.target.value)} value={Agency}required/>
         </div>
         
 
       <div className='reviewContainer'>
-          <textarea className="reviewInput" id="" cols="30" rows="10"placeholder='Write Your Review...'></textarea>
+          <textarea className="reviewInput" id="reviewInput" cols="30" rows="10"placeholder='Write Your Review...' onChange={(e)=> setBody(e.target.value)} value={Body} required/>
       </div>
       <div className="mediaCont">
         
-        <input type="text" className="mediaInput" id="mediaInput" placeholder='Insert Media URL' />
+        <input type="text" className="mediaInput" id="mediaInput" placeholder='Insert Media URL (Videos can only be YT links)' onChange={(e)=> setMediaURL(e.target.value)} value={MediaURL} />
       </div>
       <div className="buttonContainer">
         <button className='postReviewBut'>Post Review</button>
       </div>
-    </div>
+    </form>
   );
 };
 
