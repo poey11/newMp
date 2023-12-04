@@ -15,20 +15,21 @@ const Loginpage = () => {
     },[])
 
     const fetchUsers= async ()=>{
+        const response = await fetch("/api/user/");
+        const json = await response.json()
         try{
-            const response = await fetch("/api/user/");
-            const json = await response.json()
-    
             if(response.ok){
                 setUsers(json);
             }
+            if(!response.ok){
+                console.log(json.error)
+            }
         }
         catch(error){
-            console.error('Error parsing JSON:', error);
+            console.log('Error parsing JSON:', error);
 
-            // Handle non-JSON response (e.g., HTML)
-            const text = await response.text();
-            console.log('Non-JSON response:', text);
+         
+            console.log('Non-JSON response:', json);
         }
         
     }
