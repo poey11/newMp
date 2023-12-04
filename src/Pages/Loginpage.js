@@ -23,7 +23,7 @@ const Loginpage = () => {
                 setUsers(json);
             }
         }
-        catch(e){
+        catch(error){
             console.error('Error parsing JSON:', error);
 
             // Handle non-JSON response (e.g., HTML)
