@@ -9,8 +9,14 @@ const reviewRoutes = require('./router/reviewRouter.js');
 const cors = require('cors');
 const  app = express();
 
+
 app.use(cors());
-//middleware
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'https://newmp-poey11.onrender.com');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+  });
 app.use(express.json())
 app.use((req, res, next)=> {
     console.log(req.path, req.method)
