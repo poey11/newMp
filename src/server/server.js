@@ -29,9 +29,9 @@ connect()
     .then(()=>{
         //listens to request
        
-        console.log('Connected To MongoDB ', process.env.URL);
+        console.log('Connected To MongoDB ', process.env.URL);// mongodb URL
         app.listen(process.env.PORT, ()=> {
-            console.log('listening on port ', process.env.PORT);
+            console.log('listening on port ', process.env.PORT);//localhost:5000
         })
     })
     .catch((error)=>{
