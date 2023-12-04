@@ -23,10 +23,11 @@ const Loginpage = () => {
       
             const json = await response.json();
             // Update state with the fetched user data
-            setUsers(json);
+            if (response.ok) {
+                setUsers(json)
+            }
           } catch (error) {
             // Handle network errors or errors during JSON parsing
-            console.log('Error fetching user data: '+ error);
           }
         };
       
