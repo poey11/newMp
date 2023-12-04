@@ -9,29 +9,31 @@ const Loginpage = () => {
     const [Username, setUsername] = useState('')
     const [Password, setPassword] = useState('') 
 
-    useEffect(()=>{
-        const fetchUsers= async ()=>{
+    useEffect(() => {
+        const fetchUsers = async () => {
+          try {
             const response = await fetch("/api/user/");
-            const json = await response.json()
-            try{
-                if(response.ok){
-                    setUsers(json);
-                }
-                if(!response.ok){
-                    console.log(json.error)
-                }
+      
+            if (!response.ok) {
+              // Handle non-successful response (HTTP status not in the range 200-299)
+              const error = await response.json();
+              console.error('Error:', error);
+              return;
             }
-            catch(error){
-                console.log('Error parsing JSON:', error);
-    
-             
-                console.log('Non-JSON response:', json);
-            }
-            
-        }
-        fetchUsers()
-    },[])
-
+      
+            const json = await response.json();
+            // Update state with the fetched user data
+            setUsers(json);
+          } catch (error) {
+            // Handle network errors or errors during JSON parsing
+            console.error('Error fetching user data:', error);
+          }
+        };
+      
+        // Call the fetchUsers function when the component mounts
+        fetchUsers();
+      }, []); // The empty dependency array ensures this effect runs only once when the component mounts
+      
     
     const isLoginSuccessful = async(e) =>{
         e.preventDefault() 
