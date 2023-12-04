@@ -6,8 +6,10 @@ const connect = require('./db.js');
 
 const userRoutes = require('./router/userRouter.js')
 const reviewRoutes = require('./router/reviewRouter.js');
+const cors = require('cors');
 const  app = express();
 
+app.use(cors());
 //middleware
 app.use(express.json())
 app.use((req, res, next)=> {
