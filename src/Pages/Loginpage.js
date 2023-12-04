@@ -26,7 +26,7 @@ const Loginpage = () => {
             setUsers(json);
           } catch (error) {
             // Handle network errors or errors during JSON parsing
-            console.error('Error fetching user data:', error);
+            console.log('Error fetching user data: '+ error);
           }
         };
       
