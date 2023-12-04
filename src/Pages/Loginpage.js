@@ -10,29 +10,29 @@ const Loginpage = () => {
     const [Password, setPassword] = useState('') 
 
     useEffect(()=>{
+        const fetchUsers= async ()=>{
+            const response = await fetch("/api/user/");
+            const json = await response.json()
+            try{
+                if(response.ok){
+                    setUsers(json);
+                }
+                if(!response.ok){
+                    console.log(json.error)
+                }
+            }
+            catch(error){
+                console.log('Error parsing JSON:', error);
+    
+             
+                console.log('Non-JSON response:', json);
+            }
+            
+        }
         fetchUsers()
-        
     },[])
 
-    const fetchUsers= async ()=>{
-        const response = await fetch("/api/user/");
-        const json = await response.json()
-        try{
-            if(response.ok){
-                setUsers(json);
-            }
-            if(!response.ok){
-                console.log(json.error)
-            }
-        }
-        catch(error){
-            console.log('Error parsing JSON:', error);
-
-         
-            console.log('Non-JSON response:', json);
-        }
-        
-    }
+    
     const isLoginSuccessful = async(e) =>{
         e.preventDefault() 
         
