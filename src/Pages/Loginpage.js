@@ -34,11 +34,13 @@ const Loginpage = () => {
         fetchUsers();
         console.log(users);
 
-      }, []); // The empty dependency array ensures this effect runs only once when the component mounts
+      }, [users]); // The empty dependency array ensures this effect runs only once when the component mounts
       
     
     const isLoginSuccessful = async(e) =>{
         e.preventDefault() 
+        console.log(users + Password);
+
         console.log(users);
         try{
             for(let i = 0; i < users.length ; i++){
