@@ -6,12 +6,7 @@ const reviewRoutes = require('./router/reviewRouter.js');
 const app = express();
 const path = require('path');
 
-app.use(express.static(path.join(__dirname, 'build')));
 
-// For any other routes, serve the React app
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
-});
 
 app.use(express.json());
 app.use((req, res, next) => {

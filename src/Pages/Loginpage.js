@@ -40,7 +40,7 @@ const Loginpage = () => {
         }
         
         fetchUsers();
-      }, [users]); // The empty dependency array ensures this effect runs only once when the component mounts
+      }, []); // The empty dependency array ensures this effect runs only once when the component mounts
       
     
     const isLoginSuccessful = async(e) =>{
