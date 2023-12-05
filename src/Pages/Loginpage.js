@@ -11,32 +11,22 @@ const Loginpage = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-            let dataB;
-            let text;
             try {
-                const response = await fetch("/api/user/").
-                then(response => {
-                    if (!response.ok) {
-                        text =  response.text();
-                        throw new Error(`Network response was not ok: ${text}`);
-                    }
-                    return response.json();
-                  })
-                  .then(data => {
-                    dataB=data;
-                    console.log(data)
-                    setUsers(JSON.stringify(data))
-                })
-                  .catch(error => {
-                    console.log(text)
-                    console.error('Error:', error)
-                });
-                
+                const response = await fetch("/api/user/");
+        
+                if (!response.ok) {
+                    const text = await response.text();
+                    throw new Error(`Network response was not ok: ${text}`);
+                }
+        
+                const data = await response.json();
+                console.log(data);
+                setUsers(data);
             } catch (error) {
                 console.error('Error fetching user data:', error);
-                console.log(text);
             }
-        }
+        };
+        
         
         fetchUsers();
       }, []); // The empty dependency array ensures this effect runs only once when the component mounts

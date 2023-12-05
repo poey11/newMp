@@ -2,18 +2,18 @@ const User = require('../models/User.js')
 const mongoose = require('mongoose')
 
 //create new user
-const createUser = async (req,res) => {
-    const {Username,Password,Bio,Roles,Avatar} = req.body
-    
-    try{
-        const user  = await User.create({Username,Password,Bio,Roles,Avatar})
-        res.status(200).json(user)
-    }
-    catch(error){
-        res.status(400).json({error: error.message})
-    }
+const createUser = async (req, res) => {
+    const { Username, Password, Bio, Roles, Avatar } = req.body;
 
-}
+    try {
+        const user = await User.create({ Username, Password, Bio, Roles, Avatar });
+        res.status(200).json(user);
+    } catch (error) {
+        console.error('Error creating user:', error);
+        res.status(400).json({ error: error.message });
+    }
+};
+
 
 //get all user
 const GetAllUser  = async (req, res) =>{
