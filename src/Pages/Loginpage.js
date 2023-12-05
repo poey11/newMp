@@ -5,7 +5,7 @@ import {useState,useEffect } from 'react';
 
 
 const Loginpage = () => {
-    const [users, setUsers] = useState('')
+    const [users, setUsers] = useState([])
     const [Username, setUsername] = useState('')
     const [Password, setPassword] = useState('') 
 
