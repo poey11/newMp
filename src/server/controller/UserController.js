@@ -26,9 +26,7 @@ const GetAllUser = async (req, res) => {
         console.error('Error fetching user data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
-};
-
-
+}
 // get single user
 const GetUser = async (req, res) => {
     const { id } = req.params
