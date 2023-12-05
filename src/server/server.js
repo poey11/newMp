@@ -1,13 +1,12 @@
 
-require('dotenv').config();
+require('dotenv').config({path: "./src/server/.env"});
 const express = require('express');
 const connect = require('./db.js');
-
 const userRoutes = require('./router/userRouter.js')
 const reviewRoutes = require('./router/reviewRouter.js');
 const  app = express();
-
-
+const Cors = require('cors');
+app.use(Cors());
 
 app.use(express.json())
 app.use((req, res, next)=> {
