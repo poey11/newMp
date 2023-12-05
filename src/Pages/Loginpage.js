@@ -16,7 +16,8 @@ const Loginpage = () => {
                 
                 console.log('Response status:', response.status);
                 console.log('Response headers:', response.headers);
-                
+                console.log (response)
+                console.log (response.json)
                 const text = await response.text();
                 
                 console.log('Response text:', text);

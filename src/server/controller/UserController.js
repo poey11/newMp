@@ -22,13 +22,13 @@ const GetAllUser = async (req, res) => {
     try {
         const Users = await User.find({}).sort({ createdAt: -1 });
         res.status(200).json(Users);
-       
+        console.log(Users)
+        console.log(req)
     } catch (error) {
         console.error('Error fetching user data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
-    console.log(Users)
-    console.log(req)
+    
 };
 
 // get single user
