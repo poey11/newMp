@@ -11,12 +11,14 @@ const Loginpage = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
+            let text;
+            let errorText;
             try {
                 const response = await fetch("/api/user/");
         
+                text = await response.text();
                 if (!response.ok) {
-                    const text = await response.text();
-                    throw new Error(`Network response was not ok: ${text}`);
+                    throw new Error(`Network response was not ok: ${errorText}`);
                 }
         
                 const data = await response.json();
@@ -24,6 +26,9 @@ const Loginpage = () => {
                 setUsers(data);
             } catch (error) {
                 console.error('Error fetching user data:', error);
+                console.log(text);
+                console.log(errorText)
+
             }
         };
         
