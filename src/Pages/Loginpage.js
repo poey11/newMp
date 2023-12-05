@@ -12,11 +12,13 @@ const Loginpage = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             let dataB;
+            let text;
             try {
                 const response = await fetch("/api/user/").
                 then(response => {
                     if (!response.ok) {
-                      throw new Error('Network response was not ok');
+                        text =  response.text();
+                        throw new Error('Network response was not ok');
                     }
                     return response.json();
                   })
@@ -32,13 +34,14 @@ const Loginpage = () => {
                 
             } catch (error) {
                 console.error('Error fetching user data:', error);
+                console.log(text);
             }
         }
         
         fetchUsers();
       }, []); // The empty dependency array ensures this effect runs only once when the component mounts
       
-    
+
     const isLoginSuccessful = async(e) =>{
         e.preventDefault() 
         console.log(Username + Password);
