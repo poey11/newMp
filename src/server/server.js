@@ -18,12 +18,12 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api/user/', userRoutes);
 app.use('/api/reviews/', reviewRoutes);
-
+port = process.env.PORT || 5000
 connect()
     .then(() => {
         console.log('Connected To MongoDB ', process.env.URL); // MongoDB URL
-        app.listen(process.env.PORT, () => {
-            console.log('Listening on port ', process.env.PORT); // localhost:5000
+        app.listen(port, () => {
+            console.log('Listening on port ', port); // localhost:5000
         });
     })
     .catch((error) => {
