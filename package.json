@@ -1,5 +1,5 @@
 {
-  "proxy": "https://newmp-poey11.onrender.com/",
+  "proxy": "https://newmp-poey11.onrender.com",
   "name": "mp-blog",
   "version": "0.1.0",
   "private": true,
