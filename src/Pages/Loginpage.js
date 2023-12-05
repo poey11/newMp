@@ -11,29 +11,34 @@ const Loginpage = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
-          try {
-            const response = await fetch("/api/user/");
-            console.log(response)
-            if (!response.ok) {
-              // Handle non-successful response (HTTP status not in the range 200-299)
-              const error = await response.json();
-              console.error('Error:', error);
-              return;
+            try {
+                const response = await fetch("/api/user/");
+                
+                console.log('Response status:', response.status);
+                console.log('Response headers:', response.headers);
+                
+                const text = await response.text();
+                
+                console.log('Response text:', text);
+        
+                try {
+                    const json = JSON.parse(text);
+                    console.log('Response JSON:', json);
+        
+                    if (response.ok) {
+                        setUsers(json);
+                    } else {
+                        console.error('Server returned an error:', json);
+                    }
+                } catch (jsonError) {
+                    console.error('Error parsing JSON:', jsonError);
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
             }
-      
-            const json = await response.json();
-            // Update state with the fetched user data
-            if (response.ok) {
-                setUsers(json)
-            }
-          } catch (error) {
-            // Handle network errors or errors during JSON parsing
-            console.error('Error fetching user data:', error);
-          }
-        };      
+        }
+        
         fetchUsers();
-        console.log(users);
-
       }, [users]); // The empty dependency array ensures this effect runs only once when the component mounts
       
     
