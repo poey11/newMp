@@ -4,13 +4,13 @@ const connect = require('./db.js');
 const userRoutes = require('./router/userRouter.js');
 const reviewRoutes = require('./router/reviewRouter.js');
 const app = express();
-const cors = require('cors'); // Correct import statement
 
-const corsOptions = {
-    origin: 'https://newmp-poey11.onrender.com',
-    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  };
-app.use(cors(corsOptions)); // Enable CORS for all routes
+app.use(express.static(path.join(__dirname, 'build')));
+
+// For any other routes, serve the React app
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.use(express.json());
 app.use((req, res, next) => {
