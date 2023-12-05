@@ -18,7 +18,7 @@ const Loginpage = () => {
                 then(response => {
                     if (!response.ok) {
                         text =  response.text();
-                        throw new Error('Network response was not ok');
+                        throw new Error(`Network response was not ok: ${text}`);
                     }
                     return response.json();
                   })
