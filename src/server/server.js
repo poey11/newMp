@@ -6,7 +6,11 @@ const reviewRoutes = require('./router/reviewRouter.js');
 const app = express();
 const cors = require('cors'); // Correct import statement
 
-app.use(cors()); // Enable CORS for all routes
+const corsOptions = {
+    origin: 'https://newmp-poey11.onrender.com',
+    optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
+  };
+app.use(cors(corsOptions)); // Enable CORS for all routes
 
 app.use(express.json());
 app.use((req, res, next) => {
