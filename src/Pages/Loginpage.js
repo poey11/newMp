@@ -10,37 +10,17 @@ const Loginpage = () => {
     const [Password, setPassword] = useState('') 
 
     useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const response = await fetch("/api/user/");
-                
-                console.log('Response status:', response.status);
-                console.log('Response headers:', response.headers);
-                console.log (response)
-                console.log (response.json)
-                const text = await response.text();
-                
-                console.log('Response text:', text);
-        
-                try {
-                    const json = JSON.parse(text);
-                    console.log('Response JSON:', json);
-        
-                    if (response.ok) {
-                        setUsers(json);
-                    } else {
-                        console.error('Server returned an error:', json);
-                    }
-                } catch (jsonError) {
-                    console.error('Error parsing JSON:', jsonError);
-                }
-            } catch (error) {
-                console.error('Error fetching user data:', error);
+        const fetchUsers= async ()=>{
+            const response = await fetch("/api/user/");
+            const json = await response.json()
+    
+            if(response.ok){
+                setUsers(json);
             }
         }
         
         fetchUsers();
-      }, [users]); // The empty dependency array ensures this effect runs only once when the component mounts
+      }, []); // The empty dependency array ensures this effect runs only once when the component mounts
       
     
     const isLoginSuccessful = async(e) =>{

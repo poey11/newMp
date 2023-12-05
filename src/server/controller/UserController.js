@@ -4,32 +4,23 @@ const mongoose = require('mongoose')
 //create new user
 const createUser = async (req,res) => {
     const {Username,Password,Bio,Roles,Avatar} = req.body
-    console.log(req)
-    console.log(req.params)
+    
     try{
         const user  = await User.create({Username,Password,Bio,Roles,Avatar})
         res.status(200).json(user)
     }
     catch(error){
-        console.log({error: error.message})
         res.status(400).json({error: error.message})
     }
 
 }
 
 //get all user
-const GetAllUser = async (req, res) => {
-    try {
-        const Users = await User.find({}).sort({ createdAt: -1 });
-        res.status(200).json(Users);
-        console.log(Users)
-        console.log(req)
-    } catch (error) {
-        console.error('Error fetching user data:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
-    }
-    
-};
+const GetAllUser  = async (req, res) =>{
+    const Users = await User.find({}).sort({createdAt:-1})
+
+    res.status(200).json(Users)
+}
 
 // get single user
 const GetUser = async (req, res) => {
