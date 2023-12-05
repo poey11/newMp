@@ -12,7 +12,6 @@ const Loginpage = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-<<<<<<< HEAD
                 const response = await fetch("/api/user/");
         
                 if (!response.ok) {
@@ -23,26 +22,6 @@ const Loginpage = () => {
                 const data = await response.json();
                 console.log(data);
                 setUsers(data);
-=======
-                const response = await fetch("/api/user/").
-                then(response => {
-                    if (!response.ok) {
-                        text =  response.text();
-                        throw new Error('Network response was not ok');
-                    }
-                    return response.json();
-                  })
-                  .then(data => {
-                    dataB=data;
-                    console.log(data)
-                    setUsers(JSON.stringify(data))
-                })
-                  .catch(error => {
-                    console.log(text)
-                    console.error('Error:', error)
-                });
-                
->>>>>>> parent of b5bdccb (Update Loginpage.js)
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }

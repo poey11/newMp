@@ -1,5 +1,5 @@
 {
-  "proxy": "",
+  "proxy": "http://localhost:5000/",
   "name": "mp-blog",
   "version": "0.1.0",
   "private": true,
@@ -23,8 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "nodemon ./src/server",
-    "dev-and-build": "concurrently \"npm run dev\" \"npm run build\""
+    "dev": "nodemon ./src/server"
   },
   "eslintConfig": {
     "extends": [
