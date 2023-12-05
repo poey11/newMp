@@ -19,9 +19,9 @@ const createUser = async (req,res) => {
 
 //get all user
 const GetAllUser = async (req, res) => {
-    try {
-        console.log(req)
-        const Users = await User.find({}).sort({ createdAt: -1 });
+    console.log(req)
+try {
+        const Users = await User.find({});
         res.status(200).json(Users);
         console.log(Users)
     } catch (error) {
