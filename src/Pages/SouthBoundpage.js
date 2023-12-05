@@ -50,7 +50,7 @@ const SouthBoundPage = () => {
        {Reviews
       .filter((review) => review.Category === categoryToShow)
       .map((review) => (
-          <Review key = {review._id} Agency = {review.Agency} id = {review._id} Title = {review.Title} Author ={review.Author} Date = { review.createdAt} Body={review.Body}/>        
+        <Review key = {review._id} Agency = {review.Agency} id = {review._id} Title = {review.Title} AuthorId ={review.Author} Date = { review.createdAt} Body={review.Body}/>        
 
       ))}
       </div>
