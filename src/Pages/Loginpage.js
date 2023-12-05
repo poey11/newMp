@@ -12,31 +12,19 @@ const Loginpage = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await fetch("/api/user/")
-                .then(response => response.json())
-                .then(data => console.log(data))
-                .catch(error => console.error('Error:', error));
-                
-                console.log('Response status:', response.status);
-                console.log('Response headers:', response.headers);
-                console.log (response)
-                console.log (response.json)
-                const text = await response.text();
-                
-                console.log('Response text:', text);
-        
-                try {
-                    const json = JSON.parse(text);
-                    console.log('Response JSON:', json);
-        
-                    if (response.ok) {
-                        setUsers(json);
-                    } else {
-                        console.error('Server returned an error:', json);
+                const response = await fetch("/api/user/").
+                then(response => {
+                    if (!response.ok) {
+                      throw new Error('Network response was not ok');
                     }
-                } catch (jsonError) {
-                    console.error('Error parsing JSON:', jsonError);
-                }
+                    return response.json();
+                  })
+                  .then(data => {
+                    console.log(data)
+                    setUsers(data)
+                })
+                  .catch(error => console.error('Error:', error));
+                
             } catch (error) {
                 console.error('Error fetching user data:', error);
             }
