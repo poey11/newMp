@@ -12,7 +12,10 @@ const Loginpage = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await fetch("/api/user/");
+                const response = await fetch("/api/user/")
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error:', error));
                 
                 console.log('Response status:', response.status);
                 console.log('Response headers:', response.headers);
