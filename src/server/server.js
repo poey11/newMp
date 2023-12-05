@@ -4,6 +4,7 @@ const connect = require('./db.js');
 const userRoutes = require('./router/userRouter.js');
 const reviewRoutes = require('./router/reviewRouter.js');
 const app = express();
+const path = require('path');
 
 app.use(express.static(path.join(__dirname, 'build')));
 
