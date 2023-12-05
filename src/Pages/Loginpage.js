@@ -11,6 +11,7 @@ const Loginpage = () => {
 
     useEffect(() => {
         const fetchUsers = async () => {
+            let dataB;
             try {
                 const response = await fetch("/api/user/").
                 then(response => {
@@ -20,10 +21,14 @@ const Loginpage = () => {
                     return response.json();
                   })
                   .then(data => {
+                    dataB=data;
                     console.log(data)
                     setUsers(JSON.stringify(data))
                 })
-                  .catch(error => console.error('Error:', error));
+                  .catch(error => {
+                    console.log(dataB)
+                    console.error('Error:', error)
+                });
                 
             } catch (error) {
                 console.error('Error fetching user data:', error);
