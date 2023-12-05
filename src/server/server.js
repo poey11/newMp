@@ -3,6 +3,7 @@ const express = require('express');
 const connect = require('./db.js');
 const userRoutes = require('./router/userRouter.js');
 const reviewRoutes = require('./router/reviewRouter.js');
+const cors = require('cors');
 const app = express();
 app.use(cors());
 
