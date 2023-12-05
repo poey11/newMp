@@ -19,15 +19,16 @@ const createUser = async (req,res) => {
 
 //get all user
 const GetAllUser = async (req, res) => {
-    console.log(req)
-try {
-        const Users = await User.find({});
+    try {
+        const Users = await User.find({}).sort({ createdAt: -1 });
         res.status(200).json(Users);
-        console.log(Users)
+       
     } catch (error) {
         console.error('Error fetching user data:', error);
         res.status(500).json({ error: 'Internal Server Error' });
     }
+    console.log(Users)
+    console.log(req)
 };
 
 // get single user
