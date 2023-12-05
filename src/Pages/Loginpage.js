@@ -13,7 +13,7 @@ const Loginpage = () => {
         const fetchUsers = async () => {
           try {
             const response = await fetch("/api/user/");
-      
+            console.log(response)
             if (!response.ok) {
               // Handle non-successful response (HTTP status not in the range 200-299)
               const error = await response.json();
@@ -39,7 +39,7 @@ const Loginpage = () => {
     
     const isLoginSuccessful = async(e) =>{
         e.preventDefault() 
-        console.log(users + Password);
+        console.log(Username + Password);
 
         console.log(users);
         try{
