@@ -28,7 +28,7 @@ const Loginpage = () => {
                     setUsers(JSON.stringify(data))
                 })
                   .catch(error => {
-                    console.log(dataB)
+                    console.log(text)
                     console.error('Error:', error)
                 });
                 
