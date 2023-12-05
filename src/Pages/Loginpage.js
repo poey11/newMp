@@ -21,7 +21,7 @@ const Loginpage = () => {
                   })
                   .then(data => {
                     console.log(data)
-                    setUsers(data)
+                    setUsers(JSON.stringify(data))
                 })
                   .catch(error => console.error('Error:', error));
                 
