@@ -18,7 +18,6 @@ const Loginpage = () => {
                     const text = await response.text();
                     throw new Error(`Network response was not ok: ${text}`);
                 }
-        
                 const data = await response.json();
                 console.log(data);
                 setUsers(data);
