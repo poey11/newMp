@@ -1,37 +1,30 @@
-
-require('dotenv').config({path: "./src/server/.env"});
+require('dotenv').config({ path: "./src/server/.env" });
 const express = require('express');
 const connect = require('./db.js');
-const userRoutes = require('./router/userRouter.js')
+const userRoutes = require('./router/userRouter.js');
 const reviewRoutes = require('./router/reviewRouter.js');
-const  app = express();
-const Cors = require('cors');
-app.use(Cors());
+const app = express();
+const cors = require('cors'); // Correct import statement
 
-app.use(express.json())
-app.use((req, res, next)=> {
-    console.log(req.path, req.method)
-    next()
-})
+app.use(cors()); // Enable CORS for all routes
 
-//routess
-app.use('/api/user/', userRoutes)
+app.use(express.json());
+app.use((req, res, next) => {
+    console.log(req.path, req.method);
+    next();
+});
+
+// Routes
+app.use('/api/user/', userRoutes);
 app.use('/api/reviews/', reviewRoutes);
 
-
-
-
 connect()
-    .then(()=>{
-        //listens to request
-       
-        console.log('Connected To MongoDB ', process.env.URL);// mongodb URL
-        app.listen(process.env.PORT, ()=> {
-            console.log('listening on port ', process.env.PORT);//localhost:5000
-        })
+    .then(() => {
+        console.log('Connected To MongoDB ', process.env.URL); // MongoDB URL
+        app.listen(process.env.PORT, () => {
+            console.log('Listening on port ', process.env.PORT); // localhost:5000
+        });
     })
-    .catch((error)=>{
-        console.log(error)
-    }
-)
-
+    .catch((error) => {
+        console.log(error);
+    });
