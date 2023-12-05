@@ -4,8 +4,7 @@ const connect = require('./db.js');
 const userRoutes = require('./router/userRouter.js');
 const reviewRoutes = require('./router/reviewRouter.js');
 const app = express();
-const path = require('path');
-
+app.use(cors());
 
 
 app.use(express.json());
