@@ -10,7 +10,7 @@ const Loginpage = () => {
 
       const isLoginSuccessful = async (e) => {
         e.preventDefault();
-    
+        console.log(Username + Password)
         try {
             const response = await fetch("/api/user/login", {
                 method: "POST",
@@ -19,19 +19,15 @@ const Loginpage = () => {
                 },
                 body: JSON.stringify({ username: Username, password: Password }),
             });
-    
+            
             if (!response.ok) {
                 const text = await response.text();
-                setUsername('')
-                setPassword('')
                 throw new Error(`Login failed: ${text}`);
             }
             alert("Login Successful");
             window.location.assign('/');
         } catch (error) {
             console.error('Error during login:', error);
-            setUsername('')
-            setPassword('')
             alert("Login failed. Wrong Username or Password");
         }
     };

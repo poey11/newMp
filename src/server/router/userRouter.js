@@ -3,7 +3,8 @@ const router = express.Router()
 const { createUser,
     GetAllUser,
     GetUser,
-    updateUser
+    updateUser,
+    loginUser,
 } = require('../controller/UserController')
 
 // get ALL user info
@@ -18,5 +19,9 @@ router.post('/', createUser)
 //update/edit user
 router.patch('/:id',updateUser)
 
+//login valid
+router.post('/login', loginUser);
+
+//logout
 
 module.exports = router

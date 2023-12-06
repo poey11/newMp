@@ -1,19 +1,28 @@
 const User = require('../models/User.js')
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt');
 
 //create new user
 const createUser = async (req, res) => {
     const { Username, Password, Bio, Roles, Avatar } = req.body;
 
     try {
+        // Check if the username already exists in the database
+        const existingUser = await User.findOne({ Username });
+
+        if (existingUser) {
+            return res.status(409).json({ error: 'Username already exists' });
+        }
+
+        // If the username is not found, create the new user
         const user = await User.create({ Username, Password, Bio, Roles, Avatar });
+       
         res.status(200).json(user);
     } catch (error) {
         console.error('Error creating user:', error);
         res.status(400).json({ error: error.message });
     }
 };
-
 
 //get all user
 const GetAllUser = async (req, res) => {
@@ -63,9 +72,37 @@ const updateUser = async (req, res) => {
       res.status(200).json(singleUser)
 }
 
+
+const loginUser = async (req, res) => {
+    const { username, password } = req.body;
+    try {
+        const user = await User.findOne({ Username: username }).select('+Password');
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid username or password' });
+        }
+
+        const passwordMatch = await bcrypt.compare(password, user.Password);
+
+        if (passwordMatch) {
+            // Successful login
+            res.status(200).json({ message: 'Login successful' });
+        } else {
+            // Incorrect password
+            res.status(401).json({ error: 'Invalid username or password' });
+        }
+    } catch (error) {
+        console.error('Error during login:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+};
+
+
+//logout
+
 module.exports ={
     createUser,
     GetAllUser,
     GetUser,
-    updateUser
+    updateUser,
+    loginUser
 }

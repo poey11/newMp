@@ -18,6 +18,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/api/user/', userRoutes);
 app.use('/api/reviews/', reviewRoutes);
+
 port = process.env.PORT || 5000
 connect()
     .then(() => {

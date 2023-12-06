@@ -22,7 +22,6 @@ const UserSchema = new Schema({
     },
     Avatar:{
         type: String,
-        required: true
     }
     
 },{timestamps:true})
