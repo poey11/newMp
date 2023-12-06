@@ -5,52 +5,36 @@ import {useState,useEffect } from 'react';
 
 
 const Loginpage = () => {
-    const [users, setUsers] = useState([])
     const [Username, setUsername] = useState('')
     const [Password, setPassword] = useState('') 
 
-    useEffect(() => {
-        const fetchUsers = async () => {
-            try {
-                const response = await fetch("/api/user/");
-        
-                if (!response.ok) {
-                    const text = await response.text();
-                    throw new Error(`Network response was not ok: ${text}`);
-                }
-                const data = await response.json();
-                console.log(data);
-                setUsers(data);
-            } catch (error) {
-                console.error('Error fetching user data:', error);
+      const isLoginSuccessful = async (e) => {
+        e.preventDefault();
+    
+        try {
+            const response = await fetch("/api/user/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ username: Username, password: Password }),
+            });
+    
+            if (!response.ok) {
+                const text = await response.text();
+                setUsername('')
+                setPassword('')
+                throw new Error(`Login failed: ${text}`);
             }
-        };
-        
-        
-        fetchUsers();
-      }, []); // The empty dependency array ensures this effect runs only once when the component mounts
-      
-
-    const isLoginSuccessful = async(e) =>{
-        e.preventDefault() 
-        console.log(Username + Password);
-
-        console.log(users);
-        try{
-            for(let i = 0; i < users.length ; i++){
-                if(users[i].Username === Username){
-                   if(users[i].Password === Password){
-                       alert("Login Successful")
-                       return window.location.assign('/')
-                   } 
-                }
-            }
-            alert("Login Fail. Wrong Username or Password")
+            alert("Login Successful");
+            window.location.assign('/');
+        } catch (error) {
+            console.error('Error during login:', error);
+            setUsername('')
+            setPassword('')
+            alert("Login failed. Wrong Username or Password");
         }
-        catch(error){
-            alert(error)
-        }
-    }
+    };
     
     
     return (  

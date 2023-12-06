@@ -43,7 +43,7 @@ const Postpage = () => {
         };
         fetchSingleReviews();
         fetchUser();
-    },[UserId,Review]);
+    },[Review]);
 
     
     const handleDelete = async (e) => {

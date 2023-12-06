@@ -13,7 +13,7 @@ const ProfilePage = () => {
   useEffect(()=>{
     const fetchUsers= async ()=>{
     
-      const response = await fetch("/api/user/656b3cfd9b4c00b0338a7654");
+      const response = await fetch("/api/user/");
       const json = await response.json()
   
       if(response.ok){

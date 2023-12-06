@@ -19,7 +19,7 @@ const CreateReviewpage = () => {
   useEffect(() => {
     const fetchUser= async ()=>{
 
-        const response = await fetch("/api/user/656b3cfd9b4c00b0338a7654");
+        const response = await fetch("/api/user/65701c7ffd20e14809ff6fef");
         const json = await response.json()
     
         if(response.ok){

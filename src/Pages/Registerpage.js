@@ -7,40 +7,44 @@ const Registerpage = () => {
     const [Username, setUsername] = useState('')
     const [Password, setPassword] = useState('')
     const [Bio, setBio] = useState('')
-    const [error, setError] = useState(null)
     const Roles = "Customer"
     const [Avatar, setAvatar] = useState('');
 
-    const handleSubmit = async(e)=> {
-        e.preventDefault() // prevent reloading the page after pressing register
-
-        const user = {Username, Password, Bio, Roles, Avatar}
-
-        const response = await fetch('/api/user/',{
-            method:'POST',
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        const user = { Username, Password, Bio, Roles, Avatar };
+    
+        const response = await fetch('/api/user/', {
+            method: 'POST',
             body: JSON.stringify(user),
-            headers:{
-                'Content-Type': 'application/json'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+    
+        const json = await response.json();
+    
+        if (!response.ok) {
+            alert(json.error);
+        } else {
+            if (response.status === 409) {
+                alert('Username already exists');
+                setUsername('');
+                setPassword('');
+                setBio('');
+                setAvatar('');
+            } else {
+                alert('User Registered Successfully');
+                setUsername('');
+                setPassword('');
+                setBio('');
+                setAvatar('');
+                window.location.assign('/');
             }
-        })
-
-        const json = await response.json()
-
-        if(!response.ok){
-            setError(json.error)
         }
-        if(response.ok){
-            alert("User Registered Successfully")
-            setError(null)
-            setUsername('')
-            setPassword('')
-            setBio('')
-            setAvatar('')
-            console.log('new user registered',json)
-            window.location.assign('/')
-            
-        }
-    }
+    };
+    
     
 
     return ( 
@@ -100,7 +104,6 @@ const Registerpage = () => {
                     <span className="span">.</span>
                     </i>
                 </div>
-                {error && <div className='error'>{error}</div>}
         </form>
      );
 }
