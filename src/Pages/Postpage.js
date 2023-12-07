@@ -238,7 +238,7 @@ const Postpage = () => {
 
             <div className='text-box'>
                 <label className="textBoxLabel" htmlFor="myTextbox"></label>
-                <textarea  id="myTextbox" className="textbox" placeholder="Owner's response ... (This will only be enabled if you are the Owner of the Travel Agency" disabled/>
+                <textarea  id="myTextbox" className="textbox" placeholder="Owner's response ... (This will only be enabled if you are the Owner of the Travel Agency" />
             </div>
 
                         
@@ -246,7 +246,7 @@ const Postpage = () => {
             <button className="btn" id="edit-btn" onClick={onEdit}>Edit Review</button>
             
             <button className="btn" id='delete-btn' onClick={handleDelete} >Delete Review</button>
-            <button className="btn" id='comment-btn' hidden>Post Response</button>
+            <button className="btn" id='comment-btn' >Post Response</button>
           
 
             <div className='footer'/>
