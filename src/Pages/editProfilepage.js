@@ -8,9 +8,30 @@ import { useNavigate } from 'react-router-dom';
 const EditProfilepage = () => {
     const [users, setUsers] = useState('');
     const navigate = useNavigate();
-   
+    const [id, setId] = useState('');
+
 
     useEffect(()=>{
+        const fetchUserId = async () => {
+            try {
+                const response = await fetch("/api/session/sessionUserId");
+                const json = await response.json();
+                if (response.ok) {
+                    // Session exists, check authentication status
+                    setId(json)
+                } else {
+                    // Session doesn't exist
+                    alert("You are not Logged in")
+                    window.location.assign('/Login');       
+                  }
+      
+            } catch (error) {
+                // Handle fetch error
+                console.error("Error fetching authentication status:", error);
+                setId(false);
+            }
+            
+        };
         const fetchUsers= async ()=>{
             const response = await fetch("/api/user/");
             const json = await response.json()
@@ -20,6 +41,7 @@ const EditProfilepage = () => {
             }
             
         }
+        fetchUserId()
         fetchUsers()
     },[]) ;
 
@@ -35,9 +57,13 @@ const EditProfilepage = () => {
 
     
     const newUser = { newUserName, newBio, newAvatar };
-    
+    for(let i =0; i< users.length; i++){
+        if(users[i].Username === newUserName){
+            return alert("The username is already used")
+        }
+    }
     try {
-        const response = await fetch('/api/user/656b3cfd9b4c00b0338a7654', {
+        const response = await fetch('/api/user/'+id, {
             method: 'PATCH',
             body: JSON.stringify(newUser),
             headers: {
@@ -46,12 +72,11 @@ const EditProfilepage = () => {
         });
 
         const json = await response.json();
-
+       
         if (!response.ok) {
             alert(json.error);
         }
-
-        if (response.ok) {
+       else{
             alert("User Info Updated Successfully");
             navigate(-1);
         }

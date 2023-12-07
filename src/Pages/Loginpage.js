@@ -1,36 +1,39 @@
 import NavBar from '../Components/NavBar.js';
 import '../Page Style/LoginpageCSS.css';
 import { Link } from "react-router-dom"; 
-import {useState,useEffect } from 'react';
+import {useState, useEffect } from 'react';
 
 
 const Loginpage = () => {
     const [Username, setUsername] = useState('')
     const [Password, setPassword] = useState('') 
 
-      const isLoginSuccessful = async (e) => {
-        e.preventDefault();
-        console.log(Username + Password)
-        try {
-            const response = await fetch("/api/user/login", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+    const isLoginSuccessful = async (e) => {
+        e.preventDefault();    
+        try{
+            const response = await fetch('/api/user/login', {
+                method: 'POST',
                 body: JSON.stringify({ username: Username, password: Password }),
+                headers: {
+                    'Content-Type': 'application/json',
+                },
             });
-            
-            if (!response.ok) {
-                const text = await response.text();
-                throw new Error(`Login failed: ${text}`);
+        
+            const json = await response.json();
+            if(response.ok){
+                alert("Logged In Successfully")
+                window.location.assign('/');            
             }
-            alert("Login Successful");
-            window.location.assign('/');
-        } catch (error) {
-            console.error('Error during login:', error);
-            alert("Login failed. Wrong Username or Password");
+            else{
+                alert("Invalid Password Or Username")
+            }
         }
+        catch(e){
+            alert("Internal Server Error: "+ e)
+        }
+       
     };
+    
     
     
     return (  
@@ -55,9 +58,9 @@ const Loginpage = () => {
                     src="/malutotranslogo1@2x.png"
                 />
                 <div className="userN">Username</div>
-                <input type="text" id="loginUN" placeholder='Username' className='userInput' onChange={(e) => setUsername(e.target.value)} value={Username} required/>
+                <input type="text" id="loginUN" placeholder='Username' className='userInput' onChange={(e) => setUsername(e.target.value)} value={Username} />
                 <div className="pass">Password</div>
-                <input type="password"   id="loginPS" placeholder='Password' className='passInput' onChange={(e) => setPassword(e.target.value)} value={Password} required/>
+                <input type="password"   id="loginPS" placeholder='Password' className='passInput' onChange={(e) => setPassword(e.target.value)} value={Password} />
             </div>
             <input type='checkbox' className="RememberMeBox"  id="RememberMeBox" />
             <p className='forget'>Forgot Password?</p>

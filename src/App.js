@@ -30,6 +30,7 @@ function App() {
           {
             <Route exact path ="/" Component={Home}/>
           }
+          
           {
             <Route exact path ="/Review" Component={Review}/>
           }

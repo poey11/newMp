@@ -40,7 +40,7 @@ const Registerpage = () => {
                 setPassword('');
                 setBio('');
                 setAvatar('');
-                window.location.assign('/');
+                window.location.assign('/Login');
             }
         }
     };

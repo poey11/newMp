@@ -8,12 +8,33 @@ import {useState,useEffect } from 'react';
 const ProfilePage = () => {
   const [users, setUsers] = useState('');
   const [Reviews, setReviews] = useState([])
-  
+  const [id, setId] = useState('');
+
 
   useEffect(()=>{
-    const fetchUsers= async ()=>{
+    const fetchUserId = async () => {
+      try {
+          const response = await fetch("/api/session/sessionUserId");
+          const json = await response.json();
+          if (response.ok) {
+              // Session exists, check authentication status
+              setId(json)
+          } else {
+              // Session doesn't exist
+              alert("You are not Logged in")
+              window.location.assign('/Login');       
+            }
+
+      } catch (error) {
+          // Handle fetch error
+          console.error("Error fetching authentication status:", error);
+          setId(false);
+      }
+      
+  };
+    const fetchUser= async ()=>{
     
-      const response = await fetch("/api/user/");
+      const response = await fetch("/api/user/"+id);
       const json = await response.json()
   
       if(response.ok){
@@ -34,9 +55,9 @@ const ProfilePage = () => {
       }
     }
     fetchReviews();
-    fetchUsers()
-    
-  },[]);
+    fetchUser()
+    fetchUserId()
+},[id]);
 
 
   
@@ -95,7 +116,7 @@ const ProfilePage = () => {
       <div className="lastestHeader"> Lastest Reviews</div>
       <div className="latestContainer">
         {Reviews
-       .filter((review) => review.Author === users._id)
+       .filter((review) => review.Author === id)
        .map((review) => (
             <Review key = {review._id} Agency = {review.Agency} id = {review._id} Title = {review.Title} AuthorId ={review.Author} Date = { review.createdAt} Body={review.Body}/>       
         ))}

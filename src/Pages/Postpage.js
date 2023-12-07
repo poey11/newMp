@@ -21,7 +21,7 @@ const Postpage = () => {
        
         const fetchUser= async ()=>{
           
-            const response = await fetch("/api/user/"+UserId);
+            const response = await fetch("/api/user/6570abeb5890915b6b91cc27");
             const json = await response.json()
         
             if(response.ok){
@@ -43,7 +43,7 @@ const Postpage = () => {
         };
         fetchSingleReviews();
         fetchUser();
-    },[Review]);
+    },[]);
 
     
     const handleDelete = async (e) => {
@@ -113,6 +113,7 @@ const Postpage = () => {
             // Tally updated successfully, refresh the page
             const button = e.target;
             button.disabled = true;
+            window.location.reload();
           } else if (response.status === 404) {
             // Candidate not found, display error message
             console.log('id not found, display error message');

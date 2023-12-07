@@ -15,22 +15,30 @@ const CreateReviewpage = () => {
   const [MediaURL, setMediaURL] = useState('');
   const [Agency, setAgency] = useState('');
   const navigate = useNavigate();
+  const [id, setId] = useState('');
   
   useEffect(() => {
-    const fetchUser= async ()=>{
-
-        const response = await fetch("/api/user/65701c7ffd20e14809ff6fef");
-        const json = await response.json()
-    
-        if(response.ok){
-            setUser(json);
-        } else {
-            console.log(json.error);
+    const fetchUserId = async () => {
+      try {
+          const response = await fetch("/api/session/sessionUserId");
+          const json = await response.json();
+          if (response.ok) {
+              // Session exists, check authentication status
+              setId(json)
+          } else {
+              // Session doesn't exist
+              alert("You are not Logged in")
+              window.location.assign('/Login');       
             }
-          
-    }
-    fetchUser();
-   
+
+      } catch (error) {
+          // Handle fetch error
+          console.error("Error fetching authentication status:", error);
+          setId(false);
+      }
+    
+    };
+    fetchUserId()
   },[])
 
   if(Rating === "" && Category === ""){
@@ -40,7 +48,7 @@ const CreateReviewpage = () => {
   
   const handleSubmit = async (e)=>{
     e.preventDefault()
-    const Author= User._id
+    const Author=id;
     const review = {Title,Author,Category,Body,Rating,MediaURL,Agency,OwnerReply}
     console.log(User)
 

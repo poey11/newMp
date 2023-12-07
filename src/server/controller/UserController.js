@@ -72,37 +72,60 @@ const updateUser = async (req, res) => {
       res.status(200).json(singleUser)
 }
 
-
 const loginUser = async (req, res) => {
     const { username, password } = req.body;
     try {
         const user = await User.findOne({ Username: username }).select('+Password');
         if (!user) {
-            return res.status(401).json({ error: 'Invalid username or password' });
+            return res.status(401).json({ error: 'User doesnt exist' });
         }
 
         const passwordMatch = await bcrypt.compare(password, user.Password);
-
-        if (passwordMatch) {
-            // Successful login
-            res.status(200).json({ message: 'Login successful' });
+        if (passwordMatch === true) {
+            //Successful login
+            if (!req.session) {
+                req.session = {};
+            }
+            if (req.session.authenticated) {
+                req.session.userId = user._id.toString();
+              
+            }
+            else {
+                req.session.authenticated = true;
+                req.session.userId = user._id;
+            }
+            return res.status(201).json({message:'Login Success'});
         } else {
             // Incorrect password
             res.status(401).json({ error: 'Invalid username or password' });
         }
     } catch (error) {
-        console.error('Error during login:', error);
-        res.status(500).json({ error: 'Internal Server Error' });
+      res.status(501).json({error:"Internal Server Error",})
     }
 };
 
 
 //logout
+const userLogout = async(req,res) =>{
+    console.log(req.session)
+    req.session.destroy((err) => {
+        if (err) {
+          console.error(err);
+          res.status(500).json({ message: 'error' });
+        }
+        res.status(200).json({ message: 'Logout successful' });
+      });
+}
+
+
+
+
 
 module.exports ={
     createUser,
     GetAllUser,
     GetUser,
     updateUser,
-    loginUser
+    loginUser,
+    userLogout
 }

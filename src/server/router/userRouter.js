@@ -5,6 +5,7 @@ const { createUser,
     GetUser,
     updateUser,
     loginUser,
+    userLogout
 } = require('../controller/UserController')
 
 // get ALL user info
@@ -23,5 +24,6 @@ router.patch('/:id',updateUser)
 router.post('/login', loginUser);
 
 //logout
+router.post('/logout', userLogout);
 
 module.exports = router
