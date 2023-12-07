@@ -1,6 +1,8 @@
 import {useState } from 'react';
 import Nav from '../Components/NavBar';
 import '../Page Style/RegisterpageCSS.css';
+import { useNavigate } from 'react-router-dom';
+const navigate = useNavigate();
 
 
 const Registerpage = () => {
@@ -40,7 +42,7 @@ const Registerpage = () => {
                 setPassword('');
                 setBio('');
                 setAvatar('');
-                window.location.assign('/Login');
+                navigate('/Login')
             }
         }
     };

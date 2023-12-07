@@ -11,7 +11,7 @@ import MediaComponent from './MediaComponent';
 const Postpage = () => {
     const location = useLocation();
     const { state } = location;
-    const { id } = state || {}; // eslint-disable-next-line react-hooks/exhaustive-deps
+    const { id } = state || {}; //gets the review id 
     const [user, setUser] = useState('');
     const navigate = useNavigate();
     const [Review, setReview] = useState('');

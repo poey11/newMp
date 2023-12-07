@@ -6,7 +6,7 @@ import SubNav from '../Components/SubNavBar.js';
 import '../Page Style/CreateReviewpageCSS.css';
 
 const CreateReviewpage = () => {
-  const [User, setUser] = useState('');
+  
   const [Title, setTitle] = useState('');
   const OwnerReply = "";
   const [Category, setCategory] = useState('');
@@ -50,7 +50,7 @@ const CreateReviewpage = () => {
     e.preventDefault()
     const Author=id;
     const review = {Title,Author,Category,Body,Rating,MediaURL,Agency,OwnerReply}
-    console.log(User)
+  
 
 
     const response = await fetch('/api/reviews/',{
@@ -76,7 +76,9 @@ const CreateReviewpage = () => {
       navigate(-1);
     }
   }
-
+  const onCancel = ()=>{
+    navigate(-1)
+  }
 
   return (
     <form className="CreateReviewCont" onSubmit={handleSubmit}>
@@ -123,6 +125,7 @@ const CreateReviewpage = () => {
         <input type="text" className="mediaInput" id="mediaInput" placeholder='Insert Media URL (Videos can only be YT links)' onChange={(e)=> setMediaURL(e.target.value)} value={MediaURL} />
       </div>
       <div className="buttonContainer">
+      <button className='postReviewBut' onClick={onCancel}>Cancel</button>
         <button className='postReviewBut'>Post Review</button>
       </div>
     </form>

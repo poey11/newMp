@@ -8,18 +8,27 @@ const EditReviewpage = () => {
     const { state } = location;
     const { id } = state || {};
     const navigate = useNavigate();
-    
-    const onEdit= async()=>{
+    const [Title, setTitle] = useState('');
+    const [Category, setCategory] = useState('');
+    const [Body, setBody] = useState('');
+    const [Rating, setRating] = useState('');
+    const [MediaURL, setMediaURL] = useState('');
+    const [Agency, setAgency] = useState('');
+
+    const onEdit= async(e)=>{
+      e.preventDefault();    
       
+    }
+    const onCancel = ()=>{
+      navigate(-1)
     }
 
 
 
 
 
-
     return (  
-    <div className="EditReviewCont">
+    <form className="EditReviewCont" onSubmit={onEdit}>
       <NavBar />
       <div className="page-header">
         <div className="page-title">Edit Review</div>
@@ -63,9 +72,10 @@ const EditReviewpage = () => {
         <input type="text" className="mediaInput" id="mediaInput" placeholder='Insert Media URL' />
       </div>
       <div className="buttonContainer">
-        <button className='postReviewBut'>Update Review</button>
+        <button className='postReviewBut'onClick={onCancel}>Cancel</button>
+         <button className='postReviewBut'>Update Review</button>
       </div>
-    </div>
+    </form >
     );
 }
  
