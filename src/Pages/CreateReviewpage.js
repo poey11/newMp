@@ -28,7 +28,7 @@ const CreateReviewpage = () => {
           } else {
               // Session doesn't exist
               alert("You are not Logged in")
-              window.location.assign('/Login');       
+              navigate("/Login");
             }
 
       } catch (error) {
