@@ -22,19 +22,24 @@ const Aboutpage = () => {
                             src="/malutotranslogo1@2x.png"
                         />
                     <div className="at-igan-we-container">
-                        <span>
-                        <span>At</span>
-                        </span>
-                        <span className="igan">
-                        <span>{` `}</span>
-                        <b>IGAN</b>
-                        </span>
-                        <span>
-                        , we are dedicated to providing exceptional transportation services to
-                        our passengers, ensuring safety, comfort, and reliability in every
-                        journey. We believe in connecting communities, creating memories, and
-                        making travel convenient and enjoyable for all.
-                        </span>
+                            dependencies: 
+                            babel/plugin-proposal-private-property-in-object: 7.21.11,
+                            testing-library/jest-dom: ^5.17.0,
+                            testing-library/react: ^13.4.0,
+                            testing-library/user-event: ^13.5.0,
+                            bcrypt: ^5.1.1,
+                            connect-mongo: ^5.1.0,
+                            cors: ^2.8.5,
+                            dotenv: ^16.3.1,
+                            express: ^4.18.2,
+                            express-session: ^1.17.3,
+                            mongoose: ^8.0.1,
+                            react: ^18.2.0,
+                            react-dom: ^18.2.0,
+                            react-router-dom: ^6.20.1,
+                            react-scripts: 5.0.1,
+                            web-vitals: ^2.1.4
+                    
                     </div>
                 </div>
                 <div className="footer">
