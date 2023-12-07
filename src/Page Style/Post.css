@@ -26,6 +26,7 @@
 }
 .review-name #author{
     font-size: 20px;
+    cursor: pointer;
     margin-top: 9px;
     margin-left: 40px;
 }
@@ -36,6 +37,7 @@
     position: relative;
     object-fit: contain;
     height: 30px;
+    cursor: pointer;
     left: -10px;
     top:-26px;
 }

@@ -15,8 +15,7 @@ const Postpage = () => {
     const [user, setUser] = useState('');
     const navigate = useNavigate();
     const [Review, setReview] = useState('');
-    const [UserId, setUserId] = useState('');
-
+    const [AuthorId, setAuthorId] = useState('');
     useEffect(() => {
         const fetchUser= async ()=>{
             const response = await fetch("/api/user/"+Review.Author);
@@ -41,6 +40,7 @@ const Postpage = () => {
         };
         fetchSingleReviews();
         fetchUser();
+        setAuthorId(Review.Author);
     },[Review.Author]);
     
     const handleDelete = async (e) => {
@@ -67,6 +67,9 @@ const Postpage = () => {
     const onEdit= (()=>{
         navigate('/EditReview',{state:{id}})
     })
+    const otherUsersProfile= (()=>{
+      navigate('/Other',{state:{AuthorId}})
+  })
     const nothelpful = async(e)=>{
         try {
             // Disable the button to prevent multiple click
@@ -136,8 +139,8 @@ const Postpage = () => {
                 <div id='reviewDate'>{Review.createdAt}</div>
                 <div id='agencyUsed'>{Review.Agency}</div>
                 <div id='user-rating'>{Review.Rating}</div>
-                <a href='/Profile'>
-                    <div id='author' >{user.Username}</div>
+               
+                    <div id='author'    onClick={otherUsersProfile}>{user.Username}</div>
                     <img   className='profilepic'
                         id='profile-pic'
                         alt=''
@@ -145,10 +148,13 @@ const Postpage = () => {
                         onError={(e) => {
                             e.target.src = '/avatar-icon.png';
                             e.target.alt = 'Default Avatar';
-                        }}
-                    />   
-                </a>
-            
+                        }
+                        
+                      }
+                      onClick={otherUsersProfile}
+                      />
+              
+          
                 
             </div>
             <div className="review-paragraph">

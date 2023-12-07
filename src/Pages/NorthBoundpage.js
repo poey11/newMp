@@ -3,15 +3,17 @@ import Nav from '../Components/NavBar';
 import '../Page Style/SouthBoundpageCSS.css';
 import SubNav from '../Components/SubNavBar.js';
 import Review from '../Components/ReviewPost.js';
-
+import { useNavigate } from "react-router-dom";
 import {useState,useEffect } from 'react';
 
 
 
 const NorthBoundpage = () => {
+  const Navigate = useNavigate();
   const [Reviews, setReviews] = useState([])
+  
   const Create=()=>{
-    return window.location.assign('/CreateReview')
+    Navigate("/CreateReview")
   }
 
    const categoryToShow = "North Bound";

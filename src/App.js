@@ -12,6 +12,7 @@ import CreateReview from './Pages/CreateReviewpage.js';
 import Post from './Pages/Postpage.js';
 import EditProfile from './Pages/editProfilepage.js';
 import EditReview from './Pages/EditReviewpage.js';
+import OtherProfile from './Pages/OtherProfilepage.js';
 
 import { 
   BrowserRouter as Router, 
@@ -66,6 +67,9 @@ function App() {
           }
           {
             <Route exact path ="/EditReview" Component={EditReview}/>
+          }
+           {
+            <Route exact path ="/Other" Component={OtherProfile}/>
           }
         </Routes>
       </Router>
