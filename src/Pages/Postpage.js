@@ -41,7 +41,7 @@ const Postpage = () => {
         fetchSingleReviews();
         fetchUser();
         setAuthorId(Review.Author);
-    },[Review.Author]);
+    },[Review]);
     
     const handleDelete = async (e) => {
         try{
@@ -113,7 +113,6 @@ const Postpage = () => {
             // Tally updated successfully, refresh the page
             const button = e.target;
             button.disabled = true;
-            window.location.reload();
           } else if (response.status === 404) {
             // Candidate not found, display error message
             console.log('id not found, display error message');
@@ -169,7 +168,7 @@ const Postpage = () => {
                 <img id='thumbs-up' src='/like-1-1@2x.png'alt=''  />
                 <input type='button'id='like' onClick={(e)=>helpful(e)} value={Review.Helpful+" Helpful"}/>
                 <img id='thumbs-down'alt='' src='/like-1-1@2x.png' />
-                <input type='button' id='dislike'onClick={(e)=>nothelpful(e)} value={Review.NotHelpful+" NotHelpful"}/>
+                <input type='button' id='dislike'onClick={(e)=>nothelpful(e)} value={Review.NotHelpful+" Not Helpful"}/>
                 
             </div>
 
