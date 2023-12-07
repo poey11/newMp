@@ -18,33 +18,30 @@ const Postpage = () => {
     const [UserId, setUserId] = useState('');
 
     useEffect(() => {
-       
         const fetchUser= async ()=>{
-          
-            const response = await fetch("/api/user/6570abeb5890915b6b91cc27");
+            const response = await fetch("/api/user/"+Review.Author);
             const json = await response.json()
-        
             if(response.ok){
                 setUser(json);
               }
-              
+            else{
+              console.error(json)
+            }
         }
         const fetchSingleReviews = async () => {
-            
             const response = await fetch("/api/reviews/" + id);
             const json = await response.json();
-
+         
             if (response.ok) {
                 setReview(json);
-                setUserId(Review.Author)
+                
             } else {
                 console.log(json.error);
             }
         };
         fetchSingleReviews();
         fetchUser();
-    },[]);
-
+    },[Review.Author]);
     
     const handleDelete = async (e) => {
         try{
