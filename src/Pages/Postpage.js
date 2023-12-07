@@ -181,7 +181,7 @@ const Postpage = () => {
           console.error('Error updating tally:', error);
         } 
       };
-    const Alert= ()=>{
+    const Alert= (e)=>{
       alert("You are not the Owner of the Agency and cant reply to the review");
     }
     return ( 
@@ -248,7 +248,7 @@ const Postpage = () => {
             <button className="btn" id="edit-btn" onClick={onEdit}>Edit Review</button>
             
             <button className="btn" id='delete-btn' onClick={handleDelete} >Delete Review</button>
-            <button className="btn" id='comment-btn' onclick={Alert}>Post Response</button>
+            <button className="btn" id='comment-btn' onClick={Alert}>Post Response</button>
           
 
             <div className='footer'/>
