@@ -2,14 +2,14 @@ import Nav from '../Components/NavBar';
 import SubNavBar from '../Components/SubNavBar';
 import '../Page Style/ProfilepageCSS.css';
 import Review from '../Components/ReviewPost.js';
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import {useState,useEffect } from 'react';
 
 const ProfilePage = () => {
   const [users, setUsers] = useState('');
   const [Reviews, setReviews] = useState([])
   const [id, setId] = useState('');
-
+  const Navigate = useNavigate();
 
   useEffect(()=>{
     const fetchUserId = async () => {
@@ -22,7 +22,7 @@ const ProfilePage = () => {
           } else {
               // Session doesn't exist
               alert("You are not Logged in")
-              window.location.assign('/Login');       
+              Navigate('/Login');      
             }
 
       } catch (error) {

@@ -1,8 +1,9 @@
 import { useEffect,useState } from 'react';
 import '../Component Style/NavBarCSS.css';
-import { Link } from "react-router-dom"; 
+import { Link,useNavigate } from "react-router-dom"; 
 
 const NavBar = () => {
+    const Navigate = useNavigate();
     const [session, setSession] = useState(false);
     useEffect(()=>{
         const fetchAuth = async () => {
@@ -49,14 +50,15 @@ const NavBar = () => {
             
         if(response.ok){
         setSession(false);
-         window.location.assign('/');
+         Navigate('/')
+         
         }
         else{
             console.log(json.error)
         }
     }
     const handleloginPage=()=>{
-        window.location.assign('/Login');
+        Navigate('/Login')
     }
     return (
         <nav className="navBar">

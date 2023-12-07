@@ -39,7 +39,7 @@ const GetAllUser = async (req, res) => {
 // get single user
 const GetUser = async (req, res) => {
     const { id } = req.params
-
+   
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error:'id is not valid'})
     }
