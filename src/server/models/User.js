@@ -17,9 +17,6 @@ const UserSchema = new Schema({
     Bio:{
         type: String
     },    
-    Roles:{
-        type: String
-    },
     Avatar:{
         type: String,
     }

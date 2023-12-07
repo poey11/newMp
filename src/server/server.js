@@ -4,6 +4,7 @@ const connect = require('./db.js');
 const userRoutes = require('./router/userRouter.js');
 const reviewRoutes = require('./router/reviewRouter.js');
 const sessionRoutes = require('./router/sessionRouter.js');
+const agencyRoutes = require('./router/agencyRouter.js');
 const cors = require('cors');
 const app = express();
 const mongoStore = require('connect-mongo');
@@ -38,7 +39,7 @@ router.use(session({
 app.use('/api/user/', userRoutes);
 app.use('/api/reviews/', reviewRoutes);
 app.use('/api/session/', sessionRoutes);
-
+app.use('/api/agency/', agencyRoutes);
 
 port = process.env.PORT || 5000
 connect()

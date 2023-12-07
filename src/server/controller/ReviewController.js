@@ -82,12 +82,17 @@ const getReview = async (req, res) => {
 
 const updateReview = async(req,res) =>{
   const { id } = req.params
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error:'id is not valid'})
-    }
+    console.log(id)
     const singleReview = await Review.findByIdAndUpdate({_id: id}, {
-        
+      Title: req.body.Title,
+      Category:req.body.Category,
+      Body:req.body.Body,
+      Rating:req.body.Rating,
+      MediaURL:req.body.MediaURL,
+      Agency:req.body.Agency
+      
     });
+    console.log(singleReview)
 
     if(!singleReview){
         return res.status(404).json({error: 'Review does not exist'})

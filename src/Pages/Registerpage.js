@@ -9,13 +9,12 @@ const Registerpage = () => {
     const [Username, setUsername] = useState('')
     const [Password, setPassword] = useState('')
     const [Bio, setBio] = useState('')
-    const Roles = "Customer"
     const [Avatar, setAvatar] = useState('');
     const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
     
-        const user = { Username, Password, Bio, Roles, Avatar };
+        const user = { Username, Password, Bio, Avatar };
     
         const response = await fetch('/api/user/', {
             method: 'POST',

@@ -58,13 +58,17 @@ const Postpage = () => {
           }
           
       }
-        fetchSingleReviews();
-        fetchUser();
-        fetchUserId()
-        setAuthorId(Review.Author);
+      
+      
+      fetchSingleReviews();
+      fetchUser();
+      fetchUserId()
+      setAuthorId(Review.Author);
+     
+      
     },[Review]);
    
-  
+
 
     const handleDelete = async (e) => {
       if(userId===AuthorId){

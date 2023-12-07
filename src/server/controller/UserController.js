@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 //create new user
 const createUser = async (req, res) => {
-    const { Username, Password, Bio, Roles, Avatar } = req.body;
+    const { Username, Password, Bio, Avatar } = req.body;
 
     try {
         // Check if the username already exists in the database
@@ -15,7 +15,7 @@ const createUser = async (req, res) => {
         }
 
         // If the username is not found, create the new user
-        const user = await User.create({ Username, Password, Bio, Roles, Avatar });
+        const user = await User.create({ Username, Password, Bio, Avatar });
        
         res.status(200).json(user);
     } catch (error) {

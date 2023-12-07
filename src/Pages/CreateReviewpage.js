@@ -13,7 +13,7 @@ const CreateReviewpage = () => {
   const [Body, setBody] = useState('');
   const [Rating, setRating] = useState('');
   const [MediaURL, setMediaURL] = useState('');
-  const [Agency, setAgency] = useState('');
+  const [AgencyName, setAgency] = useState('');
   const navigate = useNavigate();
   const [id, setId] = useState('');
   
@@ -46,10 +46,29 @@ const CreateReviewpage = () => {
     setCategory("North Bound")
   }
   
+  const CreateAgency =async (e)=>{
+    const agency ={AgencyName};
+    
+    const response = await fetch('/api/agency/newAgency',{
+      method:'POST',
+      body: JSON.stringify(agency),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    })
+    const json = await response.json()
+    console.log(json);
+    if(!response.ok){
+      console.log("Agency Error"+json.error)
+    }
+    if(response.ok){
+      console.log("Agency Created")
+    }
+  }
   const handleSubmit = async (e)=>{
     e.preventDefault()
     const Author=id;
-    const review = {Title,Author,Category,Body,Rating,MediaURL,Agency,OwnerReply}
+    const review = {Title,Author,Category,Body,Rating,MediaURL,AgencyName,OwnerReply}
   
 
 
@@ -67,6 +86,7 @@ const CreateReviewpage = () => {
     }
     if(response.ok){
       alert("Review Created")
+      CreateAgency()
       setTitle('')
       setCategory('')
       setBody('')
@@ -113,7 +133,7 @@ const CreateReviewpage = () => {
           </select>
 
           <div className="agencyLabel">Travel Agency Used: </div>
-          <input className="agencyInput" id= "agencyInput"type="text"  onChange={(e)=> setAgency(e.target.value)} value={Agency}required/>
+          <input className="agencyInput" id= "agencyInput"type="text"  onChange={(e)=> setAgency(e.target.value)} value={AgencyName}required/>
         </div>
         
 

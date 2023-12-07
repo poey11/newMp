@@ -7,7 +7,8 @@ const AgencySchema = new Schema({
     type:String
   },
   AgencyOwner:{
-    type:String
+    type:String,
+   
   },
 }, { timestamps: true });
 
