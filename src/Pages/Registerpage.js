@@ -2,7 +2,7 @@ import {useState } from 'react';
 import Nav from '../Components/NavBar';
 import '../Page Style/RegisterpageCSS.css';
 import { useNavigate } from 'react-router-dom';
-const navigate = useNavigate();
+
 
 
 const Registerpage = () => {
@@ -11,7 +11,7 @@ const Registerpage = () => {
     const [Bio, setBio] = useState('')
     const Roles = "Customer"
     const [Avatar, setAvatar] = useState('');
-
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
     
