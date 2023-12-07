@@ -3,16 +3,17 @@ import Nav from '../Components/NavBar';
 import '../Page Style/SouthBoundpageCSS.css';
 import SubNav from '../Components/SubNavBar.js';
 import Review from '../Components/ReviewPost.js';
-//import { Link } from "react-router-dom"; 
 import {useState,useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
+
 
 const SouthBoundPage = () => {
   const Create=()=>{
-    return window.location.assign('/CreateReview')
+    Navigate("/CreateReview")
   }
   const [Reviews, setReviews] = useState([])
   const categoryToShow = "South Bound";
-
+  const Navigate = useNavigate();
   useEffect(()=>{
     const fetchReviews = async () =>{
       const response = await fetch("/api/reviews/");

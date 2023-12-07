@@ -16,6 +16,9 @@ const Postpage = () => {
     const navigate = useNavigate();
     const [Review, setReview] = useState('');
     const [AuthorId, setAuthorId] = useState('');
+    const [userId, setUserId] = useState('')
+
+
     useEffect(() => {
         const fetchUser= async ()=>{
             const response = await fetch("/api/user/"+Review.Author);
@@ -38,19 +41,38 @@ const Postpage = () => {
                 console.log(json.error);
             }
         };
+        const fetchUserId = async() =>{
+
+          try {
+              const response = await fetch("/api/session/sessionUserId");
+              const json = await response.json();
+              if (response.ok) {
+                setUserId(json)
+              } else {
+                 
+              }
+  
+          } catch (error) {
+              // Handle fetch error
+              console.error("Error fetching authentication status:", error);
+          }
+          
+      }
         fetchSingleReviews();
         fetchUser();
+        fetchUserId()
         setAuthorId(Review.Author);
     },[Review]);
-    
+   
+  
+
     const handleDelete = async (e) => {
+      if(userId===AuthorId){
         try{
             const response = await fetch('/api/reviews/'+id,{
                 method:'DELETE'
             })
-
             const json = await response.json();
-
             if (response.ok) {
                 alert("Review Deleted");
                 navigate(-1);
@@ -63,34 +85,55 @@ const Postpage = () => {
             alert(e);
 
         }
+      }
+      else{
+        alert("You are not the author of this review")
+      }
     }
     const onEdit= (()=>{
+      if(userId===AuthorId){
         navigate('/EditReview',{state:{id}})
+      }
+      else{
+        alert("You are not the author of this review")
+      }
     })
     const otherUsersProfile= (()=>{
       navigate('/Other',{state:{AuthorId}})
   })
+
+    const [buttonState, setButtonState] = useState(false)
     const nothelpful = async(e)=>{
+      const button = e.target;
         try {
-            // Disable the button to prevent multiple click
-            const response = await fetch('/api/reviews/untally/' + id, {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-              },
-              body: JSON.stringify({ id, tally: 1 }), // You can adjust the tally value based on your requirement
-            });
-        
-            if (response.ok) {
-              // Tally updated successfully, refresh the page
-              const button = e.target;
+            if(buttonState===true){
               button.disabled = true;
-            } else if (response.status === 404) {
-              // Candidate not found, display error message
-              console.log('id not found, display error message');
-            } else {
-              // Display a generic error message
-              console.log('Error updating tally. Please try again.');
+            }
+            else{
+              // Disable the button to prevent multiple click
+              const response = await fetch('/api/reviews/untally/' + id, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ id, tally: 1 }), // You can adjust the tally value based on your requirement
+              });
+          
+              if (response.ok) {
+                // Tally updated successfully, refresh the page
+
+                button.disabled = true;
+                const imgButton = document.getElementById("thumbs-down")
+                imgButton.src = "/filled_thumbsup.png";
+                setButtonState(true)
+
+              } else if (response.status === 404) {
+                // Candidate not found, display error message
+                console.log('id not found, display error message');
+              } else {
+                // Display a generic error message
+                console.log('Error updating tally. Please try again.');
+              }
             }
           } catch (error) {
             console.error('Error updating tally:', error);
@@ -98,10 +141,15 @@ const Postpage = () => {
     }
 
     const helpful = async (e) => {
+        const button = e.target;
         try {
-          // Disable the button to prevent multiple click
+         if(buttonState === true){
+          button.disabled=true
+         }
+         else{
+           // Disable the button to prevent multiple click
          
-          const response = await fetch('/api/reviews/tally/' + id, {
+           const response = await fetch('/api/reviews/tally/' + id, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
@@ -111,8 +159,12 @@ const Postpage = () => {
       
           if (response.ok) {
             // Tally updated successfully, refresh the page
-            const button = e.target;
-            button.disabled = true;
+             button.disabled = true;
+              const imgButton = document.getElementById("thumbs-up")
+              imgButton.src = "/filled_thumbsup.png";
+              setButtonState(true)
+
+
           } else if (response.status === 404) {
             // Candidate not found, display error message
             console.log('id not found, display error message');
@@ -120,10 +172,12 @@ const Postpage = () => {
             // Display a generic error message
             console.log('Error updating tally. Please try again.');
           }
+         }
         } catch (error) {
           console.error('Error updating tally:', error);
         } 
       };
+    
     return ( 
         <div className="PostPageContainer">
         
@@ -139,7 +193,7 @@ const Postpage = () => {
                 <div id='agencyUsed'>{Review.Agency}</div>
                 <div id='user-rating'>{Review.Rating}</div>
                
-                    <div id='author'    onClick={otherUsersProfile}>{user.Username}</div>
+                    <div id='author'   >{user.Username}</div>
                     <img   className='profilepic'
                         id='profile-pic'
                         alt=''
